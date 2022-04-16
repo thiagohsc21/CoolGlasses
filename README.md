@@ -1,5 +1,7 @@
 # CoolGlasses
 
+ <img src="/src/imagens/logo.png">
+
 Projeto desenvolvido para a disciplina de Introdução ao Desenvolvimento Web, no ano de 2022.
 
 O tema escolhido por nós foi desenvolver um website que realiza a venda de óculos.
