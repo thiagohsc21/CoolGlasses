@@ -11,8 +11,8 @@ O tema escolhido por nós foi desenvolver um website que realiza a venda de ócu
 | NUSP     | Nome                       |
 |----------|----------------------------|
 | 11796594 |	Thiago Henrique dos Santos Cardoso     |
-| 	| Eduardo |
-| 	| Adrio |
+| 10716887 |  Eduardo Vinicius Barbosa Rossi         |
+| 11796830 |  Adrio Oliveira Alves                   |
 
 ### Tabela de conteúdos 
 
