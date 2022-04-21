@@ -1,0 +1,17 @@
+.login{
+    width: 400px;
+    height: 400px;
+    background-color: var(--azul-escuro);
+    margin:auto;
+    padding-top: 2em;
+}
+
+.login form{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+.login h2{
+    text-align: center;
+}
