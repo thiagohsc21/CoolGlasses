@@ -1,6 +1,6 @@
 :root {
     --azul-claro-fundo: rgb(149, 149, 243);
-    --azul-escuro: #2b29b4;
+    --azul-escuro: #183392;
 }
 
 
@@ -46,7 +46,11 @@ body {
     background-color: var(--azul-escuro);
     font-size: x-small;
     padding: 9px;
-    margin-top: ;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 150px;
 }
 .footer p, a, h3{ 
     color:white; 
@@ -61,4 +65,11 @@ body {
 }
 .list-inline li{
     color: black
+}
+
+#logo{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom: 5px;
 }
