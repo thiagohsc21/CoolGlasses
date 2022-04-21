@@ -99,10 +99,11 @@ body {
     align-items: center;
     padding-top: 20%;
     padding-bottom: 20%;
+    object-fit: cover;
 }
 
 #EmAlta{
-    background-color: black;
+    /* background-color: black; */
     margin: 10px;
 }
 
