@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/finalizarcompra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolGlasses - Entrar</title>
+</head>
+<body>
+
+    <div class="site-navbar">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <a href="home.html">
+                        <h1 class="navbar-title"><span class="bi bi-emoji-sunglasses"></span> CoolGlasses</h1>
+                    </a>
+                    <span class="navbar-icons">
+                        <a id="cart" class="shopping-cart" href="carrinho.html"><i class="fa fa-shopping-cart"></i></a> 
+                        <a href="login.html"><i class="fa fa-user"></i> Sair</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="finalizar-compra">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">    
+
+                    <h2 style="font-weight:bolder"> Finalizar Compra</h2>
+                    <p> Preço Total: linkar com o carrinho</p>
+
+                    <form class="formulario">
+                        <p>CPF</p>
+                        <input id="CPF"  type="text"><br><br>
+                        <p>Número do Cartão</p>
+                        <input id="numero-cartao" type="text"><br><br>
+                        <div class="list-inline"> 
+                            <li>   
+                            <p>Data de Validade</p>
+                            <input id="data-validade" type="date"><br><br>
+                            </li>
+                            <li>
+                            <p>Código de Segurança</p>
+                            <input id="codigo-seguranca" type="securitycode"><br><br>
+                            </li>
+                        </div>
+                        <p>Endereço de Entrega</p>
+                        <input id="endereco" type="text"><br><br>
+                    </form>
+
+                    <form>
+                        <br>
+                        <div class="list-inline" style="gap:19.2em">
+                            <li><input type="submit" value="Finalizar Compra"><br></li>
+                            <li><input type="submit" formaction="carrinho.html" value="Voltar para Carrinho"><br><br></li>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Sobre nós</h3>
+                    <p>Surgimos de uma confraternização de amigos e temos como
+                        objetivo restaurar a auto estima do jovem universitário, o qual
+                        é destruído todos os dias pela universidade e professores. </p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Atalhos</h3>
+                    <ul>
+                        <li><a href="home.html" style="text-decoration: none; color: white">Home</a></li>
+                        <li><a href="minhaconta.html" style="text-decoration: none; color: white">Minha Conta</a></li>
+                        <li><a href="carrinho.html" style="text-decoration: none; color: white">Carrinho</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-md-3">
+                    <h3>Contato</h3>
+                    <p>
+                        <i class="fa fa-envelope"></i> coolglasses@email.com <br>
+                        <i class="fa fa-phone"></i> (16) 9999-9999 <br>
+                        segunda à sexta, 7h30 - 18h30
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-inline">
+                        <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i> </a></li> 
+                         <li><a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                        <p style="font-size:1em;"> layout e desenvolvimento GRUPO 7<br>
+                            CoolGlasses 2022 | todos os direitos reservados</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
