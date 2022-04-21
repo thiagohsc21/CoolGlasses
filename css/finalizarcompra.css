@@ -1,0 +1,36 @@
+.finalizar-compra{
+    margin:auto;
+    margin-left: 19em;
+    margin-top: 3.7em;
+    color: black;
+}
+
+
+.formulario{
+    background-color: var(--cinza-claro);
+    font-weight: bolder;
+    font-size: 1.1em;
+    padding-left: 3%;
+    padding-top: 1%;
+}
+
+
+.list-inline-compra{
+    display: flex; 
+    flex-direction: row; 
+    gap: 2em;
+    text-decoration: none;
+}
+.list-inline-compra li{
+    list-style-type: none;
+}
+
+
+
+input[type=text] {
+    width: 63%;
+    box-sizing: border-box;
+}
+input[type=securitycode] {
+    width: 85%;
+}

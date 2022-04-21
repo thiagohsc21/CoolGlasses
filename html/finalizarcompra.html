@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/finalizarcompra.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoolGlasses - Entrar</title>
+    <title>CoolGlasses - Finalizar Compra</title>
 </head>
 <body>
 
@@ -21,23 +21,51 @@
                     <a href="home.html">
                         <h1 class="navbar-title"><span class="bi bi-emoji-sunglasses"></span> CoolGlasses</h1>
                     </a>
+                    <span class="navbar-icons">
+                        <a id="cart" class="shopping-cart" href="carrinho.html"><i class="fa fa-shopping-cart"></i></a> 
+                        <a href="login.html"><i class="fa fa-user"></i> Sair</a>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="login">
+    <div class="finalizar-compra">
         <div class="container">
             <div class="row">
-                <form>
-                    <h2> Entrar</h2><br>
-                    <p style="font-weight:bold">E-mail</p>
-                    <input id="email"  type="text"><br><br>
-                    <p style="font-weight:bold">Senha</p>
-                    <input id="password" type="password"><br><br>
-                    <input type="submit" value="Entrar"><br><br>
-                    <p style="font-size: 0.7em">Caso não tenha uma conta, clique <a href="criarconta.html">aqui</a> para se cadastrar</p>
-                </form>
+                <div class="col-md-12">    
+
+                    <h2 style="font-weight:bolder"> Finalizar Compra</h2>
+                    <p> Preço Total: linkar com o carrinho</p>
+
+                    <form class="formulario">
+                        <p>CPF</p>
+                        <input id="CPF"  type="text"><br><br>
+                        <p>Número do Cartão</p>
+                        <input id="numero-cartao" type="text"><br><br>
+                        <div class="list-inline-compra"> 
+                            <li>   
+                            <p>Data de Validade</p>
+                            <input id="data-validade" type="date"><br><br>
+                            </li>
+                            <li>
+                            <p>Código de Segurança</p>
+                            <input id="codigo-seguranca" type="securitycode"><br><br>
+                            </li>
+                        </div>
+                        <p>Endereço de Entrega</p>
+                        <input id="endereco" type="text"><br><br>
+                    </form>
+
+                    <form>
+                        <br>
+                        <div class="list-inline-compra" style="gap:19.2em">
+                            <li><input type="submit" value="Finalizar Compra"><br></li>
+                            <li><input type="submit" formaction="carrinho.html" value="Voltar para Carrinho"><br><br></li>
+                        </div>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
