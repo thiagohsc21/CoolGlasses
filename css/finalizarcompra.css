@@ -15,8 +15,20 @@
 }
 
 
+.list-inline-compra{
+    display: flex; 
+    flex-direction: row; 
+    gap: 2em;
+    text-decoration: none;
+}
+.list-inline-compra li{
+    list-style-type: none;
+}
+
+
+
 input[type=text] {
-    width: 59.7%;
+    width: 63%;
     box-sizing: border-box;
 }
 input[type=securitycode] {
