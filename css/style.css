@@ -40,19 +40,15 @@ body {
     text-decoration: none;
 }
 
-
-.footer{
+.rodape{
     display: block;
     background-color: var(--azul-escuro);
     font-size: x-small;
     padding: 9px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
     width: 100%;
     height: 150px;
 }
-.footer p, a, h3{ 
+.rodape p, a, h3{ 
     color:white; 
 }
 
@@ -73,3 +69,46 @@ body {
     position: relative;
     bottom: 5px;
 }
+
+.slogan{
+    width: 100%;
+}
+
+
+#imagem_slogan{
+    background-color: green;
+    padding: 20px;
+    float: left;
+    width: 70%;
+}
+
+#imagem_slogan img{
+    width: 100%;
+}
+
+#produto_slogan{
+    background-color: rgb(235, 229, 229);
+    padding: 20px;
+    float: right;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    margin-right: 0;
+}
+
+#produto_slogan img{
+    width: 70%;
+    align-items: center;
+}
+
+.produto{
+    margin: 35px;
+    width: 20%;
+    float: left;
+}
+
+.produto .OculosEmAlta{
+    width: 100%;
+}
+
