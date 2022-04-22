@@ -1,9 +1,10 @@
 .finalizar-compra{
     margin:auto;
-    margin-left: 19em;
-    margin-top: 3.7em;
+    margin-top: 20px;
     color: black;
+    width: 600px;
 }
+
 
 
 .formulario{
@@ -14,18 +15,47 @@
     padding-top: 1%;
 }
 
+.formulario input {
+    background-color: var(--cinza-claro);
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.formulario#finalizar {
+    background-color: white;
+    padding-bottom: 15px;
+}
+
+.formulario#finalizar input[type=submit]{
+    background-color: black;
+    color: white;
+    transition-duration: 0.2s;
+}
+.formulario input[type=submit]:hover{
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.formulario#finalizar a{
+    color: black;
+}
 
 .list-inline-compra{
-    display: flex; 
-    flex-direction: row; 
-    gap: 2em;
+    display: flex;
     text-decoration: none;
 }
+
 .list-inline-compra li{
+    /* margin: auto; */
     list-style-type: none;
+} 
+
+.listafim{
+    position:absolute;
+    right: 30%;
 }
-
-
 
 input[type=text] {
     width: 63%;

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/finalizarcompra.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
@@ -48,20 +48,24 @@
                             <p>Data de Validade</p>
                             <input id="data-validade" type="date"><br><br>
                             </li>
-                            <li>
-                            <p>Código de Segurança</p>
-                            <input id="codigo-seguranca" type="securitycode"><br><br>
-                            </li>
+                            <div class="listafim">
+                                <li>
+                                <p>Código de Segurança</p>
+                                <input id="codigo-seguranca" type="securitycode"><br><br>
+                                </li>
+                            </div>
                         </div>
                         <p>Endereço de Entrega</p>
                         <input id="endereco" type="text"><br><br>
+
                     </form>
 
-                    <form>
-                        <br>
-                        <div class="list-inline-compra" style="gap:19.2em">
-                            <li><input type="submit" value="Finalizar Compra"><br></li>
-                            <li><input type="submit" formaction="carrinho.html" value="Voltar para Carrinho"><br><br></li>
+                    <form class="formulario" id="finalizar">
+                        <div class="list-inline-compra">
+                            <li><input type="submit" value="Finalizar Compra"></li>
+                            <div class="listafim">
+                                <li><a href="carrinho.html">Voltar para Carrinho</a></li>
+                            </div>
                         </div>
                     </form>
 
@@ -70,7 +74,7 @@
         </div>
     </div>
 
-    <div class="footer">
+    <div class="rodape">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -82,9 +86,9 @@
                 <div class="col-md-3">
                     <h3>Atalhos</h3>
                     <ul>
-                        <li><a href="home.html" style="text-decoration: none; color: white">Home</a></li>
-                        <li><a href="minhaconta.html" style="text-decoration: none; color: white">Minha Conta</a></li>
-                        <li><a href="carrinho.html" style="text-decoration: none; color: white">Carrinho</a></li>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="minhaconta.html">Minha Conta</a></li>
+                        <li><a href="carrinho.html">Carrinho</a></li>
                     </ul>
 
                 </div>
