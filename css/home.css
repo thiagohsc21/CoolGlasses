@@ -36,15 +36,22 @@
     text-align: center;
     color: black;
     background-color: var(--azul-claro-fundo);
-    border-radius: 50px;
-    width: 30%;
     margin: auto;
 }
 
 #EmAlta button{
-    float: right;
+    color: white;
     border-radius: 50px;
     background-color: #183392;
+}
+
+#EmAlta button:hover{
+    filter: contrast(1.85);
+}
+
+#botao{
+    float: right;
+    margin-right: 59px;
 }
 .produto{
     background-color: rgb(235, 229, 229);
