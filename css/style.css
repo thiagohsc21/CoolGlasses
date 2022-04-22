@@ -68,73 +68,6 @@ body {
     bottom: 5px;
 }
 
-.slogan{
-    width: 100%;
-    padding: 10px;
-}
-
-
-#imagem_slogan{
-    float: left;
-    width: 69%;
-}
-
-#imagem_slogan img{
-    width: 100%;
-}
-
-#produto_slogan{
-    background-color: rgb(235, 229, 229);
-    float: right;
-    max-width: 30%;
-    height: 100%;
-    align-items: center;
-    text-align: center;
-}
-
-#produto_slogan img{
-    width: 70%;
-    align-items: center;
-    padding-top: 20%;
-    padding-bottom: 20%;
-    object-fit: cover;
-}
-
-#EmAlta{
-    /* background-color: black; */
-    margin: 10px;
-}
-
-#EmAlta h3{
-    text-align: center;
-    color: black;
-    background-color: var(--azul-claro-fundo);
-    border-radius: 50px;
-    width: 30%;
-    margin: auto;
-}
-
-#EmAlta button{
-    float: right;
-    border-radius: 50px;
-    background-color: #183392;
-}
-.produto{
-    background-color: rgb(235, 229, 229);
-    width: 22%;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 50px;
-}
-
-#primeiro_produto{
-    margin-left: 60px;
-}
-
-.produto .OculosEmAlta{
-    width: 100%;
-}
-
 .row a {
     text-decoration: none; 
     color: white;
@@ -144,4 +77,3 @@ body {
     color: lightblue;
     text-decoration: underline;
 }
-
