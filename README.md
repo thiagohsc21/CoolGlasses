@@ -41,14 +41,14 @@ CoolGlasses é uma loja virtual de óculos. O projeto será desenvolvido impleme
 Os mockups se encontram no diretório 'mockups', além de todos estarem contidos também nesse link para o figma que foi utilizado: https://www.figma.com/file/Q0Aj5abwo0EIDR1jyfYADb/CoolGlasses?node-id=0%3A1
 
 Acesso aos arquivos dos mockups: 
-- [Home](/mockups/home.png)
-  - [Produtos](/mockups/produtos.png)
-    - [Produto](/mockups/produto.png)
-- [Login](/mockups/login.png)
-- [Cadastro](/mockups/cadastro.png)
-- [Perfil do Cliente](/mockups/perfil.png)
+- [Home](/mockups/home.PNG)
+  - [Produtos](/mockups/produtos.PNG)
+    - [Produto](/mockups/produto.PNG)
+- [Login](/mockups/login.PNG)
+- [Cadastro](/mockups/cadastro.PNG)
+- [Perfil do Cliente](/mockups/perfil.PNG)
 - [Carrinho](/mockups/carrinho.png)
-  - [Finalizar Compra](/mockups/finalizarCompra.png)
+  - [Finalizar Compra](/mockups/finalizarCompra.PNG)
 
 ### Funcionalidades
 
