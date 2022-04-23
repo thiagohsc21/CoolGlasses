@@ -1,29 +1,35 @@
 .slogan{
-    width: 100%;
+    display: flex;
+    flex-direction: row;
     padding: 10px;
 }
 
-
 #imagem_slogan{
-    float: left;
-    width: 69%;
+    padding-right: 10px;
 }
 
 #imagem_slogan img{
     width: 100%;
+    height: 380px;
+    object-fit: cover;
 }
 
 #produto_slogan{
+    color: black;
     background-color: var(--cinza-claro);
-    padding: 20px;
     float: right;
-    width: 30%;
+    height: 380px;
+    width: 380px;
     align-items: center;
     text-align: center;
 }
 
+#produto_slogan:hover {
+    box-shadow: 3px 5px 10px -3px #000000;
+}
+
 #produto_slogan img{
-    width: 70%;
+    height: 300px;
     align-items: center;
 }
 
@@ -48,20 +54,29 @@
     filter: brightness(1.5);
 }
 
+.produtos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.produtos a{
+    color: black;
+    text-decoration: none;
+    margin: auto;
+}
+
 #botao{
     float: right;
     margin-right: 59px;
 }
 .produto{
     background-color: var(--cinza-claro);
-    width: 22%;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 50px;
+    width: 300px;
 }
 
-#primeiro_produto{
-    margin-left: 60px;
+.produto:hover {
+    box-shadow: 3px 5px 10px -3px #000000;
 }
 
 .produto .OculosEmAlta{
