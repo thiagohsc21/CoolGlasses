@@ -33,3 +33,8 @@
 .login h2{
     text-align: center;
 }
+
+.login a {
+    color: var(--primary);
+    font-weight: bold;
+}

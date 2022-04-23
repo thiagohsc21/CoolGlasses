@@ -1,7 +1,11 @@
 :root {
     --azul-claro-fundo: rgb(149, 149, 243);
-    --azul-escuro: #183392;
-    --cinza-claro : #ccc
+
+    --cinza-claro: rgb(235, 233, 246);
+
+    --primary: #4b6387;
+    --dark:#1d395a;
+    --light:#7990b7;
 }
 
 html, body {
@@ -12,13 +16,13 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    color: var(--azul-claro-fundo);
+    color: var(--primary);
 }
 
 .site-navbar{
     width: 100%;
     height: 75px;
-    background-color: var(--azul-escuro);
+    background-color: var(--dark);
 }
 .navbar-title{
     font-size: 32px;
@@ -29,19 +33,19 @@ body {
     text-decoration: none;
 }
 .navbar-icons{
-    font-size: 18px;
-    line-height: 75px;
+    font-size: 25px;
+    line-height: 70px;
     font-weight:bolder;
     float:right;
 }
 .navbar-icons a{
-    color: white;
+    color: var(--primary);
     text-decoration: none;
 }
 
 .rodape{
     display: block;
-    background-color: var(--azul-escuro);
+    background-color: var(--dark);
     font-size: x-small;
     padding: 9px;
     width: 100%;
@@ -74,6 +78,6 @@ body {
 }
 
 .row a:hover{
-    color: lightblue;
+    color: var(--light);
     text-decoration: underline;
 }

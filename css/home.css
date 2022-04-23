@@ -14,7 +14,7 @@
 }
 
 #produto_slogan{
-    background-color: rgb(235, 229, 229);
+    background-color: var(--cinza-claro);
     padding: 20px;
     float: right;
     width: 30%;
@@ -28,25 +28,24 @@
 }
 
 #EmAlta{
-    /* background-color: black; */
     margin: 10px;
 }
 
 #EmAlta h3{
     text-align: center;
-    color: black;
-    background-color: var(--azul-claro-fundo);
+    color: white;
+    background-color: var(--primary);
     margin: auto;
 }
 
 #EmAlta button{
     color: white;
     border-radius: 50px;
-    background-color: #183392;
+    background-color: var(--primary);
 }
 
 #EmAlta button:hover{
-    filter: contrast(1.85);
+    filter: brightness(1.5);
 }
 
 #botao{
@@ -54,7 +53,7 @@
     margin-right: 59px;
 }
 .produto{
-    background-color: rgb(235, 229, 229);
+    background-color: var(--cinza-claro);
     width: 22%;
     float: left;
     margin-right: 20px;
