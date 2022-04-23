@@ -26,7 +26,56 @@ O tema escolhido por nós foi desenvolver um website que realiza a venda de ócu
 - [8. Comentários](#8-comentários)
 
 ## 1. Requisitos
+
+
+
 ## 2. Descrição do projeto
+
+CoolGlasses é uma loja virtual de óculos. O projeto será desenvolvido implementando HTML, CSS, javascript e outros, além do uso de um banco de dados. 
+
+### Diagrama de navegação
+![navegacao](imagens/diagramaNavegacao.png)
+
+#### Mockups
+
+Os mockups se encontram no diretório 'mockups', além de todos estarem contidos também nesse link para o figma que foi utilizado: https://www.figma.com/file/Q0Aj5abwo0EIDR1jyfYADb/CoolGlasses?node-id=0%3A1
+
+Acesso aos arquivos dos mockups: 
+- [Home](/mockups/home.png)
+  - [Produtos](/mockups/produtos.png)
+    - [Produto](/mockups/produto.png)
+- [Login](/mockups/login.png)
+- [Cadastro](/mockups/cadastro.png)
+- [Perfil do Cliente](/mockups/perfil.png)
+- [Carrinho](/mockups/carrinho.png)
+  - [Finalizar Compra](/mockups/finalizarCompra.png)
+
+### Funcionalidades
+
+- Apresentar alguns produtos na homepage.
+- Apresentar todos os produtos com preços com a possibilidade também de filtrar por tipos de óculos.
+- Visualizar de um produto em sua pagina especifica, contendo com uma descrição e um botão para adicionar ao carrinho.
+- Possibilidade do usuário se registrar com nome, e-mail e senha.
+- Acessar e editar as credenciais do usuário após estar logado.
+- Apresentar os produtos no carrinho, com possibilidade de editar quantidades, etc.
+- Finalizar compra, a partir da inserção do CPF, número do cartão, data de validade do cartão, codigo de segurança e endereço de entrega
+
+### Informações armazenadas no Servidor
+
+#### Contas
+- ID
+- Nome
+- E-mail
+- Senha
+
+#### Produtos
+- ID
+- Título
+- Categoria
+- Preço
+- Descrição
+- Imagem
+
 ## 3. Comentários sobre o código
 ## 4. Plano de teste
 ## 5. Resultados dos testes
