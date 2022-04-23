@@ -1,6 +1,6 @@
 .finalizar-compra{
     margin:auto;
-    margin-top: 20px;
+    margin-top: 4.6em;
     color: black;
     width: 600px;
 }
@@ -29,6 +29,7 @@
     color: white;
     transition-duration: 0.2s;
 }
+
 .formulario input[type=submit]:hover{
     font-weight: bold;
     background-color: white;
@@ -48,19 +49,21 @@
 .list-inline-compra{
     display: flex;
     text-decoration: none;
+    gap: 1.7em;
 }
-
 .list-inline-compra li{
     list-style-type: none;
 } 
 
 .listafim{
-    position:absolute;
-    right: 30%;
+    position:relative;
+    right: -35.9%;
 }
 
+
+
 input[type=text] {
-    width: 63%;
+    width: 63.3%;
     box-sizing: border-box;
 }
 input[type=securitycode] {
