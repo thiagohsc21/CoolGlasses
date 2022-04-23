@@ -65,6 +65,7 @@ Acesso aos arquivos dos mockups:
 #### Contas
 - ID
 - Nome
+- Foto
 - E-mail
 - Senha
 
