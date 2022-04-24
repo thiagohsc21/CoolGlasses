@@ -24,19 +24,27 @@ body {
     height: 75px;
     background-color: var(--dark);
 }
+.navegacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .navbar-title{
     font-size: 32px;
     line-height: 75px;
     font-weight: bolder;
     color:white;
-    float:left;
     text-decoration: none;
+}
+#produtos{
+    padding-right: 100px;
+    align-self: center;
+    font-size: large;
 }
 .navbar-icons{
     font-size: 25px;
     line-height: 70px;
     font-weight:bolder;
-    float:right;
 }
 .navbar-icons a{
     color: var(--primary);
