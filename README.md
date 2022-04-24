@@ -27,6 +27,14 @@ O tema escolhido por nós foi desenvolver um website que realiza a venda de ócu
 
 ## 1. Requisitos
 
+- O sistema deve permitir dois tipos de usuários: administradores e clientes. 
+- O usuário deve se registrar utilizando seu nome, email e senha.
+- O usuário pode atualizar seu perfil a qualquer momento, adicionando foto, CPF, endereço, telefone e celular ou alterando o que já está lá. 
+- O usuário pode verificar os itens disponíveis, utilizando para isso a aba de produtos.
+- O cliente pode realizar compras, utilizando para isso as informações do seu cartão, CPF e endereço de entrega. É preciso estar logado.
+- Uma compra é feita clicando sobre o produto e adicionando ele ao carrinho e após isso, acessando o carrinho e finalizando-a. 
+- O administrador pode realizar a inclusão, edição ou exclusão de outros administradores, clientes ou produtos. 
+- Os produtos são registrados com ID, título, categoria, preço, descrição, quantidade disponível, quantidade vendida e imagem. 
 
 
 ## 2. Descrição do projeto
@@ -63,9 +71,12 @@ Acesso aos arquivos dos mockups:
 ### Informações armazenadas no Servidor
 
 #### Contas
-- ID
+- CPF
 - Nome
 - Foto
+- Telefone
+- Celular
+- Endereço
 - E-mail
 - Senha
 
@@ -76,6 +87,8 @@ Acesso aos arquivos dos mockups:
 - Preço
 - Descrição
 - Imagem
+- Quantidade Disponível
+- Quantidade Vendida
 
 ## 3. Comentários sobre o código
 ## 4. Plano de teste
