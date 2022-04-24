@@ -1,6 +1,6 @@
 # CoolGlasses
 
-![logo](imagens/logo.png)
+![logo](imagens/imagem-readme.png)
 
 Projeto desenvolvido para a disciplina de Introdução ao Desenvolvimento Web, no ano de 2022.
 
