@@ -54,7 +54,7 @@ body {
 .rodape{
     display: block;
     background-color: var(--dark);
-    font-size: x-small;
+    font-size: x-medium;
     padding: 9px;
     width: 100%;
 }
