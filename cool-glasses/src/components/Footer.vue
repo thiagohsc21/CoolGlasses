@@ -53,9 +53,9 @@ export default {
     font-size: x-medium;
     padding: 9px;
     width: 100%;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
 }
 .rodape p, a, h3{ 
     color:white; 

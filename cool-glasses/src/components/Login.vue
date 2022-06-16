@@ -29,7 +29,8 @@ export default {
     height: 400px;
     background-color: var(--cinza-claro);
     margin: auto;
-    margin-top: 43px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding-top: 2em;
 }
 
