@@ -1,0 +1,18 @@
+{
+    "produtos":[
+        {   "nome": "Oculos Legal",
+            "id": 1,
+            "descricao": "top de linha lancamento nacional o oculos legal realmente é muito legal",
+            "imagem": "aviatorpreto.png",
+            "preco": 49.9
+        },
+
+        {
+            "nome": "Segundo Oculos",
+            "id": 2,
+            "descricao": "top de linha lancamento nacional o oculos 2 é a nova versão do oculos 1",
+            "imagem": "glasses.png",
+            "preco": 499.9
+        }
+    ]
+}

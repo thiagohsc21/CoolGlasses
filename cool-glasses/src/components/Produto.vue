@@ -5,14 +5,12 @@
 
     <div class="destaque">
         <div class="imgEPreco">
-            <img id="imagem" src="../assets/imagens/aviatorpreto.png">
-            <p>R$ 249,90</p>
+            <img id="imagem"  :src="require(`../assets/imagens/${obj.imagem}`)">
+            <p>R$ {{obj.preco}}</p>
         </div>
         <div class="descricaoEComprar">
-            <h1>Oculos Aviador Classico em Ouro</h1>
-            <p> Atualmente um dos modelos de óculos de sol mais icônicos do mundo, os óculos de sol Aviator Classic foram originalmente criados aos pilotos americanos em 1937. <br>
-                Os óculos de sol Aviator Classic são um modelo atemporal que combina o grande estilo Aviator com qualidade, desempenho e conforto excepcionais.
-            </p>
+            <h1>{{obj.nome}}</h1>
+            <p>{{obj.descricao}}</p>
             <div class="comprar">
                 <button id="comprar">Adicionar ao carrinho</button>
             </div>
@@ -22,44 +20,46 @@
     <div class="tituloRecomendados">Outros compraram</div>
 
     <div class="recomendados">
-        <a href="/produto">
+        <a href="/produto/1">
             <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                <p>Oculos Maneiro Branco<br>R$ 249,99</p>
+                <img class="OculosEmAlta" :src="require(`../assets/imagens/${obj.imagem}`)" alt="oculos1">
+                <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
             </div>
         </a>
 
-        <a href="/produto">
+        <a href="/produto/2">
             <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
-                <p>Oculos Maneirim Roxo<br>R$ 199,99</p>
+                <img class="OculosEmAlta" :src="require(`../assets/imagens/${obj.imagem}`)" alt="oculos2">
+                <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
             </div>
         </a>
         
-        <a href="/produto">
+        <!-- falta mexer aqui -->
+        <a href="/produto/3">
             <div class="produto">
                 <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos3">
                 <p>Oculos Maneirim Preto<br>R$ 199,99</p>
             </div>
         </a>
         
-        <a href="/produto">
+        <!-- falta mezer aqui -->
+        <a href="/produto/4">
             <div class="produto" id="ultima_imagem">
-                <img class="OculosEmAlta" src="../assets/imagens/glasses.png" alt="oculos4">
+                <img class="OculosEmAlta" src="../assets/imagens/aviatorpreto.png" alt="oculos4">
                 <p>Oculos Maneiro Preto<br>R$ 249,99</p>
             </div>
         </a>
     </div>
 
-    <div class="teste">
+    <!-- <div class="teste">
         <h2>TESTE </h2>
         <li>
             <ul>Nome: {{obj.nome}}</ul>
             <ul>Descrição: {{obj.descricao}}</ul>
             <ul>Preco: {{obj.preco}}</ul>
-            <ul><img :src="obj.imagem"></ul>
+            <ul><img :src="require(`../assets/imagens/${obj.imagem}`)" alt="img_produto"></ul>
         </li>
-    </div>
+    </div> -->
 
 
 </template>
