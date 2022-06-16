@@ -13,7 +13,7 @@
 
                     <span class="navbar-icons">
                         <a id="cart" class="shopping-cart" href="/carrinho"><i class="fa fa-shopping-cart"></i></a> 
-                        <a href="user.html"><i class="fa fa-user"></i></a>
+                        <a href="/user"><i class="fa fa-user"></i></a>
                         <a href="/login">Entrar</a>
                     </span>
                 </div>
