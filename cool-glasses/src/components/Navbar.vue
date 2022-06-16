@@ -3,18 +3,18 @@
         <div class="container">
             <div class="row">
                 <div class="navegacao">
-                    <a href="home.html">
+                    <a href="/">
                         <h1 class="navbar-title"><img id="logo" src="../assets/logo.png" alt="Logo"> CoolGlasses</h1>
                     </a>
 
                     <span id="produtos">
-                        <a href="produtos.html" >Produtos</a>
+                        <a href="/produtos" >Produtos</a>
                     </span>
 
                     <span class="navbar-icons">
                         <a id="cart" class="shopping-cart" href="carrinho.html"><i class="fa fa-shopping-cart"></i></a> 
                         <a href="user.html"><i class="fa fa-user"></i></a>
-                        <a href="login.html">Entrar</a>
+                        <a href="/login">Entrar</a>
                     </span>
                 </div>
             </div>
