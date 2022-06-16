@@ -2,7 +2,7 @@
   <NavBar/>
   
     <div id="slogan">
-        <img src="./assets/emogiLogo.png">
+        <!-- <img src="./assets/emogiLogo.png"> -->
         <produto :obj="myObj"/>
     </div>
 
@@ -12,15 +12,18 @@
 import NavBar from './components/nav-bar.vue'
 import Produto from './components/produto.vue'
 
+let teste = {
+  id: 'p1',
+  nome: 'oculos legal',
+  preco: 199.90,
+  imagem: './assets/aviatorpreto.png'
+};
+
 export default {
   name: 'App',
   data() {
     return {
-      myObj: {
-        nome: 'oculos legal',
-        preco: 199.90,
-        imagem: './assets/aviatorpreto.png'
-      }
+      myObj: teste
     }
   },
   components: {

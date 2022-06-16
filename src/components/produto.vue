@@ -1,8 +1,7 @@
 <template>
-<a href="p1.html">
+<a :href="obj.id">
     <div class="produto">
-        <!-- <img class="OculosEmAlta" src="../assets/aviatorpreto.png" alt="oculos1"> -->
-        <img class="OculosEmAlta" :src="obj.imagem" alt="oculos1">
+        <img :src="/obj.imagem" :alt="obj.id">
         <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
     </div>
 </a>
@@ -13,6 +12,7 @@ export default {
     name: 'MeuProduto',
     props: {
         obj : {
+            id: String,
             nome: String,
             preco: Number,
             imagem: String
