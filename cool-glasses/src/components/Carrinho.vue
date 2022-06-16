@@ -56,7 +56,9 @@
     </div>
     
     <br>
-    <input class="finalizar_compra" type="button" value="Finalizar Compra">
+    <a href="/finalizar_compra">
+        <input class="finalizar_compra" type="button" value="Finalizar Compra">
+    </a>
 
     <br><br>
     <a id="continue_comprando" href="produto.html"> Continue Comprando</a>
