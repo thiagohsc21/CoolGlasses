@@ -4,7 +4,7 @@
             <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
         </div>
 
-        <a href="pSlogan.html">
+        <a href="/produto">
             <div id="produto_slogan">
                 <img src="../assets/imagens/aviatorpreto.png" alt="oculos1">
                 <p>Oculos de Sol Preto<br>R$ 249,99</p>
@@ -24,28 +24,28 @@
 
         <div class="produtos">
 
-            <a href="p1.html">
+            <a href="/produto">
                 <div class="produto">
                     <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
                     <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
                 </div>
             </a>
 
-            <a href="p2.html">
+            <a href="/produto">
                 <div class="produto">
                     <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
                     <p>Oculos Aviator Rosa<br>R$ 199,99</p>
                 </div>
             </a>
             
-            <a href="p3.html">
+            <a href="/produto">
                 <div class="produto">
                     <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos3">
                     <p>Oculos Maneirim Preto<br>R$ 199,99</p>
                 </div>
             </a>
             
-            <a href="p4.html">
+            <a href="/produto">
                 <div class="produto" id="ultima_imagem">
                     <img class="OculosEmAlta" src="../assets/imagens/glasses.png" alt="oculos4">
                     <p>Oculos de Grau Retangular<br>R$ 249,99</p>

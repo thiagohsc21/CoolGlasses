@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="produtos_carrinho">
-                    <a href="p1.html">
+                    <a href="/produto">
                         <div class="produto">
                             <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
                             <div class="valor_prod"> 
@@ -19,7 +19,7 @@
                         </div>
                     </a>
                     
-                    <a href="p2.html">
+                    <a href="/produto">
                         <div class="produto">
                             <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
                             <div class="valor_prod"> 
