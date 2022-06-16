@@ -51,12 +51,30 @@
         </a>
     </div>
 
+    <div class="teste">
+        <h2>TESTE </h2>
+        <li>
+            <ul>Nome: {{obj.nome}}</ul>
+            <ul>Descrição: {{obj.descricao}}</ul>
+            <ul>Preco: {{obj.preco}}</ul>
+            <ul><img :src="obj.imagem"></ul>
+        </li>
+    </div>
+
 
 </template>
 
 <script>
 export default {
   name: 'Produto',
+  props: {
+    obj: {        
+        nome: String,
+        descricao: String,
+        imagem: String,
+        preco: Number
+    }
+  }
 }
 </script>
 
