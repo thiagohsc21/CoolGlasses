@@ -58,4 +58,14 @@ export default {
     color:white; 
 }
 
+.list-inline {
+    display: flex; 
+    flex-direction: row; 
+    font-size: 2em;
+    gap: 2em;
+}
+.list-inline li{
+    color: black
+}
+
 </style>
