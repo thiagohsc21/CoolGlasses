@@ -1,7 +1,7 @@
 let produtos = {}
 
-produtos['oculos legal'] = {
-    nome: "oculos legal",
+produtos['oculos_legal'] = {
+    nome: "oculos_legal",
     descricao: "top de linha lancamento nacional o oculos legal realmente é muito legal",
     imagem: "./assets/imagens/aviatorPreto.png",
     preco: 49.9

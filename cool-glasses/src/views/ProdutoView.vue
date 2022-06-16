@@ -1,5 +1,7 @@
 <template>
+    <p>aloooo</p>
     <Produto :obj="p"/>
+    <p>{{$route.params.nome}}</p>
 </template>
 
 <script>
@@ -7,17 +9,20 @@
 import Produto from '@/components/Produto.vue'
 import produtos from '@/objects/objects.js'
 
-let p = produtos[$route.params.nome];
 
 export default {
   name: 'ProdutoView',
   data() {
     return {
-      p : p
+      nome: this.$route.params.nome,
+      p: produtos.produtos[this.nome]
     }
   },
   components: {
     Produto
+  },
+  created() {
+    console.log(produtos.produtos)
   }
 }
 </script>
