@@ -2,10 +2,17 @@
     <br><br>
     <h2 id="titulo"> Carrinho</h2>
     <br><br>
-    <h6 id="caminho"><a class="item_caminho" href="home.html">PÁGINA INICIAL</a> > <a class="item_caminho" href="carrinho.html"> CARRINHO</a></h6>
+    <h6 id="caminho"><a class="item_caminho" href="/">PÁGINA INICIAL</a> > <a class="item_caminho" href="/carrinho"> CARRINHO</a></h6>
     <br><br>
 
-    <div class="painel_carrinho">
+    <div v-if="carrinho_vazio" id="carrinho_vazio">
+        <h1>SEU CARRINHO ESTÁ VAZIO</h1>
+        <p>Não há nenhum produto no seu carrinho, volte para a página de 
+            <a href="/produtos">Produtos</a> para adicionar algum oculos em seu carrinho</p>
+    </div>
+
+    <div v-else>
+        <div class="painel_carrinho">
         <div class="container">
             <div class="row">
                 <div class="produtos_carrinho">
@@ -63,14 +70,21 @@
     </a>
 
     <br><br>
-    <a id="continue_comprando" href="produto.html"> Continue Comprando</a>
+    <a id="continue_comprando" href="/produto"> Continue Comprando</a>
     <br><br><br>
-    
+    </div>
 </template>
 
 <script>
+import { onMounted } from 'vue'
+
 export default {
   name: 'Carrinho',
+  data(){
+    return{
+        carrinho_vazio: false
+    }
+  }
 }
 </script>
 
@@ -160,5 +174,11 @@ export default {
 
     .item_caminho:hover{
         color: gray;
+    }
+
+    #carrinho_vazio{
+        margin-left: 20%;
+        margin-top: 5%;
+        margin-bottom: 15%;
     }
 </style>
