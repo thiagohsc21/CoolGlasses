@@ -12,23 +12,21 @@
     import Produto from '@/components/Produto.vue'
 
     
-    export default {
+export default {
     name: 'ProdutoView',
-    props: ['id'],
     data() {
         return {
             produtos: null
         }
     },
     mounted(){
-        fetch('http://localhost:3000/produtos/' + this.id)
+        fetch('http://localhost:3000/produtos/' + this.$route.params.id)
             .then(res => res.json())
             .then(data => this.produtos = data)
             .catch(err => console.log(err.message))
     },
     components: {
         Produto
-    },
-    
+    }
     }
 </script>

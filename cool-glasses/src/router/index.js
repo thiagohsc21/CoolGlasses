@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProdutoView from '../views/ProdutoView.vue'
 
 const routes = [
   {
@@ -29,8 +28,7 @@ const routes = [
   {
     path: '/produto/:id',
     name: 'produto',
-    component: ProdutoView,
-    props: true
+    component: () => import(/* webpackChunkName: "about" */ '../views/Produto.vue')
   },
   {
     path: '/cadastro',
