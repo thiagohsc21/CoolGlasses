@@ -1,6 +1,6 @@
 <template>
     <div v-if="produtos">
-      <HomePage :obj="produtos"/>
+      <HomePage :produtos="produtos"/>
     </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     }
   },
   mounted(){
-        fetch('http://localhost:3000/produtos/')
+        fetch('http://localhost:3000/produtos')
             .then(res => res.json())
             .then(data => this.produtos = data)
             .catch(err => console.log(err.message))

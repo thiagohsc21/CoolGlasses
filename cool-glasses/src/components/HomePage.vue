@@ -1,64 +1,43 @@
-<template v-for="produto in obj">
-    <p>{{produto}}</p>
-    <div class="slogan">
-        <div id="imagem_slogan">
-            <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
-        </div>
-
-        <a href="/produto">
-            <div id="produto_slogan">
-                <img src="../assets/imagens/aviatorpreto.png" alt="oculos1">
-                <p>Oculos de Sol Preto<br>R$ 249,99</p>
+<template>
+        <div class="slogan">
+            <div id="imagem_slogan">
+                <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
             </div>
-        </a>
 
-    </div>
-    
-    <br><br>
-    <div id="EmAlta">
-        <h3>Em Alta</h3>
-        <br>
-        <div id="botao">
-            <button type="button">Ver todos os produtos ></button>
+            <a v-for="produto in produtos.slice(0,1)" href="/produto">
+                <div id="produto_slogan">
+                    <img :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
+                    <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
+                </div>
+            </a>
         </div>
+        
         <br><br>
+        <div id="EmAlta">
+            <h3>Em Alta</h3>
+            <br>
+            <div id="botao">
+                <button type="button">Ver todos os produtos ></button>
+            </div>
+            <br><br>
 
-        <div class="produtos">
-
-            <a href="/produto">
-                <div class="produto">
-                    <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                    <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                </div>
-            </a>
-
-            <a href="/produto">
-                <div class="produto">
-                    <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
-                    <p>Oculos Aviator Rosa<br>R$ 199,99</p>
-                </div>
-            </a>
-            
-            <a href="/produto">
-                <div class="produto">
-                    <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos3">
-                    <p>Oculos Maneirim Preto<br>R$ 199,99</p>
-                </div>
-            </a>
-            
-            <a href="/produto">
-                <div class="produto" id="ultima_imagem">
-                    <img class="OculosEmAlta" src="../assets/imagens/glasses.png" alt="oculos4">
-                    <p>Oculos de Grau Retangular<br>R$ 249,99</p>
-                </div>
-            </a>
+            <div class="produtos">
+                <a v-for="produto in produtos.slice(1,5)" href="/produto">
+                    <div class="produto">
+                        <img class="OculosEmAlta" :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
+                        <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
 </template>
 
 <script>
 export default {
   name: 'HomePage',
+  props: {
+    produtos: Array
+  }
 }
 </script>
 
@@ -141,6 +120,10 @@ export default {
 .produto{
     background-color: var(--cinza-claro);
     width: 300px;
+}
+
+.produto p{
+    text-align: center;
 }
 
 .produto:hover {
