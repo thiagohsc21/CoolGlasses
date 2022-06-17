@@ -49,6 +49,11 @@ const routes = [
     path: '/finalizar_compra',
     name: 'finalizar_compra',
     component: () => import(/* webpackChunkName: "about" */ '../views/FinalizarCompraView.vue')
+  },
+  {
+    path: '/pedidos',
+    name: 'pedidos',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PedidosView.vue')
   }
 ]
 

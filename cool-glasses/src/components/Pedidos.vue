@@ -1,15 +1,17 @@
 <template>
     <br><br>
-    <h2 id="titulo"> Carrinho</h2>
+    <a class="titulo" href="/user">
+        <h2> Meu Perfil</h2>
+    </a>
     <br><br>
-    <h6 id="caminho"><a class="item_caminho" href="home.html">PÁGINA INICIAL</a> > <a class="item_caminho" href="carrinho.html"> CARRINHO</a></h6>
+    <h6 id="caminho"><a class="item_caminho" href="/user">MEU PERFIL</a> > <a class="item_caminho" href="/pedidos"> PEDIDOS</a></h6>
     <br><br>
 
-    <div class="painel_carrinho">
+    <div class="painel_pedidos">
         <div class="container">
             <div class="row">
-                <div class="produtos_carrinho">
-                    <a href="/produto">
+                <div class="produtos_pedidos">
+                    <a href="p1.html">
                         <div class="produto">
                             <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
                             <div class="valor_prod"> 
@@ -21,7 +23,7 @@
                         </div>
                     </a>
                     
-                    <a href="/produto">
+                    <a href="p2.html">
                         <div class="produto">
                             <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
                             <div class="valor_prod"> 
@@ -36,46 +38,18 @@
             </div>
         </div>
     </div>
-    <br><br>
-    <h4 id="sub_titulo">Método de Pagamento: </h4>
-
-    <div class="fim_painel">
-        <div id="met_pag">
-            <div class="chechbox_pag">
-                <input type="checkbox" id="avista" name="avista" checked>
-                <label for="scales">À VISTA</label>
-            </div>
-
-            <div class="chechbox_pag">
-                <input type="checkbox" id="parcelado" name="parcelado">
-                <label for="scales">PARCELADO (4x R$ 50,00)</label>
-            </div>
-            <br>
-            <div id="total">
-                <p> Preço Total: R$449,98</p>
-            </div>
-        </div>
-    </div>
-    
-    <br>
-    <a href="/finalizar_compra">
-        <input class="finalizar_compra" type="button" value="Finalizar Compra">
-    </a>
-
-    <br><br>
-    <a id="continue_comprando" href="produto.html"> Continue Comprando</a>
     <br><br><br>
-    
+
 </template>
 
 <script>
-export default {
-  name: 'Carrinho',
-}
+    export default {
+    name: 'Pedidos',
+    }
 </script>
 
 <style>
-    .painel_carrinho{    
+    .painel_pedidos{    
         width: 1000px;
         background-color: var(--cinza-claro);
         margin: auto;
@@ -87,11 +61,11 @@ export default {
         align-items: center;
     }
 
-    .produtos_carrinho img{
+    .produtos_pedidos img{
         height: 200px;
     }
 
-    .produtos_carrinho a{
+    .produtos_pedidos a{
         color: black;
         text-decoration: none;
         margin: auto;
@@ -109,44 +83,16 @@ export default {
         padding-top: 60px;
     }
 
-
-    .fim_painel{
-        width: 1000px;
-        background-color: var(--cinza-claro);
-        margin: auto;
-    }
-
-    #met_pag{
-        width: 100%;
-        display: inline-block;
-        align-items: center;
-        padding: 30px;
-    }
-
-    .chechbox_pag{
-        width: 50%;
-    }
-
-    #total{
-        float: left;
-        vertical-align: top;
-    }
-
-    #titulo{
-        float: left;
-        padding-left: 20%;
-    }
-    #sub_titulo{
-        color: black;
-        margin-left: 20%;
-    }
-    .finalizar_compra{
+    .titulo{
         width: 150px;
+        float: left;
         margin-left: 20%;
+        color: black;
+        text-decoration: none;
     }
 
-    #continue_comprando{
-        margin-left: 20%;
+    .titulo:hover{
+        color: gray;
     }
 
     #caminho{
@@ -161,4 +107,5 @@ export default {
     .item_caminho:hover{
         color: gray;
     }
+
 </style>

@@ -3,7 +3,7 @@
         <div id="barraEsquerda">
             <h2>Meu Perfil</h2>
             <ul id="links">
-                <li id="pedidos"> <a href="pedidos.html">Meus Pedidos</a></li>
+                <li id="pedidos"> <a href="/pedidos">Meus Pedidos</a></li>
             </ul>
         </div>
         <div id="dados">
