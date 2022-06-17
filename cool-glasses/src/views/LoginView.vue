@@ -10,6 +10,6 @@ export default {
   name: 'LoginView',
   components: {
     Login
-  }
+  },
 }
 </script>

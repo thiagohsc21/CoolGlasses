@@ -4,7 +4,7 @@
             "id": 1,
             "descricao": "top de linha lancamento nacional o oculos legal realmente é muito legal",
             "imagem": "aviatorpreto.png",
-            "preco": 49.9
+            "preco": 49.95
         },
 
         {
@@ -12,7 +12,23 @@
             "id": 2,
             "descricao": "top de linha lancamento nacional o oculos 2 é a nova versão do oculos 1",
             "imagem": "glasses.png",
-            "preco": 499.9
+            "preco": 499.99
+        },
+
+        {
+            "nome": "Aviador Rosa",
+            "id": 3,
+            "descricao": "Oculos Aviador de lente rosa",
+            "imagem": "aviatorRosa.png",
+            "preco": 299.99
+        },
+
+        {
+            "nome": "Rayban Preto",
+            "id": 4,
+            "descricao": "Oculos da marca Rayban de cor preto",
+            "imagem": "raybanpreto.webp",
+            "preco": 499.99
         }
     ]
 }

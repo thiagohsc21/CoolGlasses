@@ -7,7 +7,7 @@
                         <h1 class="navbar-title"><img id="logo" src="../assets/logo.png" alt="Logo"> CoolGlasses</h1>
                     </a>
 
-                    <span id="produtos">
+                    <span id="link_produtos">
                         <a href="/produtos" >Produtos</a>
                     </span>
 
@@ -47,7 +47,7 @@ export default {
     color:white;
     text-decoration: none;
 }
-#produtos{
+#link_produtos{
     padding-right: 100px;
     align-self: center;
     font-size: large;

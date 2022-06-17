@@ -51,17 +51,6 @@
         </a>
     </div>
 
-    <!-- <div class="teste">
-        <h2>TESTE </h2>
-        <li>
-            <ul>Nome: {{obj.nome}}</ul>
-            <ul>Descrição: {{obj.descricao}}</ul>
-            <ul>Preco: {{obj.preco}}</ul>
-            <ul><img :src="require(`../assets/imagens/${obj.imagem}`)" alt="img_produto"></ul>
-        </li>
-    </div> -->
-
-
 </template>
 
 <script>

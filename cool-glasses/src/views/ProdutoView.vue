@@ -1,11 +1,8 @@
 <template>
     <div v-if="produtos">
         <Produto :obj="produtos"/>
-    </div>
-    
-    
+    </div>    
 </template>
-        <!-- <img :src="require(`../assets/imagens/${produtos.imagem}`)" alt="img_produto"> -->
 
 <script>
     // @ is an alias to /src
