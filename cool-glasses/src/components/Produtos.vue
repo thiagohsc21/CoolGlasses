@@ -39,9 +39,15 @@
                         <input type="checkbox" id="feminino" name="feminino">
                         <label for="feminino">Feminino</label>
                     </div>
+
+                <!-- <h2>MEU COR TESTE</h2>
+                <template v-for="option in cor">
+                    <input :id="option" type="checkbox" :value="option" v-model="checked.cor"><label :for="option" >{{ option }}</label>
+                </template> -->
+
                 
                     <br>
-                <input id='filtroSubmit' type="submit" value="Aplicar Filtros">
+                <input id='filtroSubmit' type="submit" value="Aplicar Filtros" v-on:click="filtrar()">
                     <br>
             </div>
         </div>
@@ -50,83 +56,57 @@
 
             <div id="grid">
 
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
-                <a href="p1.html">
-                    <div class="produto">
-                        <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                        <p>Oculos de Sol Quadrado Preto<br>R$ 249,99</p>
-                    </div>
-                </a>
+                <div v-for="produto in objs">
+                    <p_produto :obj="produto" v-show="visible(produto, selected)"/>
+                </div> 
+
 
             </div>
 
         </div>
+
     </div>
 
 </template>
 
 <script>
+
+import p_produto from './components/p-produto.vue'
+
 export default {
   name: 'Produtos',
+  props: {
+    objs: Array
+  },
+  data() {
+    return {
+        cor: ['Preto', 'Vermelho', 'Marrom'],
+        checked: {
+            cor: []
+        },
+        selected: {
+            '1':true,'2':true,'3':true,'4':true
+        }
+    }
+  },
+  components: {
+    p_produto
+  },
+  methods: {
+    filtrar() {
+        this.objs.forEach(p => {
+            this.selected[p.id] = p.id == '1' || p.id=='2' ? true : false
+        });
+    },
+    visible (produto, selected) {
+        return selected[produto.id]
+    }
+  }
 }
 </script>
 
 <style>
     #tudo {
-        margin: 15px;
         display: flex;
         flex-direction: row;
     }
@@ -176,6 +156,7 @@ export default {
         width: 100%;
         margin:auto;
         padding: 0px;
+        margin-top: 0px;
     }
 
     #produtos h1 {
@@ -195,7 +176,7 @@ export default {
         align-self: center;
     }
 
-    #grid a {
+    #grid div {
         margin:auto;
     }
 

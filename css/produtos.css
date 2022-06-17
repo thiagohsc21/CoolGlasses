@@ -1,11 +1,10 @@
 #tudo {
-    /* margin: 15px; */
     display: flex;
     flex-direction: row;
 }
 
 #barraEsquerda{
-    width: 15%;
+    width: 17%;
     height: 95%;
 }
 
@@ -46,7 +45,7 @@
 }
 
 #produtos {
-    width:85%;
+    width:84%;
     margin:auto;
     padding: 0px;
 }

@@ -1,15 +1,27 @@
 <template>
-    <Produtos />
+    <div v-if="produtos">
+      <Produtos :objs="produtos" />
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Produtos from '@/components/Produtos.vue'
 
 export default {
   name: 'ProdutosView',
+  data () {
+    return {
+      produtos : null
+    }
+  },
   components: {
     Produtos
+  },
+  mounted(){
+      fetch('http://localhost:3000/produtos')
+          .then(res => res.json())
+          .then(data => this.produtos = data)
+          .catch(err => alert(err.message))
   }
 }
 </script>
