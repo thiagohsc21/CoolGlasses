@@ -1,7 +1,9 @@
 <template>
+
     <div v-if="produtos">
         <Produto :obj="produtos"/>
-    </div>    
+    </div>
+
 </template>
 
 <script>

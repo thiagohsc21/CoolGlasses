@@ -1,5 +1,7 @@
 <template>
-    <HomePage />
+    <div v-if="produtos">
+      <HomePage :obj="produtos"/>
+    </div>
 </template>
 
 <script>
@@ -8,6 +10,18 @@ import HomePage from '@/components/HomePage.vue'
 
 export default {
   name: 'HomeView',
+  data() {
+    return {
+      produtos: null,
+    }
+  },
+  mounted(){
+        fetch('http://localhost:3000/produtos/')
+            .then(res => res.json())
+            .then(data => this.produtos = data)
+            .catch(err => console.log(err.message))
+        
+  },
   components: {
     HomePage
   }

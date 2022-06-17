@@ -1,5 +1,6 @@
-<template>
-     <div class="slogan">
+<template v-for="produto in obj">
+    <p>{{produto}}</p>
+    <div class="slogan">
         <div id="imagem_slogan">
             <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
         </div>

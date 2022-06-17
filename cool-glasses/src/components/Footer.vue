@@ -11,9 +11,9 @@
                 <div class="col-md-3">
                     <h3>Atalhos</h3>
                     <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="minhaconta.html">Minha Conta</a></li>
-                        <li><a href="carrinho.html">Carrinho</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/user">Minha Conta</a></li>
+                        <li><a href="/carrinho">Carrinho</a></li>
                     </ul>
 
                 </div>
