@@ -98,7 +98,7 @@ export default {
     }
   },
   mounted() {
-    this.carrinho_vazio = this.compras.length() == 0
+    this.carrinho_vazio = this.compras.length == 0
   }
 }
 </script>

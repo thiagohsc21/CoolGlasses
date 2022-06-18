@@ -1,36 +1,25 @@
 <template>
-    <div v-if="compras">
-      <Carrinho :compras="compras"/>
+    <div v-if="c">
+      <Carrinho :compras="c"/>
     </div>
 </template>
 
 <script>
 import Carrinho from '@/components/Carrinho.vue'
-import compras from '@/objects/carrinho'
+import compras from '@/objects/carrinho.js'
 
 compras = compras.compras;
 
 var produtos = null;
 
 fetch('http://localhost:3000/produtos')
-    .then(res => res.json())
-    .then(data => {
-      produtos = data;
-    })
-    .catch(err => alert(err.message));
+  .then(res => res.json())
+  .then(data => {
+    produtos = data;
+  })
+  .catch(err => alert(err.message));
 
-//
-async function funcName(url){
-  const response = await fetch(url);
-  let data = await response.json();
-  return data;
-}
-
-produtos = funcName('http://localhost:3000/produtos');
-
-console.log('produtos ', produtos);
-//
-
+console.log('produtos depois: ', produtos);
 
 let produtoNoCarrinho = [];
 
@@ -39,16 +28,20 @@ compras.forEach((compra, idx) => {
   produtoNoCarrinho[idx].qtd = compra.qtd
 });
 
+this.c = produtoNoCarrinho;
 
 export default {
   name: 'CarrinhoView',
   data () {
     return {
-      compras : produtoNoCarrinho
+      c : null,
+      teste : null
     }
   },
   components: {
     Carrinho
+  },
+  mounted() {
   }
 }
 </script>
