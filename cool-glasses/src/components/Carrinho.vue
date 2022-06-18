@@ -73,17 +73,32 @@
     <a id="continue_comprando" href="/produto"> Continue Comprando</a>
     <br><br><br>
     </div>
+
+    <div>
+        {{compras}}
+
+        <div v-for="compra in compras">
+            
+        </div>
+
+    </div>
+
 </template>
 
 <script>
-import { onMounted } from 'vue'
 
 export default {
   name: 'Carrinho',
+  props: {
+    compras: Array
+  },
   data(){
     return{
         carrinho_vazio: false
     }
+  },
+  mounted() {
+    this.carrinho_vazio = this.compras.length() == 0
   }
 }
 </script>
