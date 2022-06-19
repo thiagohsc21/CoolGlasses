@@ -7,9 +7,7 @@
 </template>
 
 <script>
-    // @ is an alias to /src
-    import Produto from '@/components/Produto.vue'
-
+import Produto from '@/components/Produto.vue'
     
 export default {
     name: 'ProdutoView',
@@ -27,5 +25,5 @@ export default {
     components: {
         Produto
     }
-    }
+}
 </script>

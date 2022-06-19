@@ -12,7 +12,7 @@
             <h1>{{obj.nome}}</h1>
             <p>{{obj.descricao}}</p>
             <div class="comprar">
-                <button id="comprar">Adicionar ao carrinho</button>
+                <button v-on:click="addCarrinho()" id="comprar">Adicionar ao carrinho</button>
             </div>
         </div>
     </div>
@@ -54,14 +54,25 @@
 </template>
 
 <script>
+import {estoque} from '@/objects/objects'
+
 export default {
   name: 'Produto',
   props: {
     obj: {        
         nome: String,
+        id: String,
         descricao: String,
         imagem: String,
         preco: Number
+    }
+  },
+  methods: {
+    addCarrinho() {
+        compras.push({
+            idx_produto: this.obj.id - 1,
+            qtd: 1
+        })
     }
   }
 }

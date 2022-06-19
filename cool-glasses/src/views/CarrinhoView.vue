@@ -6,21 +6,21 @@
 
 <script>
 import Carrinho from '@/components/Carrinho.vue'
-import compras from '@/objects/carrinho.js'
+import {compras} from '@/objects/objects.js'
 
 export default {
   name: 'CarrinhoView',
   data () {
     return {
-      c : null,
-      teste : null
+      c : null
     }
   },
   components: {
     Carrinho
   },
   mounted() {
-    compras = compras.compras;
+    // compras = compras.compras;
+    console.log('compras no mounted ',compras);
 
     fetch('http://localhost:3000/produtos')
       .then(res => res.json())
@@ -29,7 +29,9 @@ export default {
         
         let produtoNoCarrinho = [];
 
-        compras.forEach((compra, idx) => {
+        console.log(compras.getObjs());
+
+        compras.getObjs().forEach((compra, idx) => {
           produtoNoCarrinho.push(produtos[compra.id]);
           produtoNoCarrinho[idx].qtd = compra.qtd;
         });       

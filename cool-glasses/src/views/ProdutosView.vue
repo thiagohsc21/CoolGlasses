@@ -20,7 +20,7 @@ export default {
   mounted(){
       fetch('http://localhost:3000/produtos')
           .then(res => res.json())
-          .then(data => this.produtos = data)
+          .then(data => this.produtos = data.produtos)
           .catch(err => alert(err.message))
   }
 }
