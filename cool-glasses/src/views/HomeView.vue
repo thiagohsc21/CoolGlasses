@@ -20,7 +20,7 @@ export default {
         .then(res => res.json())
         .then(data =>  {
 
-          this.produtos = data.produtos;
+          this.produtos = data;
           console.log(data);
 
         })

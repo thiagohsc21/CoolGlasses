@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import {estoque} from '@/objects/objects'
+import {compras} from '@/objects/objects'
 
 export default {
   name: 'Produto',
@@ -69,7 +69,8 @@ export default {
   },
   methods: {
     addCarrinho() {
-        compras.push({
+        // compras.push({
+        compras.pushObjs({
             idx_produto: this.obj.id - 1,
             qtd: 1
         })
