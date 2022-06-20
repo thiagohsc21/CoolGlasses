@@ -1,5 +1,4 @@
-{
-    "produtos":[
+    [
         {   "nome": "Oculos Legal",
             "id": 1,
             "descricao": "top de linha lancamento nacional o oculos legal realmente é muito legal",
@@ -36,4 +35,3 @@
             "preco": 499.99
         }
     ]
-}

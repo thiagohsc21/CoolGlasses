@@ -1,7 +1,7 @@
 <template>
-    <div v-if="produtos">
-      <HomePage :produtos="produtos"/>
-    </div>
+  <div v-if="produtos">
+    <HomePage :produtos="produtos"/>
+  </div>
 </template>
 
 <script>
@@ -16,10 +16,15 @@ export default {
     }
   },
   mounted(){
-        fetch('http://localhost:3000/produtos')
-            .then(res => res.json())
-            .then(data => this.produtos = data)
-            .catch(err => console.log(err.message))
+    fetch('http://localhost:3000/produtos')
+        .then(res => res.json())
+        .then(data =>  {
+
+          this.produtos = data;
+          console.log(data);
+
+        })
+        .catch(err => console.log(err.message))
         
   },
   components: {

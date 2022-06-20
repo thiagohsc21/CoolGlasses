@@ -15,8 +15,10 @@
         <div class="painel_carrinho">
         <div class="container">
             <div class="row">
-                <div class="produtos_carrinho">
-                    <a href="/produto">
+                <div class="produtos_carrinho" v-for="produto in compras">
+                    <p_no_carrinho :obj="produto" />
+
+                    <!-- <a href="/produto">
                         <div class="produto">
                             <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
                             <div class="valor_prod"> 
@@ -38,7 +40,7 @@
                                 <p>Oculos Aviator Rosa <br> <br> Quantidade: X</p>
                             </div>
                         </div> 
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -53,10 +55,10 @@
                 <label for="scales">À VISTA</label>
             </div>
 
-            <div class="chechbox_pag">
+            <!-- <div class="chechbox_pag">
                 <input type="checkbox" id="parcelado" name="parcelado">
                 <label for="scales">PARCELADO (4x R$ 50,00)</label>
-            </div>
+            </div> -->
             <br>
             <div id="total">
                 <p> Preço Total: R$449,98</p>
@@ -75,10 +77,13 @@
     </div>
 
     <div>
+<<<<<<< HEAD
         <!-- {{compras}} -->
+=======
+>>>>>>> 3b15efb6fe3e974462287f8a8e150b82f8af2698
 
         <div v-for="compra in compras">
-            
+            {{compra}}
         </div>
 
     </div>
@@ -86,6 +91,7 @@
 </template>
 
 <script>
+import p_no_carrinho from '@/components/components/p-no-carrinho.vue'
 
 export default {
   name: 'Carrinho',
@@ -93,9 +99,23 @@ export default {
     compras: Array,
     carrinho_vazio: Boolean
   },
+<<<<<<< HEAD
   mounted(){
     // console.log(this.compras)
   }
+=======
+  components: {
+    p_no_carrinho
+  },
+  data(){
+    return{
+        carrinho_vazio: false
+    }
+  },
+  mounted() {
+    this.carrinho_vazio = this.compras.length == 0
+  },
+>>>>>>> 3b15efb6fe3e974462287f8a8e150b82f8af2698
 }
 </script>
 
