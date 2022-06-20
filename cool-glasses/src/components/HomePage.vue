@@ -3,8 +3,8 @@
             <div id="imagem_slogan">
                 <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
             </div>
-
-            <a v-for="produto in produtos.slice(0,1)" href="/produto">
+            
+            <a v-for="produto in produtos.slice(0,1)" :href="'/produto/' + produto.id">
                 <div id="produto_slogan">
                     <img :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
                     <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
@@ -22,7 +22,7 @@
             <br><br>
 
             <div class="produtos">
-                <a v-for="produto in produtos.slice(1,5)" href="/produto">
+                <a v-for="produto in produtos.slice(1,5)" :href="'/produto/' + produto.id">
                     <div class="produto">
                         <img class="OculosEmAlta" :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
                         <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
