@@ -75,7 +75,7 @@
     </div>
 
     <div>
-        {{compras}}
+        <!-- {{compras}} -->
 
         <div v-for="compra in compras">
             
@@ -90,15 +90,11 @@
 export default {
   name: 'Carrinho',
   props: {
-    compras: Array
+    compras: Array,
+    carrinho_vazio: Boolean
   },
-  data(){
-    return{
-        carrinho_vazio: false
-    }
-  },
-  mounted() {
-    this.carrinho_vazio = this.compras.length == 0
+  mounted(){
+    // console.log(this.compras)
   }
 }
 </script>
