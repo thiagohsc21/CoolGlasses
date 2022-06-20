@@ -77,10 +77,6 @@
     </div>
 
     <div>
-<<<<<<< HEAD
-        <!-- {{compras}} -->
-=======
->>>>>>> 3b15efb6fe3e974462287f8a8e150b82f8af2698
 
         <div v-for="compra in compras">
             {{compra}}
@@ -96,14 +92,8 @@ import p_no_carrinho from '@/components/components/p-no-carrinho.vue'
 export default {
   name: 'Carrinho',
   props: {
-    compras: Array,
-    carrinho_vazio: Boolean
+    compras: Array
   },
-<<<<<<< HEAD
-  mounted(){
-    // console.log(this.compras)
-  }
-=======
   components: {
     p_no_carrinho
   },
@@ -115,7 +105,6 @@ export default {
   mounted() {
     this.carrinho_vazio = this.compras.length == 0
   },
->>>>>>> 3b15efb6fe3e974462287f8a8e150b82f8af2698
 }
 </script>
 

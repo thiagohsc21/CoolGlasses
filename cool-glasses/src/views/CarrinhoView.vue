@@ -1,57 +1,49 @@
 <template>
-    <div v-if="produtos">
-    {{produtos}}
-      <Carrinho :compras="compras"/>
-    </div>
-    <div v-else>
-
+    <div v-if="c">
+      <Carrinho :compras="c"/>
     </div>
 </template>
 
 <script>
 import Carrinho from '@/components/Carrinho.vue'
-import compras from '@/objects/carrinho.js'
-
+import {compras} from '@/objects/objects.js'
 
 export default {
   name: 'CarrinhoView',
-  data () { 
+  data () {
     return {
-      compras: null,
-      produtos: null,
+      c : null
     }
-  },
-  mounted() {
-    this.compras = compras.compras;
-
-      async function myfetch(){
-        let produtos = fetch('http://localhost:3000/produtos')
-        return (await produtos).json()
-      }
-      
-      async function recebe_prod(compras){
-          let produtos = await myfetch()
-          let produtoNoCarrinho = [];
-          let idx = 0;
-          
-          for(let i in produtos){
-            for(const compra of compras){
-              if(produtos[i].id == compra.id){
-                produtoNoCarrinho.push(produtos[compra.id])
-                produtoNoCarrinho[idx].qtd = compra.qtd
-                idx += 1
-              }
-            }
-          }
-        return produtoNoCarrinho
-             
-      }
-    
-    recebe_prod(this.compras).then(prods=>this.produtos=prods)
-    console.log(this.produtos)
   },
   components: {
     Carrinho
   },
+  mounted() {
+    // compras = compras.compras;
+    console.log('compras no mounted ',compras);
+
+    fetch('http://localhost:3000/produtos')
+      .then(res => res.json())
+      .then(data => {
+        let produtos = data;
+        
+        let produtoNoCarrinho = [];
+
+        console.log(compras.getObjs());
+
+        (compras.getObjs()).forEach((compra, idx) => {
+          console.log('compra: ', compra);
+          // console.log('idx: ', idx);
+          console.log('produtos: ', produtos);
+          console.log('prod[comrpas.id]: ', produtos[compras.idx_produto]);
+          produtoNoCarrinho.push(produtos[compra.idx_produto]);
+          produtoNoCarrinho[idx].qtd = compra.qtd;
+        });       
+
+        this.c = produtoNoCarrinho;
+      })
+      .catch(err => alert(err.message));
+
+  }
 }
 </script>
