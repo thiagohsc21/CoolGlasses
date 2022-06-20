@@ -1,7 +1,7 @@
 <template>
     <div v-if="produtos">
     {{produtos}}
-      <Carrinho :compras="compras"/>
+      <Carrinho :compras="compras" :vazio="vazio"/>
     </div>
     <div v-else>
 
@@ -19,10 +19,14 @@ export default {
     return {
       compras: null,
       produtos: null,
+      vazio: null
     }
   },
   mounted() {
     this.compras = compras.compras;
+
+    if (compras.length() == 0)
+      vazio = true;
 
       async function myfetch(){
         let produtos = fetch('http://localhost:3000/produtos')
@@ -55,3 +59,18 @@ export default {
   },
 }
 </script>
+
+<!-- <template>
+    <Carrinho />
+</template>
+
+<script>
+// @ is an alias to /src
+import Carrinho from '@/components/Carrinho.vue'
+export default {
+  name: 'CarrinhoView',
+  components: {
+    Carrinho
+  }
+}
+</script> -->
