@@ -11,18 +11,41 @@
         </div>
         
     </a>
-    <button v-on:click=" obj.qtd += 1">+</button>
-    <button v-on:click=" obj.qtd -= 1">-</button>
+    <button v-on:click=" add()">+</button>
+    <button v-on:click=" decrease() ">-</button>
+    <br><br>    
 </template>
 
 
 <script>
+import {compras} from '@/objects/objects'
+
 
 export default {
     nome: "p_no_carrinho",
     props: {
         obj: Object
-    }   
+    },
+    methods: {
+        add() {
+            compras.pushObjs({
+                idx_produto: this.obj.id - 1,
+                qtd: 1,
+                valor: this.obj.preco
+            })
+
+            document.location.reload(false);
+        },
+
+        decrease() {
+            compras.popObjs({
+                idx_produto: this.obj.id - 1,
+                qtd: 1,
+                valor: this.obj.preco
+            })
+            document.location.reload(false);
+        }
+    },
 }
 
 </script>

@@ -29,7 +29,27 @@ class Compras {
             aux[idx].qtd++;
             localStorage.setItem("compras", JSON.stringify(aux));
         }
-    }
+    };
+    popObjs ( item ) {
+        let aux;
+
+        if (localStorage.length==0) 
+            aux = [];
+        else
+            aux = JSON.parse(localStorage.compras);
+
+        const idx = aux.findIndex(o => o.idx_produto == item.idx_produto);
+        if(idx != -1){
+            if(aux[idx].qtd == 1){
+                aux.pop(item);
+                localStorage.compras = JSON.stringify(aux);
+            }
+            else{
+                aux[idx].qtd--;
+                localStorage.setItem("compras", JSON.stringify(aux));
+            }
+        }
+    };
 }
 
 export var compras = new Compras();

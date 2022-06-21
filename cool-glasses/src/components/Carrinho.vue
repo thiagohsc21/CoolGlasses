@@ -27,17 +27,17 @@
     <div class="fim_painel">
         <div id="met_pag">
             <div class="chechbox_pag">
-                <input type="radio" id="avista" name="pagamento"> <!-- checked onclick="if(document.getElementById('parcelas').disabled==false){document.getElementById('parcelas').disabled=true}"> -->
+                <input type="radio" id="avista" name="pagamento" checked onclick="if(document.getElementById('parcelas').disabled==false){document.getElementById('parcelas').disabled=true}">
                 <label for="scales">À VISTA</label>
             </div>
             <br>
-            <!-- <div class="chechbox_pag">
+            <div class="chechbox_pag">
                 <input type="radio" id="parcelado" name="pagamento" onclick="if(document.getElementById('parcelas').disabled==true){document.getElementById('parcelas').disabled=false}">
                 <label for="scales">PARCELADO (4x R$ {{(valor_total / 4).toFixed(2)}})</label>
                 <br>
                 <input type="number" id="parcelas" name="parcelas" min="2" max="5" value="2" disabled="disabled">
 
-            </div> -->
+            </div>
             <br>
             <div id="total">
                 <p> Preço Total: R$ {{valor_total}}</p>
