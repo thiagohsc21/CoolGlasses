@@ -1,20 +1,18 @@
 <template>
     <div v-if="c">
       <Carrinho :compras="c"/>
-      {{teste}}
     </div>
 </template>
 
 <script>
 import Carrinho from '@/components/Carrinho.vue'
-import {compras, testee} from '@/objects/objects.js'
+import {compras} from '@/objects/objects.js'
 
 export default {
   name: 'CarrinhoView',
   data () {
     return {
-      c : null,
-      teste : null
+      c : null
     }
   },
   components: {
@@ -36,7 +34,6 @@ export default {
         });       
 
         this.c = produtoNoCarrinho;
-
       })
       .catch(err => alert(err.message));
 

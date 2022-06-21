@@ -3,20 +3,26 @@
             "id": 1,
             "descricao": "top de linha lancamento nacional o oculos legal realmente é muito legal",
             "imagem": "aviatorpreto.png",
-            "preco": 49.95
+            "preco": 49.95,
+            "estoque" : 9,
+            "vendidos" : 2
         },
         {   "nome": "Oculos Rayban Quadrado",
             "id": 2,
             "descricao": "Oculos com estilo vintage da Rayban, possui lente quadrada um pouco esverdeada, as bordas são um pouco arredondadas",
             "imagem": "quadrado.webp",
-            "preco": 400.00
+            "preco": 400.00,
+            "estoque" : 10,
+            "vendidos" : 3
         },
         {
             "nome": "Segundo Oculos",
             "id": 3,
             "descricao": "top de linha lancamento nacional o oculos 2 é a nova versão do oculos 1",
             "imagem": "glasses.png",
-            "preco": 499.99
+            "preco": 499.99,
+            "estoque" : 4,
+            "vendidos" : 9
         },
 
         {
@@ -24,7 +30,9 @@
             "id": 4,
             "descricao": "Oculos Aviador de lente rosa",
             "imagem": "aviatorRosa.png",
-            "preco": 299.99
+            "preco": 299.99,
+            "estoque" : 8,
+            "vendidos" : 7
         },
 
         {
@@ -32,6 +40,8 @@
             "id": 5,
             "descricao": "Oculos da marca Rayban de cor preto",
             "imagem": "raybanpreto.webp",
-            "preco": 499.99
+            "preco": 499.99,
+            "estoque" : 3,
+            "vendidos" : 12
         }
     ]

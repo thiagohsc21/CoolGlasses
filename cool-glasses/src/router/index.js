@@ -54,6 +54,16 @@ const routes = [
     path: '/pedidos',
     name: 'pedidos',
     component: () => import(/* webpackChunkName: "about" */ '../views/PedidosView.vue')
+  },
+  {
+    path: '/admin1',
+    name: 'admin1',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Admin1View.vue')
+  },
+  {
+    path: '/admin2',
+    name: 'admin2',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PedidosView.vue')
   }
 ]
 
