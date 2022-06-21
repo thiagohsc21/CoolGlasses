@@ -7,7 +7,7 @@
                     <p style="font-weight:bold">E-mail</p>
                     <input id="email"  type="text"><br><br>
                     <p style="font-weight:bold">Senha</p>
-                    <input id="password" type="password"><br><br>
+                    <input id="password" type="password"><br><br>      
                     <input id="botao_entrar" type="submit" value="Entrar"><br><br>
                     <p style="font-size: 0.7em">Caso não tenha uma conta, clique <a href="/cadastro">aqui</a> para se cadastrar</p>
                 </form>

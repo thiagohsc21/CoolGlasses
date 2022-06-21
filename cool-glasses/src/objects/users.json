@@ -1,0 +1,47 @@
+{
+    "Adrio" : {
+        "nome" : "Adrio",
+        "email" : "adrio@email.com",
+        "cpf" : "123.123.123-79",
+        "telefone" : "(64) 1234-1234",
+        "celular"  : "(64) 9999-8888",
+        "endereco" : {
+            "rua" : "Rua Um",
+            "numero" : "123",
+            "bairro"  : "Jardim dos Usuarios",
+            "complemento" : "Apartamento 13",
+            "cep" : "12345-123" 
+        },
+        "senha" : "1234"
+    },
+    "Eduardo" : {
+        "nome" : "Eduardo",
+        "email" : "edu@usp.com",
+        "cpf" : "123.456.789.01",
+        "telefone" : "(16) 3030-4040",
+        "celular"  : "(16) 9876-0001",
+        "endereco" : {
+            "rua" : "Rua dos Aliados",
+            "numero" : "12",
+            "bairro"  : "Jardim dos Usuarios",
+            "complemento" : "Apartamento 31",
+            "cep" : "12345-100" 
+        },
+        "senha" : "senha"
+    },
+    "Thiago" : {
+        "nome" : "Thiago",
+        "email" : "thiago@gmail.com.br",
+        "cpf" : "987.654.321-12",
+        "telefone" : "(24) 3031-2424",
+        "celular"  : "(24) 9909-0024",
+        "endereco" : {
+            "rua" : "Rua Salomão",
+            "numero" : "321",
+            "bairro"  : "Centro",
+            "complemento" : "Lote 2",
+            "cep" : "11223-44" 
+        },
+        "senha" : "123123"
+    }
+}

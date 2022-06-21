@@ -1,18 +1,20 @@
 <template>
     <div v-if="c">
       <Carrinho :compras="c"/>
+      {{teste}}
     </div>
 </template>
 
 <script>
 import Carrinho from '@/components/Carrinho.vue'
-import {compras} from '@/objects/objects.js'
+import {compras, testee} from '@/objects/objects.js'
 
 export default {
   name: 'CarrinhoView',
   data () {
     return {
-      c : null
+      c : null,
+      teste : null
     }
   },
   components: {
@@ -34,6 +36,12 @@ export default {
         });       
 
         this.c = produtoNoCarrinho;
+
+        testee.myPush({"oi":"tchau"});
+        console.log(testee.myGet());
+        testee.myPush({"novo":"1234"});
+        this.teste = testee.getObjs();
+        
       })
       .catch(err => alert(err.message));
 

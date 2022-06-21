@@ -9,46 +9,56 @@
         <div id="dados">
             <div id="fotoEEditar">
                 <img id="foto" src="../assets/imagens/user.png">
-                <button id="editar">Editar</button>
+                <button id="editar" @click="alterar()">Editar</button>
             </div>
 
             <div class="dado">
                 <h1 class="tituloDado">Nome</h1>
-                <p>Zé</p>
+                <p v-if="!isEditing">{{user.nome}}</p>
+                <input v-else type="text"  v-model="user.nome"/>
             </div>
             <div class="dado">
                 <h1 class="tituloDado">E-mail</h1>
-                <p>ze@hotmail.com</p>
+                <p v-if="!isEditing">{{user.email}}</p>
+                <input v-else type="text"  v-model="user.email"/>
             </div>
             <div class="dado">
                 <h1 class="tituloDado">CPF</h1>
-                <p>123.123.123-12</p>
+                <p v-if="!isEditing">{{user.cpf}}</p>
+                <input v-else type="text"  v-model="user.cpf"/>
             </div>
             <div class="dado">
                 <h1 class="tituloDado">Telefone</h1>
-                <p>(16) 3131-3131</p>
+                <p v-if="!isEditing">{{user.telefone}}</p>
+                <input v-else type="text"  v-model="user.telefone"/>
             </div>
             <div class="dado">
                 <h1 class="tituloDado">Celular</h1>
-                <p>(16) 9999-9876</p>
+                <p v-if="!isEditing">{{user.celular}}</p>
+                <input v-else type="text"  v-model="user.celular"/>
             </div>
             <div class="dado">
                 <h1 class="tituloDado">Endereço</h1>
                 <ul id="endereco">
                     <li>
-                        <p><span class="tituloEndereco">Rua: </span>Rua do Usuario 1</p>
+                        <p v-if="!isEditing"><span class="tituloEndereco">Rua: </span>{{user.endereco.rua}}</p>
+                        <p v-else> <span class="tituloEndereco">Rua: </span> <input type="text"  v-model="user.endereco.rua"/> </p>
                     </li>
                     <li>
-                        <p><span class="tituloEndereco">Numero: </span>123</p>
+                        <p v-if="!isEditing"><span class="tituloEndereco">Numero: </span>{{user.endereco.numero}}</p>
+                        <p v-else> <span class="tituloEndereco">Numero: </span> <input type="text"  v-model="user.endereco.numero"/> </p>
                     </li>
                     <li>
-                        <p><span class="tituloEndereco">Bairro: </span>JD Usuario 1</p>
+                        <p v-if="!isEditing"><span class="tituloEndereco">Bairro: </span>{{user.endereco.bairro}}</p>
+                        <p v-else> <span class="tituloEndereco">Bairro: </span> <input type="text"  v-model="user.endereco.bairro"/> </p>
                     </li>
                     <li>
-                        <p><span class="tituloEndereco">Complemento: </span>Apto 13</p>
+                        <p v-if="!isEditing"><span class="tituloEndereco">Complemento: </span>{{user.endereco.complemento}}</p>
+                        <p v-else> <span class="tituloEndereco">Complemento: </span> <input type="text"  v-model="user.endereco.complemento"/> </p>
                     </li>
                     <li>
-                        <p><span class="tituloEndereco">CEP: </span>12345-123</p>
+                        <p v-if="!isEditing"><span class="tituloEndereco">CEP: </span>{{user.endereco.cep}}</p>
+                        <p v-else> <span class="tituloEndereco">CEP: </span> <input type="text"  v-model="user.endereco.cep"/> </p>
                     </li>
                 </ul>
             </div>
@@ -58,7 +68,21 @@
 
 <script>
 export default {
+  props: {
+    user : Object,
+  },
+  data () {
+    return {
+        isEditing : false
+    }
+  },
   name: 'User',
+  methods: {
+    alterar() {
+        this.isEditing = !this.isEditing;
+        document.getElementById('editar').innerText = this.isEditing ? "Salvar" : "Editar";
+    }
+  }
 }
 </script>
 
@@ -103,7 +127,6 @@ export default {
 }
 
 #fotoEEditar {
-    /* text-align: center; */
     display: flex;
     width: 100%;
 }
@@ -113,6 +136,8 @@ export default {
     width: 250px;
 }
 #editar {
+    align-self: flex-end;
+    margin-bottom: 10px;
     height: 100%;
     float: right;
 }
@@ -120,6 +145,7 @@ export default {
 .dado{
     background-color: var(--cinza-claro);
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .dado h1 {
@@ -131,6 +157,15 @@ export default {
     font-weight: 200;
     font-size: larger;
     padding: 5px;   
+}
+
+.dado input {
+    background-color: var(--cinza-claro);
+    font-weight: 400;
+    width: 30%;
+    border-radius: 20px;
+    border: none;
+    border-bottom: 1px solid black;
 }
 
 .tituloEndereco {

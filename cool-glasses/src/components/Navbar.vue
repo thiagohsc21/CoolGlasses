@@ -14,7 +14,8 @@
                     <span class="navbar-icons">
                         <a id="cart" class="shopping-cart" href="/carrinho"><i class="fa fa-shopping-cart"></i></a> 
                         <a href="/user"><i class="fa fa-user"></i></a>
-                        <a href="/login">Entrar</a>
+                        <a v-if="!isLoged" href="/login">Entrar</a>
+                        <a v-else @click="logout()" href="/">Logout</a>
                     </span>
                 </div>
             </div>
@@ -25,6 +26,19 @@
 <script>
 export default {
   name: 'Navbar',
+  data () {
+    return  {
+        isLoged : true
+    }
+  },
+  mounted () {
+    this.isLoged = localStorage.usuario ? true : false;
+  },
+  methods:{
+    logout() {
+        localStorage.removeItem('usuario')
+    }
+  }
 }
 </script>
 
@@ -58,7 +72,8 @@ export default {
     font-weight:bolder;
 }
 .navbar-icons a{
-    color: var(--primary);
+    color: white;
+    /* color: var(--primary); */
     text-decoration: none;
     margin: 7px;
 }
