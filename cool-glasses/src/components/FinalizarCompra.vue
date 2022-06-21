@@ -9,27 +9,27 @@
 
                     <form class="formulario">
                         <p>CPF</p>
-                        <input id="CPF"  type="text"><br><br>
+                        <input id="CPF"  type="text" placeholder="12345678900"><br><br>
                         <p>Número do Cartão</p>
-                        <input id="numero-cartao" type="text"><br><br>
+                        <input id="numero-cartao" type="text" placeholder="1111222233334444"><br><br>
                         <div class="list-inline-compra"> 
                             <li>   
                             <p>Data de Validade</p>
-                            <input id="data-validade" type="date"><br><br>
+                            <input id="data-validade" type="date" min="21-06-2022" max="21-06-2050"><br><br>
                             </li>
                             <li>
                             <p>Código de Segurança</p>
-                            <input id="codigo-seguranca" type="securitycode"><br><br>
+                            <input id="codigo-seguranca" type="securitycode" placeholder="123"><br><br>
                             </li>
                         </div>
                         <p>Endereço de Entrega</p>
-                        <input id="endereco" type="text"><br><br>
+                        <input id="endereco" type="text" placeholder="Rua XXXX, Número Y, Ap Z"><br><br>
 
                     </form>
 
                     <form class="formulario" id="finalizar" >
                         <div class="list-inline-compra">
-                            <li><input type="submit" value="Finalizar Compra"></li>
+                            <li><input id="botao_finalizar" type="submit" value="Finalizar Compra" ></li>
                             <div class="listafim"><li><a href="carrinho.html">Voltar para Carrinho</a></li></div>
                         </div>
                     </form>
