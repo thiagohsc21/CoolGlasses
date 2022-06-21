@@ -1,6 +1,6 @@
 <template>
 <a :href="'/produto/' + obj.id">
-    <div class="produto">
+    <div class="pproduto">
         <img id="imagem"  :src="require(`../../assets/imagens/${obj.imagem}`)">
         <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
     </div>
@@ -17,15 +17,15 @@ export default {
 </script>
 
 <style>
-.produto{
+.pproduto{
     background-color: var(--cinza-claro);
     max-width: 380px;
     min-width: 300px;
 }
-.produto:hover {
+.pproduto:hover {
     box-shadow: 3px 5px 10px -3px #000000;
 }
-.produto img{
+.pproduto img{
     width: 100%;
 }
 

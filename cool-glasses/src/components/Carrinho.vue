@@ -60,6 +60,7 @@
 <script>
 import p_no_carrinho from '@/components/components/p-no-carrinho.vue'
 
+
 export default {
   name: 'Carrinho',
   props: {

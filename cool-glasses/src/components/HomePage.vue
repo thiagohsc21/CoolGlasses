@@ -4,45 +4,45 @@
                 <img src="../assets/imagens/slogan.png" alt="ImgSlogan">
             </div>
             
-            <a v-for="produto in produtos.slice(0,1)" :href="'/produto/' + produto.id">
-                <div id="produto_slogan">
-                    <img :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
-                    <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
-                </div>
-            </a>
+            <div v-for="produto in produtos.slice(0,1)" :href="'/produto/' + produto.id">
+                <p_produto :obj="produto" id="produto_slogan"/>
+            </div>
+            
         </div>
         
         <br><br>
         <div id="EmAlta">
             <h3>Em Alta</h3>
             <br>
-            <div id="botao">
-                <button type="button">Ver todos os produtos ></button>
-            </div>
+            <a id  ="botao2" href="/produtos">Ver todos os produtos ></a>
             <br><br>
 
-            <div class="produtos">
-                <a v-for="produto in produtos.slice(1,5)" :href="'/produto/' + produto.id">
-                    <div class="produto">
-                        <img class="OculosEmAlta" :src="require(`../assets/imagens/${produto.imagem}`)" alt="oculos1">
-                        <p>{{produto.nome}}<br>R$ {{produto.preco}}</p>
-                    </div>
-                </a>
+            <div id="grid">
+                <div class="produtos" v-for="produto in produtos.slice(1,5)">
+                    <p_produto :obj="produto" />
+                </div>
             </div>
+            
         </div>
 </template>
 
 <script>
+
+import p_produto from '@/components/components/p-produto.vue'
+
 export default {
   name: 'HomePage',
   props: {
     produtos: Array
+  },
+  components: {
+    p_produto
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
     .slogan{
     width: 100%;
     display: flex;
@@ -65,18 +65,19 @@ export default {
     color: black;
     background-color: var(--cinza-claro);
     float: right;
-    height: 380px;
-    width: 380px;
+    height: 333px;
+    width: 333px;
     align-items: center;
     text-align: center;
 }
 
 #produto_slogan:hover {
     box-shadow: 3px 5px 10px -3px #000000;
-}
+}   
+
 
 #produto_slogan img{
-    height: 300px;
+    height: 333px;
     align-items: center;
 }
 
@@ -91,20 +92,12 @@ export default {
     margin: auto;
 }
 
-#EmAlta button{
-    color: white;
-    border-radius: 50px;
-    background-color: var(--primary);
-}
 
-#EmAlta button:hover{
-    filter: brightness(1.5);
-}
-
-.produtos {
+#grid {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 20px;
+    align-self: center;
 }
 
 .produtos a{
@@ -113,26 +106,21 @@ export default {
     margin: auto;
 }
 
-#botao{
+#botao2{
     float: right;
-    margin-right: 59px;
-}
-.produto{
-    background-color: var(--cinza-claro);
-    width: 300px;
+    border-radius: 20px;
+    padding: 2px 10px;
+    background-color: var(--primary);
 }
 
-.produto p{
-    text-align: center;
+#botao2:hover{
+    filter: brightness(1.5);
 }
 
-.produto:hover {
-    box-shadow: 3px 5px 10px -3px #000000;
-}
-
-.produto .OculosEmAlta{
-    width: 100%;
-}
+#botao2 {
+    color: white;
+    text-decoration: none;
+}   
 
 
 </style>
