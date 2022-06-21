@@ -90,6 +90,16 @@ Acesso aos arquivos dos mockups:
 - Quantidade Disponível
 - Quantidade Vendida
 
+## 8. Comentários
+
+#### Como rodar
+1) Abra dois terminais
+2) No primeiro, entre na pasta cool-glasses, que baixou do repositório e digite
+~ npm run serve ~
+3) No segundo, entre na pasta cool-glasses, que baixou do repositório e digite
+~ npx json-server --watch .\src\objects\index.js ~
+
+
 ## 3. Comentários sobre o código
 ## 4. Plano de teste
 ## 5. Resultados dos testes

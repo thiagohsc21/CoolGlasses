@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="produtos_carrinho" v-for="produto in compras">
-                    <p_no_carrinho :obj="produto" />
+                    <p_no_carrinho :obj="produto"/>
                 </div>
             </div>
         </div>
@@ -27,13 +27,16 @@
     <div class="fim_painel">
         <div id="met_pag">
             <div class="chechbox_pag">
-                <input type="checkbox" id="avista" name="avista" checked>
+                <input type="radio" id="avista" name="pagamento" checked onclick="if(document.getElementById('parcelas').disabled==false){document.getElementById('parcelas').disabled=true}">
                 <label for="scales">À VISTA</label>
             </div>
-
+            <br>
             <div class="chechbox_pag">
-                <input type="checkbox" id="parcelado" name="parcelado">
+                <input type="radio" id="parcelado" name="pagamento" onclick="if(document.getElementById('parcelas').disabled==true){document.getElementById('parcelas').disabled=false}">
                 <label for="scales">PARCELADO (4x R$ {{(valor_total / 4).toFixed(2)}})</label>
+                <br>
+                <input type="number" id="parcelas" name="parcelas" min="2" max="5" value="2" disabled="disabled">
+
             </div>
             <br>
             <div id="total">
@@ -68,7 +71,8 @@ export default {
   data(){
     return{
         carrinho_vazio: false,
-        valor_total: 0
+        valor_total: 0,
+        num_parcelas: 0
     }
   },
   mounted() {
@@ -83,6 +87,9 @@ export default {
     }
 
     this.valor_total = calcula_total(this.compras)
+
+    // let input = document.querySelector("#pacelado")
+    // this.num_parcelas = input.value
   },
 }
 </script>
