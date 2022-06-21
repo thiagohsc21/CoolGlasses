@@ -55,13 +55,13 @@
                 <label for="scales">À VISTA</label>
             </div>
 
-            <!-- <div class="chechbox_pag">
+            <div class="chechbox_pag">
                 <input type="checkbox" id="parcelado" name="parcelado">
-                <label for="scales">PARCELADO (4x R$ 50,00)</label>
-            </div> -->
+                <label for="scales">PARCELADO (4x R$ {{(valor_total / 4).toFixed(2)}})</label>
+            </div>
             <br>
             <div id="total">
-                <p> Preço Total: R$449,98</p>
+                <p> Preço Total: R$ {{valor_total}}</p>
             </div>
         </div>
     </div>
@@ -74,14 +74,6 @@
     <br><br>
     <a id="continue_comprando" href="/produto"> Continue Comprando</a>
     <br><br><br>
-    </div>
-
-    <div>
-
-        <div v-for="compra in compras">
-            {{compra}}
-        </div>
-
     </div>
 
 </template>
@@ -99,11 +91,22 @@ export default {
   },
   data(){
     return{
-        carrinho_vazio: false
+        carrinho_vazio: false,
+        valor_total: 0
     }
   },
   mounted() {
     this.carrinho_vazio = this.compras.length == 0
+    function calcula_total(compras){
+        let valor_aux = 0
+        for(let i in compras){
+            valor_aux += (compras[i].qtd * compras[i].preco)
+        }
+
+        return (valor_aux.toFixed(2))
+    }
+
+    this.valor_total = calcula_total(this.compras)
   },
 }
 </script>

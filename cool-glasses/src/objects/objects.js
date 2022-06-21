@@ -10,7 +10,6 @@ class Compras {
         else
             aux = JSON.parse(localStorage.compras);
 
-        console.log('aux: ', aux);
         return aux;
 
     };
@@ -21,9 +20,16 @@ class Compras {
             aux = [];
         else
             aux = JSON.parse(localStorage.compras);
-            
-        aux.push(newItem);
-        localStorage.compras = JSON.stringify(aux);
+
+        const idx = aux.findIndex(o => o.idx_produto == newItem.idx_produto);
+        if(idx == -1){
+            aux.push(newItem);
+            localStorage.compras = JSON.stringify(aux);
+        }
+        else{
+            aux[idx].qtd++;
+            localStorage.setItem("compras", JSON.stringify(aux));
+        }
     }
 }
 

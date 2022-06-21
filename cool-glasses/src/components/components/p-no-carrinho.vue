@@ -2,8 +2,8 @@
     <a :href="'/produto/' + obj.id">
         <div class="produto">
             <img id="imagem"  :src="require(`../../assets/imagens/${obj.imagem}`)">
-            <div class="valor_prod"> 
-                <p>Valor: <br> R$ {{obj.preco}}</p>
+            <div class="valor_prod">
+                <p>Valor: <br> R$ {{(obj.preco*obj.qtd).toFixed(2)}}</p>
             </div>
             <div class="nome_prod"> 
                 <p> {{obj.nome}} <br> <br> Quantidade: {{obj.qtd}}</p>

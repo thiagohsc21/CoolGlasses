@@ -19,8 +19,6 @@ export default {
     Carrinho
   },
   mounted() {
-    // compras = compras.compras;
-    console.log('compras no mounted ',compras);
 
     fetch('http://localhost:3000/produtos')
       .then(res => res.json())
@@ -29,13 +27,8 @@ export default {
         
         let produtoNoCarrinho = [];
 
-        console.log(compras.getObjs());
 
         (compras.getObjs()).forEach((compra, idx) => {
-          console.log('compra: ', compra);
-          // console.log('idx: ', idx);
-          console.log('produtos: ', produtos);
-          console.log('prod[comrpas.id]: ', produtos[compras.idx_produto]);
           produtoNoCarrinho.push(produtos[compra.idx_produto]);
           produtoNoCarrinho[idx].qtd = compra.qtd;
         });       

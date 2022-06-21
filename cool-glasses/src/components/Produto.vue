@@ -69,14 +69,16 @@ export default {
   },
   methods: {
     addCarrinho() {
-        // compras.push({
-        compras.pushObjs({
+            compras.pushObjs({
             idx_produto: this.obj.id - 1,
-            qtd: 1
+            qtd: 1,
+            valor: this.obj.preco
         })
+        alert("Produto adicionado no carrinho")
+        }
     }
-  }
 }
+
 </script>
 
 <style>
