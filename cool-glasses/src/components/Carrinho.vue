@@ -17,30 +17,6 @@
             <div class="row">
                 <div class="produtos_carrinho" v-for="produto in compras">
                     <p_no_carrinho :obj="produto" />
-
-                    <!-- <a href="/produto">
-                        <div class="produto">
-                            <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                            <div class="valor_prod"> 
-                                <p>Valor: <br> R$ 249,99</p>
-                            </div>
-                            <div class="nome_prod"> 
-                                <p>Oculos de Sol Quadrado Preto <br> <br> Quantidade: X</p>
-                            </div> 
-                        </div>
-                    </a>
-                    
-                    <a href="/produto">
-                        <div class="produto">
-                            <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
-                            <div class="valor_prod"> 
-                                <p>Valor: <br> R$ 199,99</p>
-                            </div> 
-                            <div class="nome_prod"> 
-                                <p>Oculos Aviator Rosa <br> <br> Quantidade: X</p>
-                            </div>
-                        </div> 
-                    </a> -->
                 </div>
             </div>
         </div>
