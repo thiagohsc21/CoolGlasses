@@ -37,11 +37,6 @@ export default {
 
         this.c = produtoNoCarrinho;
 
-        testee.myPush({"oi":"tchau"});
-        console.log(testee.myGet());
-        testee.myPush({"novo":"1234"});
-        this.teste = testee.getObjs();
-        
       })
       .catch(err => alert(err.message));
 

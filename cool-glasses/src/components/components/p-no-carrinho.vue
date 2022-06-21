@@ -9,7 +9,10 @@
                 <p> {{obj.nome}} <br> <br> Quantidade: {{obj.qtd}}</p>
             </div> 
         </div>
+        
     </a>
+    <button v-on:click=" obj.qtd += 1">+</button>
+    <button v-on:click=" obj.qtd -= 1">-</button>
 </template>
 
 
@@ -19,7 +22,7 @@ export default {
     nome: "p_no_carrinho",
     props: {
         obj: Object
-    }
+    }   
 }
 
 </script>
