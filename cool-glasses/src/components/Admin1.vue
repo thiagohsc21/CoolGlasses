@@ -21,41 +21,11 @@
                         <p> Vendidos: {{produto.vendidos}} </p>
                     </div>
                 </div> 
-                <a class="teste" :hreaf="'/admin2/' + produto.id"><i class="bi bi-pencil-square"></i></a>
+                <a class="teste" :href="'/admin2/' + produto.id"><i class="bi bi-pencil-square"></i></a>
+                
             </div>  
 
         </div>
-
-        <!-- <div class="produtos">
-            <div class="item">
-                <input type="checkbox" id="oculos1">
-                <img src="@/assets/imagens/raybanpreto.webp" alt="oculos1">
-                <div class="produto">
-                    <p>Oculos de Sol Quadrado Preto</p> 
-                    <div class="descricao">
-                        <p class="valor"> R$ 499.99 </p>
-                        <p> Estoque: 2 </p>
-                        <p> Vendidos: 9 </p>
-                    </div>
-                </div> 
-                <a><i class="bi bi-pencil-square"></i></a>
-                
-            </div>
-            
-            <div class="item">
-                <input type="checkbox" id="oculos1">
-                <img src="@/assets/imagens/aviatorRosa.png" alt="oculos2">
-                <div class="produto">
-                    <p>Oculos Aviator Rosa</p> 
-                    <div class="descricao">
-                        <p class="valor"> R$ 199.99 </p>
-                        <p> Estoque: 5 </p>
-                        <p> Vendidos: 2 </p>
-                    </div>
-                </div> 
-                <a><i class="bi bi-pencil-square"></i></a>
-            </div>
-        </div> -->
     </div>
 
     <div class="botoes">

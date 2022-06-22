@@ -10,14 +10,14 @@
             <div class="imgEPreco">
                 <label id="foto" for="file">
                     <p id="editFoto">Editar Foto</p>
-                    <img id="imagem" :src="require(`@/assets/imagens/aviatorpreto.png`)">
+                    <img id="imagem" :src="require(`@/assets/imagens/${produto.imagem}`)">
                     <input type="file" accept="image/png, image/jpeg">
-                </label>
-                <label>Editar Preço: <span>R$</span>
-                    <input type="number " value="249.90">
                 </label>
 
                 <div id="tags">
+                <label>Editar Preço: <span>&nbsp;&nbsp;R$</span>
+                    <input  type="number " :value="produto.preco">
+                </label>
                     <label>Tipo de Oculos: 
                         <input list="tipos">
     
@@ -62,20 +62,22 @@
             </div>
             <div class="descricaoEComprar">
                 <label>Editar Título <br>
-                    <input id="titulo" value="Oculos Aviador Classico em Ouro">
+                    <input id="titulo" :value="produto.nome">
                 </label>
                 <label>Editar Texto <br>
-                <textarea rows="10" id="texto">Atualmente um dos modelos de óculos de sol mais icônicos do mundo, os óculos de sol Aviator Classic foram originalmente criados aos pilotos americanos em 1937.
-Os óculos de sol Aviator Classic são um modelo atemporal que combina o grande estilo Aviator com qualidade, desempenho e conforto excepcionais."
+                <textarea rows="10" id="texto">{{produto.descricao}}
                 </textarea>
                 </label>
                 <label id="quantidade">Quantidade: 
-                    <input id="qtd" type="number" value="2">
+                    <input id="qtd" type="number" :value="produto.estoque">
                 </label>
-                </div>
+            </div>
 
         </div>
+        <div id="salvar">
+            <input id="salvar" type="button" value="Salvar"> 
 
+        </div>
     </form>
 
     <br/>
@@ -88,6 +90,9 @@ export default {
   name: 'Admin2',
   props: {
     produto : Object
+  },
+  mounted () {
+    console.log(this.produto)
   }
 }
 
@@ -99,6 +104,12 @@ export default {
     margin-top:10px;
     margin-left: 10px;
 }
+
+/* .destaque {
+    background-color: var(--cinza-claro);
+    padding-bottom: 15px;
+    text-align: center;
+} */
 
 .destaque {
     margin-right: 20px;
@@ -112,8 +123,9 @@ export default {
 }
 
 .destaque label {
-    color: blue;
-    font-size: large;
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
@@ -145,13 +157,21 @@ export default {
 #tags label {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
     text-justify: distribute;
+    height: 30px;
+    margin-bottom:20px;
+    margin-top:10px;
+
 }
 
 #tags input {
     flex-direction: row;
-    width: 100%; 
+    width: 200px; 
+    align-items: flex-end;
+    
+    margin-left: 30px;
+
 }
 
 .descricaoEComprar {
@@ -182,8 +202,6 @@ export default {
     background-color: white;
     border: 1px solid black;
     width: 400px;
-    filter: drop-shadow(10px 10px 10px #fff);
-    /* margin: 10px; */
 }
 
 #comprar {
@@ -198,6 +216,22 @@ export default {
     text-align: center;
     align-self: center;
     border: none;
+}
+
+#salvar {
+    background-color: var(--cinza-claro);
+    text-align: center ;
+    margin-bottom: 15px;
+    font-size: large;
+    font-weight: 500;
+}
+
+#salvar input {
+    color: white;
+    border-radius: 5px;
+    width: 10%;
+    border: none;
+    background-color: var(--primary);
 }
 
 

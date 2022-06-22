@@ -1,7 +1,7 @@
 <template>
-    <!-- <div v-if="produto"> -->
+    <div v-if="produto">
         <Admin2 :produto="produto"/>
-    <!-- </div> -->
+    </div>
 </template>
 
 <script>
