@@ -49,11 +49,11 @@ export default {
               console.log(senha, usuario.senha);
               console.log(email.value, usuario.email);
               if(usuario.email == email.value && usuario.senha == senha.value) {
-                alert('LOGOU');
                 localStorage.usuario = usuario.nome;
               }
             }
             router.back()
+            alert('Bem vindo '+ localStorage.usuario+ " !");
           })
           .catch(err => alert(err.message))
         

@@ -1,5 +1,5 @@
 <template>
-    <div id="user">
+    <div v-if="user" id="user">
         <div id="barraEsquerda">
             <h2>Meu Perfil</h2>
             <ul id="links">
@@ -64,6 +64,11 @@
             </div>
         </div>
     </div>
+    <div v-else id="notLogin">
+        <h1>VOCÊ NÃO FEZ LOGIN</h1>
+        <p>Você não está logado, volte para a página de 
+            <a href="/login">login</a> para entrar com sua conta</p>
+    </div>
 </template>
 
 <script>
@@ -82,13 +87,15 @@ export default {
         this.isEditing = !this.isEditing;
         document.getElementById('editar').innerText = this.isEditing ? "Salvar" : "Editar";
     }
+  },
+  mounted(){
+    console.log('user',this.user)
   }
 }
 </script>
 
 <style>
     #user {
-    /* margin: 15px; */
     display: flex;
     flex-direction: row;
 }
@@ -170,5 +177,14 @@ export default {
 
 .tituloEndereco {
     font-weight:600;
+} 
+
+#notLogin{
+    text-align: center;
+    margin-top: 5%;
+    /* align-items: center;
+    align-self: center; */
+    height: 95%;
+    /* margin-top: 3.6%; */
 }
 </style>

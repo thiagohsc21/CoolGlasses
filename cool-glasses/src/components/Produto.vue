@@ -11,8 +11,13 @@
         <div class="descricaoEComprar">
             <h1>{{obj.nome}}</h1>
             <p>{{obj.descricao}}</p>
-            <div class="comprar">
-                <button v-on:click="addCarrinho()" id="comprar">Adicionar ao carrinho</button>
+            <div>
+                <button v-on:click="addCarrinho()" id="comprar">
+                    <Transition name="bounce">
+                        <p v-if="!clicado">Adicionar ao carrinho <i class="bi bi-cart-plus"></i></p>
+                        <p v-else>No Carrinho</p>
+                    </Transition>
+                </button>
             </div>
         </div>
     </div>
@@ -67,6 +72,11 @@ export default {
         preco: Number
     }
   },
+  data () {
+    return {
+        clicado : false
+    }
+  },
   methods: {
     addCarrinho() {
             compras.pushObjs({
@@ -74,7 +84,8 @@ export default {
             qtd: 1,
             valor: this.obj.preco
         })
-        alert("Produto adicionado no carrinho")
+        this.clicado = true;
+        document.getElementById('comprar').style.filter="grayscale(0.6)"
         }
     }
 }
@@ -130,6 +141,10 @@ export default {
     border: none;
 }
 
+#comprar:hover {
+    filter: brightness(1.3);
+}
+
 .tituloRecomendados {
     font-size: large;
     margin: 20px;
@@ -162,6 +177,21 @@ export default {
 
 .produto:hover {
     box-shadow: 3px 5px 10px -3px #000000;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 </style>

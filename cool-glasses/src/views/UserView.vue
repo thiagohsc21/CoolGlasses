@@ -1,5 +1,5 @@
 <template>
-    <User v-if="user" :user="user"/>
+    <User :user="user"/>
 </template>
 
 <script>
