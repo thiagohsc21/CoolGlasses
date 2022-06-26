@@ -10,7 +10,7 @@
     <div class="painel_produtos">
         <div v-if="produtosNovo.length" v-for="produto in produtosNovo">
 
-            <div class="item">
+            <div class="item" v-show="produto.id != -1">
                 <input type="checkbox" :id="produto.id" v-model="checkeds[produto.id-1]">
                 <img :src="require(`@/assets/imagens/${produto.imagem}`)" :alt="produto.nome">
                 <div class="produto">
@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import router from '@/router'
+
 
 export default {
     nome: 'Admin1',
@@ -61,18 +63,22 @@ export default {
     },
     methods: {
         addFunc () {
+            router.push("/admin2/-1")
             
         },
         deleteFunc() {
-            console.log('produtos antes',this.produtosNovo)
             this.produtosNovo = this.produtosNovo.filter((value, index, arr) => {
                 return (!(this.checkeds[index] == true))
             })
-            // let novo = {teste}
-            console.log('produtos depois', this.produtosNovo)
         }
     },
     mounted () {
+        if (localStorage.getItem("admin") && localStorage.admin == 'n')
+            router.back();
+        if(!localStorage.getItem("admin"))
+            router.back();
+        
+
         this.produtosNovo = this.produtos
     }
 }
@@ -195,6 +201,16 @@ export default {
 #botaoAdd {
     padding:0px 10px;
     background-color: green;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+#botaoAdd:active, #botaoDelete:active {
+    font-size: 18px;
+    transition: 0.1s;
+}
+
+#botaoAdd:hover, #botaoDelete:hover{
+    box-shadow: 0px 4px 20px;
 }
 
 #botaoDelete {
@@ -213,6 +229,21 @@ export default {
 .teste {
     cursor: pointer;
     color:black
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 </style>

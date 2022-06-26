@@ -15,7 +15,6 @@ export default {
   mounted(){
     const submit = document.getElementById("botao_entrar");
 
-    // submit.addEventListener("click", validaVazio);
     submit.addEventListener("click", validaEntradas);
 
 
@@ -25,7 +24,6 @@ export default {
 
     function validaEntradas(e) {
         e.preventDefault();
-        // let valid = true;
         var re_email = /\S+@\S+\.\S+/;
 
         if (!(re_email.test(email.value))){
@@ -50,10 +48,15 @@ export default {
               console.log(email.value, usuario.email);
               if(usuario.email == email.value && usuario.senha == senha.value) {
                 localStorage.usuario = usuario.nome;
+                alert("admin", usuario.admin);
+                localStorage.admin = usuario.admin;
+                router.back();
+                setTimeout(alert('Bem vindo '+ localStorage.usuario+ " !"), 2);
+                return true;
               }
             }
-            router.back()
-            alert('Bem vindo '+ localStorage.usuario+ " !");
+            alert("Email ou senha Inválidos")
+            return false;
           })
           .catch(err => alert(err.message))
         

@@ -234,5 +234,9 @@ export default {
     background-color: var(--primary);
 }
 
+#salvar input:hover {
+    filter: brightness(1.5)
+}
+
 
 </style>

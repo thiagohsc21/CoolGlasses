@@ -34,7 +34,6 @@
             "estoque" : 8,
             "vendidos" : 7
         },
-
         {
             "nome": "Rayban Preto",
             "id": 5,
@@ -43,5 +42,14 @@
             "preco": 499.99,
             "estoque" : 3,
             "vendidos" : 12
+        },
+        {
+            "nome": "",
+            "id": -1,
+            "descricao": "",
+            "imagem": "noImgOculos.png",
+            "preco": null,
+            "estoque" : null,
+            "vendidos" : null
         }
     ]

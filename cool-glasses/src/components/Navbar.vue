@@ -6,6 +6,10 @@
                     <a href="/">
                         <h1 class="navbar-title"><img id="logo" src="../assets/logo.png" alt="Logo"> CoolGlasses</h1>
                     </a>
+                    
+                    <span v-show="isAdm" id="link_produtos">
+                        <a href="/admin1" >ADMIN</a>
+                    </span>
 
                     <span id="link_produtos">
                         <a href="/produtos" >Produtos</a>
@@ -28,15 +32,22 @@ export default {
   name: 'Navbar',
   data () {
     return  {
-        isLoged : true
+        isLoged : false,
+        isAdm : false,
     }
   },
   mounted () {
-    this.isLoged = localStorage.usuario ? true : false;
+    this.isLoged = localStorage.getItem('usuario') ? true : false;
+    
+    if (localStorage.getItem('admin') && localStorage.admin == 's')
+        this.isAdm = true;
+    else
+        this.isAdm = false;
   },
   methods:{
     logout() {
         localStorage.removeItem('usuario')
+        localStorage.removeItem('admin')
     }
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <!-- <div v-if="user"></div> -->
     <User :user="user"/>
 </template>
 

@@ -151,6 +151,9 @@ export default {
         font-weight:500;
         box-shadow: 0px 6px 12px -6px black;
     }
+    #filtroSubmit:hover {
+        filter: brightness(1.4)
+    }
     
     #produtos {
         width: 100%;

@@ -12,7 +12,8 @@
             "complemento" : "Apartamento 13",
             "cep" : "12345-123" 
         },
-        "senha" : "1234"
+        "senha" : "1234",
+        "admin" : "s"
     },
     "Eduardo" : {
         "nome" : "Eduardo",
@@ -27,7 +28,8 @@
             "complemento" : "Apartamento 31",
             "cep" : "12345-100" 
         },
-        "senha" : "senha"
+        "senha" : "senha",
+        "admin" : "n"
     },
     "Thiago" : {
         "nome" : "Thiago",
@@ -42,6 +44,7 @@
             "complemento" : "Lote 2",
             "cep" : "11223-44" 
         },
-        "senha" : "123123"
+        "senha" : "123123",
+        "admin" : "s"
     }
 }

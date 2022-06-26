@@ -4,7 +4,8 @@ class Compras {
     };
     getObjs () {
         let aux;
-        if (localStorage.length==0)
+
+        if (!localStorage.getItem('compras'))
             aux = [];
         else
             aux = JSON.parse(localStorage.compras);
@@ -15,7 +16,7 @@ class Compras {
     pushObjs ( newItem ) {
         let aux;
 
-        if (localStorage.length==0) 
+        if (!localStorage.getItem('compras')) 
             aux = [];
         else
             aux = JSON.parse(localStorage.compras);
