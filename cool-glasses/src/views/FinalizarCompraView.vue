@@ -62,24 +62,8 @@ export default {
         if(!endereco.value)
           alert("Insira seu endereço");
     }
-
-      fetch('http://localhost:3000/users')
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          for (let [key, usuario] of Object.entries(data)) {
-            console.log(senha, usuario.senha);
-            console.log(email.value, usuario.email);
-            if(usuario.email == email.value && usuario.senha == senha.value) {
-              alert('LOGOU');
-              localStorage.usuario = usuario.nome;
-            }
-          }
-          router.back()
-        })
-        .catch(err => alert(err.message))
       
-      return true;
+    return true;
   }
 }
 

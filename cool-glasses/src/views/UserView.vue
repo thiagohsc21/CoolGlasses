@@ -1,5 +1,6 @@
 <template>
-    <User v-if="user" :user="user"/>
+  <!-- <div v-if="user"></div> -->
+    <User :user="user"/>
 </template>
 
 <script>

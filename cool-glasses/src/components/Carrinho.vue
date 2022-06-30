@@ -31,14 +31,6 @@
                 <label for="scales">À VISTA</label>
             </div>
             <br>
-            <div class="chechbox_pag">
-                <input type="radio" id="parcelado" name="pagamento" onclick="if(document.getElementById('parcelas').disabled==true){document.getElementById('parcelas').disabled=false}">
-                <label for="scales">PARCELADO (4x R$ {{(valor_total / 4).toFixed(2)}})</label>
-                <br>
-                <input type="number" id="parcelas" name="parcelas" min="2" max="5" value="2" disabled="disabled">
-
-            </div>
-            <br>
             <div id="total">
                 <p> Preço Total: R$ {{valor_total}}</p>
             </div>
@@ -46,12 +38,12 @@
     </div>
     
     <br>
-    <a href="/finalizar_compra">
-        <input class="finalizar_compra" type="button" value="Finalizar Compra">
+    <a>
+        <input @click="finalizaCompra()" class="finalizar_compra" type="button" value="Finalizar Compra">
     </a>
 
     <br><br>
-    <a id="continue_comprando" href="/produto"> Continue Comprando</a>
+    <a id="continue_comprando" href="/produtos"> Continue Comprando</a>
     <br><br><br>
     </div>
 
@@ -59,6 +51,7 @@
 
 <script>
 import p_no_carrinho from '@/components/components/p-no-carrinho.vue'
+import router from '@/router'
 
 
 export default {
@@ -76,6 +69,13 @@ export default {
         num_parcelas: 0
     }
   },
+  methods: {
+    finalizaCompra() {
+        if (localStorage.getItem('usuario')) {
+            router.push('/finalizar_compra')
+        }
+    }
+  },
   mounted() {
     this.carrinho_vazio = this.compras.length == 0
     function calcula_total(compras){
@@ -88,9 +88,6 @@ export default {
     }
 
     this.valor_total = calcula_total(this.compras)
-
-    // let input = document.querySelector("#pacelado")
-    // this.num_parcelas = input.value
   },
 }
 </script>

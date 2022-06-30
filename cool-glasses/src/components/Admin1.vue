@@ -10,7 +10,7 @@
     <div class="painel_produtos">
         <div v-if="produtosNovo.length" v-for="produto in produtosNovo">
 
-            <div class="item">
+            <div class="item" v-show="produto.id != -1">
                 <input type="checkbox" :id="produto.id" v-model="checkeds[produto.id-1]">
                 <img :src="require(`@/assets/imagens/${produto.imagem}`)" :alt="produto.nome">
                 <div class="produto">
@@ -21,41 +21,11 @@
                         <p> Vendidos: {{produto.vendidos}} </p>
                     </div>
                 </div> 
-                <a class="teste" :hreaf="'/admin2/' + produto.id"><i class="bi bi-pencil-square"></i></a>
+                <a class="teste" :href="'/admin2/' + produto.id"><i class="bi bi-pencil-square"></i></a>
+                
             </div>  
 
         </div>
-
-        <!-- <div class="produtos">
-            <div class="item">
-                <input type="checkbox" id="oculos1">
-                <img src="@/assets/imagens/raybanpreto.webp" alt="oculos1">
-                <div class="produto">
-                    <p>Oculos de Sol Quadrado Preto</p> 
-                    <div class="descricao">
-                        <p class="valor"> R$ 499.99 </p>
-                        <p> Estoque: 2 </p>
-                        <p> Vendidos: 9 </p>
-                    </div>
-                </div> 
-                <a><i class="bi bi-pencil-square"></i></a>
-                
-            </div>
-            
-            <div class="item">
-                <input type="checkbox" id="oculos1">
-                <img src="@/assets/imagens/aviatorRosa.png" alt="oculos2">
-                <div class="produto">
-                    <p>Oculos Aviator Rosa</p> 
-                    <div class="descricao">
-                        <p class="valor"> R$ 199.99 </p>
-                        <p> Estoque: 5 </p>
-                        <p> Vendidos: 2 </p>
-                    </div>
-                </div> 
-                <a><i class="bi bi-pencil-square"></i></a>
-            </div>
-        </div> -->
     </div>
 
     <div class="botoes">
@@ -77,6 +47,8 @@
 </template>
 
 <script>
+import router from '@/router'
+
 
 export default {
     nome: 'Admin1',
@@ -91,18 +63,22 @@ export default {
     },
     methods: {
         addFunc () {
+            router.push("/admin2/-1")
             
         },
         deleteFunc() {
-            console.log('produtos antes',this.produtosNovo)
             this.produtosNovo = this.produtosNovo.filter((value, index, arr) => {
                 return (!(this.checkeds[index] == true))
             })
-            // let novo = {teste}
-            console.log('produtos depois', this.produtosNovo)
         }
     },
     mounted () {
+        if (localStorage.getItem("admin") && localStorage.admin == 'n')
+            router.back();
+        if(!localStorage.getItem("admin"))
+            router.back();
+        
+
         this.produtosNovo = this.produtos
     }
 }
@@ -225,6 +201,16 @@ export default {
 #botaoAdd {
     padding:0px 10px;
     background-color: green;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+#botaoAdd:active, #botaoDelete:active {
+    font-size: 18px;
+    transition: 0.1s;
+}
+
+#botaoAdd:hover, #botaoDelete:hover{
+    box-shadow: 0px 4px 20px;
 }
 
 #botaoDelete {
@@ -243,6 +229,21 @@ export default {
 .teste {
     cursor: pointer;
     color:black
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 </style>
