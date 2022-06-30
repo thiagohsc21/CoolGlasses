@@ -74,6 +74,10 @@ export default {
         if (localStorage.getItem('usuario')) {
             router.push('/finalizar_compra')
         }
+        else{
+            alert("Faça Login para continuar")
+            router.push('/login')
+        }
     }
   },
   mounted() {
