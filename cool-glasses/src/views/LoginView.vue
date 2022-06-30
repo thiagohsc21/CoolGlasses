@@ -44,12 +44,12 @@ export default {
           .then(data => {
             console.log(data);
             for (let [key, usuario] of Object.entries(data)) {
-              console.log(senha, usuario.senha);
-              console.log(email.value, usuario.email);
               if(usuario.email == email.value && usuario.senha == senha.value) {
                 localStorage.usuario = usuario.nome;
-                alert("admin", usuario.admin);
                 localStorage.admin = usuario.admin;
+                if(localStorage.admin == 's'){
+                  alert("admin", localStorage.usuario)
+                }
                 router.back();
                 setTimeout(alert('Bem vindo '+ localStorage.usuario+ " !"), 2);
                 return true;

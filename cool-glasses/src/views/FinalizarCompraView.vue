@@ -5,6 +5,8 @@
 <script>
 // @ is an alias to /src
 import FinalizarCompra from '@/components/FinalizarCompra.vue'
+import router from '@/router'
+
 
 export default {
   name: 'FinalizarCompraView',
@@ -48,6 +50,8 @@ export default {
         // data
         if(!validade.value)
           alert("Insira a data de validade");
+        else
+            return false;
 
         let re_codigo = /^[0-9]{3}/;
 
@@ -61,9 +65,12 @@ export default {
 
         if(!endereco.value)
           alert("Insira seu endereço");
+        else
+            return false;
+        
+        // return true;
     }
       
-    return true;
   }
 }
 

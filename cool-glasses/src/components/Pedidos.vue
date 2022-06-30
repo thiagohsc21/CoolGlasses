@@ -7,44 +7,37 @@
     <h6 id="caminho"><a class="item_caminho" href="/user">MEU PERFIL</a> > <a class="item_caminho" href="/pedidos"> PEDIDOS</a></h6>
     <br><br>
 
-    <div class="painel_pedidos">
-        <div class="container">
-            <div class="row">
-                <div class="produtos_pedidos">
-                    <a href="p1.html">
-                        <div class="produto">
-                            <img class="OculosEmAlta" src="../assets/imagens/raybanpreto.webp" alt="oculos1">
-                            <div class="valor_prod"> 
-                                <p>Valor: <br> R$ 249,99</p>
-                            </div>
-                            <div class="nome_prod"> 
-                                <p>Oculos de Sol Quadrado Preto <br> <br> Quantidade: X</p>
-                            </div> 
-                        </div>
-                    </a>
-                    
-                    <a href="p2.html">
-                        <div class="produto">
-                            <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos2">
-                            <div class="valor_prod"> 
-                                <p>Valor: <br> R$ 199,99</p>
-                            </div> 
-                            <div class="nome_prod"> 
-                                <p>Oculos Aviator Rosa <br> <br> Quantidade: X</p>
-                            </div>
-                        </div> 
-                    </a>
+    <div v-if="pedidos_vazio" id="pedidos_vazio">
+        <h1>VOCÊ AINDA NÃO TEM NENHUM PEDIDO EM NOSSA LOJA</h1>
+        <p>Não há nenhum produto no seu pedidos, volte para a página de 
+            <a href="/produtos">Produtos</a> para adicionar algum oculos em seu carrinho, ao finalizar a compra ela aparecerá aqui</p>
+    </div>
+
+    <div v-else>
+        <div class="painel_pedidos">
+            <div class="container">
+                <div class="row">
+                    <div class="produtos_pedidos" v-for="produto in produtos">
+                        <p_produto :obj="produto"/>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <br><br><br>
-
+<br><br><br>
 </template>
 
 <script>
+import p_produto from '@/components/components/p-produto.vue'
+
     export default {
     name: 'Pedidos',
+    props: {
+        produtos: Array
+    },
+    components: {
+        p_produto
+    },
     }
 </script>
 
