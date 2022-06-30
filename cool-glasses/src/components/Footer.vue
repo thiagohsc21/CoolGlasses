@@ -5,8 +5,7 @@
                 <div class="col-md-3">
                     <h3>Sobre nós</h3>
                     <p>Surgimos de uma confraternização de amigos e temos como
-                        objetivo restaurar a auto estima do jovem universitário, o qual
-                        é destruído todos os dias pela universidade e professores. </p>
+                        objetivo restaurar a auto estima do jovem universitário. </p>
                 </div>
                 <div class="col-md-3">
                     <h3>Atalhos</h3>
@@ -31,7 +30,7 @@
                          <li><a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     </ul>
-                        <p> layout e desenvolvimento GRUPO 7<br>
+                        <p style="font-size:small"> layout e desenvolvimento GRUPO 7<br>
                             CoolGlasses 2022 | todos os direitos reservados</p>
                 </div>
 
