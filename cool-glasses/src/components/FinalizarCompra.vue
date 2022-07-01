@@ -29,7 +29,7 @@
 
                     <form class="formulario" id="finalizar" >
                         <div class="list-inline-compra">
-                            <li><input @click="finalizaCompra()" id="botao_finalizar" type="submit" value="Finalizar Compra" ></li>
+                            <li><input id="botao_finalizar" type="submit" value="Finalizar Compra" ></li>
                             <div class="listafim"><li><a href="/carrinho">Voltar para Carrinho</a></li></div>
                         </div>
                     </form>
@@ -42,16 +42,9 @@
 </template>
 
 <script>
+
 export default {
   name: 'Finalizar_Compra',
-  methods: {
-    finalizaCompra() {
-        if (localStorage.getItem('usuario')) {
-            alert("Compra finalizada com sucesso")
-            router.push('/pedidos')
-        }
-    }
-  }
 }
 </script>
 

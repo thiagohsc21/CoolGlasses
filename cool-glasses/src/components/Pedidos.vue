@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="row">
                     <div class="produtos_pedidos" v-for="produto in produtos">
-                        <p_produto :obj="produto"/>
+                        <p_no_pedidos :obj="produto"/>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import p_produto from '@/components/components/p-produto.vue'
+import p_no_pedidos from '@/components/components/p-no-pedidos.vue'
 
     export default {
     name: 'Pedidos',
@@ -36,7 +36,7 @@ import p_produto from '@/components/components/p-produto.vue'
         produtos: Array
     },
     components: {
-        p_produto
+        p_no_pedidos
     },
     }
 </script>

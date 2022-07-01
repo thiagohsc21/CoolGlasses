@@ -7,7 +7,7 @@
 <script>
 // @ is an alias to /src
 import Pedidos from '@/components/Pedidos.vue'
-import {compras} from '@/objects/objects.js'
+import {pedidos} from '@/objects/objects.js'
 
 export default {
   name: 'LoginView',
@@ -29,9 +29,10 @@ export default {
         let produtosPedidos = [];
 
 
-        (compras.getObjs()).forEach((compra, idx) => {
-          produtosPedidos.push(produtos[compra.idx_produto]);
-          produtosPedidos[idx].qtd = compra.qtd;
+        (pedidos.getObjs()).forEach((pedido, idx) => {
+          produtosPedidos.push(produtos[pedido.idx_produto]);
+          console.log("pedido qtd: ", pedido.qtd)
+          produtosPedidos[idx].qtd = pedido.qtd;
         });       
 
         this.prod = produtosPedidos;

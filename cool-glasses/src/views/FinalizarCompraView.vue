@@ -4,8 +4,10 @@
 
 <script>
 // @ is an alias to /src
+import router from '@/router';
 import FinalizarCompra from '@/components/FinalizarCompra.vue'
-import router from '@/router'
+import {compras} from '@/objects/objects.js'
+import { pedidos } from '@/objects/objects';
 
 
 export default {
@@ -47,11 +49,10 @@ export default {
             return false;
         }
 
-        // data
-        if(!validade.value)
-          alert("Insira a data de validade");
-        else
-            return false;
+        if(!validade.value){
+            alert("Insira a data de validade");
+            return false
+        }
 
         let re_codigo = /^[0-9]{3}/;
 
@@ -63,14 +64,38 @@ export default {
             return false;
         }
 
-        if(!endereco.value)
-          alert("Insira seu endereço");
-        else
+        if(!endereco.value){
+            alert("Insira seu endereço");
             return false;
-        
-        // return true;
+        }
+
+        if (localStorage.getItem('usuario')) {
+            //copiando os itens do carrinho para o pedidos (salvando no local storage)
+            fetch('http://localhost:3000/produtos')
+            .then(res => res.json())
+            .then(data => {
+                let produtos = data;
+
+                (compras.getObjs()).forEach((compra, idx) => {
+                    pedidos.pushObjs({
+                        idx_produto: compra.idx_produto,
+                        qtd: compra.qtd,
+                        valor: compra.valor
+                    });
+
+                });
+                    
+                alert("Compra finalizada com sucesso")
+                setTimeout(function(){
+                    router.push('/pedidos')
+                }, 500); 
+
+                // //limpando o carrinho
+                compras.deleteCarrinho();
+            })
+            .catch(err => alert(err.message));
+        }
     }
-      
   }
 }
 
