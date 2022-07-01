@@ -38,7 +38,15 @@ import p_no_pedidos from '@/components/components/p-no-pedidos.vue'
     components: {
         p_no_pedidos
     },
+    data(){
+        return{
+            pedidos_vazio: false
+        }
+    },
+    mounted(){
+        this.pedidos_vazio = this.produtos.length == 0
     }
+}
 </script>
 
 <style>
@@ -99,6 +107,12 @@ import p_no_pedidos from '@/components/components/p-no-pedidos.vue'
 
     .item_caminho:hover{
         color: gray;
+    }
+
+    #pedidos_vazio{
+        margin-left: 20%;
+        margin-top: 5%;
+        margin-bottom: 15%;
     }
 
 </style>
