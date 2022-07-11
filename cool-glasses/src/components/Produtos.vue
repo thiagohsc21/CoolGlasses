@@ -57,7 +57,8 @@
             <div id="grid">
 
                 <div v-for="produto in objs">
-                    <p_produto :obj="produto" v-show="visible(produto, selected)"/>
+                    <p_produto :obj="produto" />
+                    <!-- <p_produto :obj="produto" v-show="visible(produto, selected)"/> -->
                 </div> 
 
 
@@ -94,9 +95,10 @@ export default {
   },
   methods: {
     filtrar() {
-        this.objs.forEach(p => {
-            this.selected[p.id] = p.id == '1' || p.id=='2' ? true : false
-        });
+        // this.objs.forEach(p => {
+        //     this.selected[p.id] = p.id == '1' || p.id=='2' ? true : false
+        // });
+        console.log(this.objs)
     },
     visible (produto, selected) {
         return selected[produto.id]

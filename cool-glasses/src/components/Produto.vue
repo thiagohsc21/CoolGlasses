@@ -27,31 +27,31 @@
     <div class="recomendados">
         <a href="/produto/1">
             <div class="produto">
-                <img class="OculosEmAlta" :src="require(`../assets/imagens/${obj.imagem}`)" alt="oculos1">
-                <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
+                <img class="OculosEmAlta" src="../assets/imagens/aviatorpreto.png" alt="oculos1">
+                <p>Oculos Legal<br>R$ 49,95</p>
             </div>
         </a>
 
         <a href="/produto/2">
             <div class="produto">
-                <img class="OculosEmAlta" :src="require(`../assets/imagens/${obj.imagem}`)" alt="oculos2">
-                <p>{{obj.nome}}<br>R$ {{obj.preco}}</p>
+                <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos2">
+                <p>Oculos Rayban Quadrado<br>R$ 400,00</p>
             </div>
         </a>
         
         <!-- falta mexer aqui -->
         <a href="/produto/3">
             <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos3">
-                <p>Oculos Maneirim Preto<br>R$ 199,99</p>
+                <img class="OculosEmAlta" src="../assets/imagens/glasses.png" alt="oculos3">
+                <p>Segundo Oculos<br>R$ 499,99</p>
             </div>
         </a>
         
         <!-- falta mezer aqui -->
         <a href="/produto/4">
             <div class="produto" id="ultima_imagem">
-                <img class="OculosEmAlta" src="../assets/imagens/aviatorpreto.png" alt="oculos4">
-                <p>Oculos Maneiro Preto<br>R$ 249,99</p>
+                <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos4">
+                <p>Aviador Rosa<br>R$ 299,99</p>
             </div>
         </a>
     </div>

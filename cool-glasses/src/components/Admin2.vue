@@ -16,7 +16,7 @@
 
                 <div id="tags">
                 <label>Editar Preço: <span>&nbsp;&nbsp;R$</span>
-                    <input  type="number " :value="produto.preco">
+                    <input  type="number " v-model="produto.preco">
                 </label>
                     <label>Tipo de Oculos: 
                         <input list="tipos">
@@ -62,20 +62,19 @@
             </div>
             <div class="descricaoEComprar">
                 <label>Editar Título <br>
-                    <input id="titulo" :value="produto.nome">
+                    <input id="titulo" v-model="produto.nome">
                 </label>
                 <label>Editar Texto <br>
-                <textarea rows="10" id="texto">{{produto.descricao}}
-                </textarea>
+                <textarea rows="10" id="texto" v-model="produto.descricao"></textarea>
                 </label>
                 <label id="quantidade">Quantidade: 
-                    <input id="qtd" type="number" :value="produto.estoque">
+                    <input id="qtd" type="number" v-model="produto.estoque">
                 </label>
             </div>
 
         </div>
         <div id="salvar">
-            <input id="salvar" type="button" value="Salvar"> 
+            <input id="salvar" type="button" value="Salvar" @click="salvar()"> 
 
         </div>
     </form>
@@ -93,6 +92,23 @@ export default {
   },
   mounted () {
     console.log(this.produto)
+  },
+  methods: {
+
+    salvar () {
+        console.log(this.produto);
+        fetch('http://localhost:8888/' + this.$route.params.id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.produto)
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err.message));
+
+        console.log(this.produtos)
+    }
   }
 }
 

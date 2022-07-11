@@ -21,7 +21,7 @@
                         <p> Vendidos: {{produto.vendidos}} </p>
                     </div>
                 </div> 
-                <a class="teste" :href="'/admin2/' + produto.id"><i class="bi bi-pencil-square"></i></a>
+                <a class="teste" :href="'/admin2/' + produto._id"><i class="bi bi-pencil-square"></i></a>
                 
             </div>  
 

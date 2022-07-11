@@ -19,7 +19,7 @@ export default {
     Admin1
   },
   mounted () {
-      fetch('http://localhost:3000/produtos')
+      fetch('http://localhost:8888')
           .then(res => res.json())
           .then(data => this.produtos = data)
           .catch(err => alert(err.message))

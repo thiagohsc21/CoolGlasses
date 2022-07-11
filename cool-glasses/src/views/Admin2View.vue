@@ -19,7 +19,7 @@ export default {
     Admin2
   },
   mounted () {
-      fetch('http://localhost:3000/produtos/' + this.$route.params.id)
+      fetch('http://localhost:8888/' + this.$route.params.id)
           .then(res => res.json())
           .then(data => this.produto = data)
           .catch(err => alert(err.message))

@@ -17,10 +17,13 @@ export default {
         }
     },
     mounted(){
-        fetch('http://localhost:3000/produtos/' + this.$route.params.id)
+        fetch('http://localhost:8888/' + this.$route.params.id)
             .then(res => res.json())
             .then(data => this.produtos = data)
-            .catch(err => console.log(err.message))
+            .then(console.log('prodtuto', this.produtos))
+            .catch(err => console.log(err.message));
+
+        console.log(this.produtos);
     },
     components: {
         Produto
