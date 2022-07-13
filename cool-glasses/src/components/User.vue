@@ -84,6 +84,18 @@ export default {
   name: 'User',
   methods: {
     alterar() {
+        if (this.isEditing) {
+            fetch('http://localhost:8888/user/' + this.user._id, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.user)
+            })
+            .then(res => console.log(res))
+            .catch(err => console.log(err.message));
+        }
+
         this.isEditing = !this.isEditing;
         document.getElementById('editar').innerText = this.isEditing ? "Salvar" : "Editar";
     }

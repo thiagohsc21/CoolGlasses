@@ -35,13 +35,17 @@ export default {
               alert("Insira um nome");
           else
               alert("Insira um nome sem caracteres especiais");
+              
+          valid = false;
       }
 
-      if (!(re_email.test(email.value))){
+      if (!(re_email.test(email.value))) {
           if (!email.value)
               alert("Insira um email");
           else
               alert("Insira um email valido");
+
+          valid = false;
       }
 
       if(senha.value != confirma_senha.value || !senha.value && !confirma_senha.value){
@@ -53,6 +57,31 @@ export default {
     
           if(senha.value != confirma_senha.value)
               alert("A senha deve ser igual nos dois campos");
+
+          valid = false;
+      }
+
+      if (valid) {
+          
+          var user = new Object();
+          user.email = email.value;
+          user.nome = nome.value;
+          user.senha = senha.value;
+
+          user.cpf=""; user.telefone=""; user.celular=""; user.admin="n"
+          user.endereco = new Object();
+          user.endereco.rua=""; user.endereco.numero=""; user.endereco.bairro=""; user.endereco.complemento=""; user.endereco.cep="";
+          console.log(user);
+
+          fetch('http://localhost:8888/user/', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(user)
+          })
+          .then(res => console.log(res))
+          .catch(err => console.log(err.message));
       }
       return valid;
     }
