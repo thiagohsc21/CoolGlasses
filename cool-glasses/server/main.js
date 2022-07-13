@@ -18,6 +18,7 @@ const bodyParser = require('body-parser');
 
 const schema = require('./model/products');
 const controller = require('./controler/products');
+const uploadImg = require('./middlewares/uploadImage');
 
 const app = express();
 const port = 8888;
@@ -36,6 +37,24 @@ app.get('/:id', controller.getById);
 app.post('/', controller.post);
 app.put('/:id', controller.put);
 
+app.post("/upload-image", uploadImg.single('image'), async (req, res) => {
+
+  if (req.file) {
+      console.log(req.file);
+      return res.json({
+          erro: false,
+          mensagem: "Upload realizado com sucesso!"
+      });
+  }
+
+  return res.status(400).json({
+      erro: true,
+      mensagem: "Erro: Upload não realizado com sucesso, necessário enviar uma imagem PNG ou JPG!"
+  });
+
+
+
+});
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);
