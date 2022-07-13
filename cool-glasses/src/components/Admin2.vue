@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import router from '@/router';
 
 export default {
   name: 'Admin2',
@@ -106,7 +107,10 @@ export default {
         })
         .then(res => console.log(res))
         .catch(err => console.log(err.message));
-
+        alert("Edição finalizada com sucesso")
+                setTimeout(function(){
+                    router.push('/admin1')
+                }, 500); 
         console.log(this.produtos)
     }
   }
@@ -120,12 +124,6 @@ export default {
     margin-top:10px;
     margin-left: 10px;
 }
-
-/* .destaque {
-    background-color: var(--cinza-claro);
-    padding-bottom: 15px;
-    text-align: center;
-} */
 
 .destaque {
     margin-right: 20px;
