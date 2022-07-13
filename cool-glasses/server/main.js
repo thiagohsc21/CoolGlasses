@@ -1,23 +1,13 @@
 
-// import mongoose from 'mongoose';
-
-// async function mongoSetup() {
-// await mongoose.connect('mongodb+srv://adrio:adrio1234@cluster0.eq0pvr4.mongodb.net/?retryWrites=true&w=majority', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   });
-// }
-  
-// const Product = require('@/model/products');
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const schema = require('./model/products');
-const controller = require('./controler/products');
+const schemaP = require('./model/products');
+const schemaU = require('./model/users');
+const controllerProduct = require('./controler/products');
+const controllerUser = require('./controler/users');
 
 const app = express();
 const port = 8888;
@@ -31,11 +21,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-app.get('/', controller.get);
-app.get('/:id', controller.getById);
-app.post('/', controller.post);
-app.put('/:id', controller.put);
+app.get('/', controllerProduct.get);
+app.get('/:id', controllerProduct.getById);
+app.post('/', controllerProduct.post);
+app.put('/:id', controllerProduct.put);
 
+app.get("/user/", controllerUser.get);
+app.get('/user/:id', controllerUser.getById);
+app.post('/user/', controllerUser.post);
+app.put('/user/:id', controllerUser.put);
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);

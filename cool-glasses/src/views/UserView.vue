@@ -18,10 +18,10 @@ export default {
     User
   },
   mounted () {
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:8888/user/' + localStorage.usuario)
           .then(res => res.json())
           .then(data => {
-            this.user = data[localStorage.usuario]; 
+            this.user = data; 
           })
           .catch(err => alert(err.message))
   }
