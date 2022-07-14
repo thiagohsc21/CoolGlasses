@@ -6,7 +6,12 @@
             <div id="filtros">
 
                 <h2>Tipo de Óculos</h2>
-
+                
+                    <div v-for="tipo in tipos" class="filtroCheck">
+                        <input type="checkbox" :id="tipo" :value="tipo" v-model="checked.tipos">
+                        <label :for="tipo">{{tipo}}</label>
+                    </div>
+                    <!-- 
                     <div class="filtroCheck">
                         <input type="checkbox" id="sol" name="oculos de sol">
                         <label for="oculos de sol">Óculos de Sol</label>
@@ -16,29 +21,41 @@
                     </div><div class="filtroCheck">
                         <input type="checkbox" id="juliette" name="juliette">
                         <label for="juliette">Juliette</label>
-                    </div>
+                    </div> -->
             
                 
                 <h2>Cor da Armação</h2>
-                    <div class="filtroCheck">
-                        <input type="checkbox" id="marrom" name="marrom">
+                
+                    <div v-for="cor in cores" class="filtroCheck">
+                        <input type="checkbox" :id="cor" :value="cor" v-model="checked.cores">
+                        <label :for="cor">{{cor}}</label>
+                    </div>
+                    <!-- <div class="filtroCheck">
+                        <input type="checkbox" id="marrom" name="marrom" value="Marrom" v-model="corSelecionada">
                         <label for="marrom">Marrom</label>
                     </div><div class="filtroCheck">
-                        <input type="checkbox" id="preto" name="preto">
+                        <input type="checkbox" id="preto" name="preto" value="Preto" v-model="corSelecionada">
                         <label for="preto">Preto</label>
                     </div><div class="filtroCheck">
-                        <input type="checkbox" id="vermelho" name="vermelho">
+                        <input type="checkbox" id="vermelho" name="vermelho" value="Vermelho" v-model="corSelecionada">
                         <label for="vermelho">Vermelho</label>
-                    </div>
+                    </div> -->
                 
+
+
                 <h2>Gênero</h2>
-                    <div class="filtroCheck">
+                
+                    <div v-for="genero in generos" class="filtroCheck">
+                        <input type="checkbox" :id="genero" :value="genero" v-model="checked.generos">
+                        <label :for="genero">{{genero}}</label>
+                    </div>
+                    <!-- <div class="filtroCheck">
                         <input type="checkbox" id="masculino" name="masculino">
                         <label for="masculino">Masculino</label>
                     </div><div class="filtroCheck">
                         <input type="checkbox" id="feminino" name="feminino">
                         <label for="feminino">Feminino</label>
-                    </div>
+                    </div> -->
 
                 <!-- <h2>MEU COR TESTE</h2>
                 <template v-for="option in cor">
@@ -57,8 +74,7 @@
             <div id="grid">
 
                 <div v-for="produto in objs">
-                    <p_produto :obj="produto" />
-                    <!-- <p_produto :obj="produto" v-show="visible(produto, selected)"/> -->
+                    <p_produto :obj="produto" v-show="visible(produto)"/>
                 </div> 
 
 
@@ -81,12 +97,13 @@ export default {
   },
   data() {
     return {
-        cor: ['Preto', 'Vermelho', 'Marrom'],
+        tipos: ['Oculos de Sol', 'Aviador', 'Juliette'],
+        cores: ['Preto', 'Vermelho', 'Marrom'],
+        generos: ['Masculino', 'Feminino', 'Unisex'],
         checked: {
-            cor: []
-        },
-        selected: {
-            '1':true,'2':true,'3':true,'4':true, '5': true
+            tipos: [],
+            cores: [],
+            generos: [],
         }
     }
   },
@@ -95,13 +112,21 @@ export default {
   },
   methods: {
     filtrar() {
-        // this.objs.forEach(p => {
-        //     this.selected[p.id] = p.id == '1' || p.id=='2' ? true : false
-        // });
-        console.log(this.objs)
+        this.objs.forEach(p => {
+            console.log(p.tipo, p.cor, p.genero)
+            if ((this.checked.tipos.includes(p.tipo)) && (this.checked.cores.includes(p.cor)) && (this.checked.generos.includes(p.genero)))
+                p.selected=true;
+            else
+                p.selected=false;
+        });
+
+        console.log("teste:", this.objs);
     },
-    visible (produto, selected) {
-        return selected[produto.id]
+    visible (produto) {
+        if ('selected' in produto && produto.selected==false)
+            return false;
+        else 
+            return true; 
     }
   }
 }

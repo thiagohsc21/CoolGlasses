@@ -19,7 +19,7 @@
                     <input  type="number " v-model="produto.preco">
                 </label>
                     <label>Tipo de Oculos: 
-                        <input list="tipos">
+                        <input list="tipos" v-model="produto.tipo">
     
                         <datalist id="tipos">
                           <option value="Aviador"></option>
@@ -29,7 +29,7 @@
                     </label>
                     
                     <label>Cor: 
-                        <input list="cor">
+                        <input list="cor" v-model="produto.cor">
     
                         <datalist id="cor">
                           <option value="Preto"></option>
@@ -49,7 +49,7 @@
                     </label>
                     
                     <label>Genero:
-                        <input list="genero">
+                        <input list="genero" v-model="produto.genero">
     
                         <datalist id="genero">
                           <option value="Feminino"></option>

@@ -11,7 +11,10 @@ const schema = new Schema({
     imagem : {type: String},
     preco : {type : Number},
     estoque : {type : Number},
-    vendidos : {type : Number}
+    vendidos : {type : Number},
+    tipo : {type: String},
+    cor : {type: String},
+    genero : {type: String}
 });
 
 module.export = mongoose.model('Product', schema);
