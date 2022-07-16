@@ -92,7 +92,7 @@ Acesso aos arquivos dos mockups:
 - Quantidade Vendida
 
 ## 3. Comentários sobre o código
-Utilizamos VUE de modo a modularizar o código do nosso projeto e bootstrap para facilitar alguns detalhes da aparência. 
+Utilizamos VUE de modo a modularizar o código do nosso projeto e bootstrap para facilitar alguns detalhes da aparência. Vale ressaltar também que o nosso código não provê nenhum tipo de segurança aos usuários. 
 
 ## 4. Plano de teste
 Todas as funcionalidades e ferramentas do site, tanto por parte do usuário quanto pelo administrador, foram testadas no navegador Google Chrome e Mozilla Firefox, utilizando os sistemas operacionais Windows 10/11 e Linux Ubuntu 20.04.4. 
@@ -138,7 +138,6 @@ Ao integrarmos todo o site com o mongoDB, também tivemos que aprender diversas 
 Concluindo, o desenvolvimento do projeto como um todo foi bem cansativo, pois não possuíamos nenhum tipo de conhecimento em Web e o nível requerido para a tarefa era, de certa forma, alto, o que demandou um tempo extremamente alto dedicado à disciplina, de tal forma que foi necessário que deixássemos de lado tarefas de outros professores. 
 
 
-
-
-
 ## 8. Comentários
+
+Agradecemos ao professor Dilvan e especialmente às monitoras Mariany morais e Débora Buzon por toda colaboração durante o desenvolvimento do projeto
