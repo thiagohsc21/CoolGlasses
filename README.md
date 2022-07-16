@@ -111,17 +111,14 @@ Os resultados foram promissores, de tal forma que não encontramos nenhum tipo d
 ## 6. Building
 Primeiramente, é necessário instalar os pacotes `npm` e `node.js` no computador. 
 
-Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na pasta cool-glasses. Por fim, abra três terminais dentro da pasta, como na foto abaixo (feito no Windows 11), lembrando que todo o processo pode ser feito utilizando somente o terminal do Windows ou Linux. 
+Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na pasta cool-glasses. Por fim, abra um terminal dentro da pasta, como na foto abaixo (feito no Windows 11), lembrando que todo o processo pode ser feito utilizando somente o terminal do Windows ou Linux. 
 
 ![abrirTerminal](imagens/abrirTerminal.png)
 
-#### No primeiro, digite:
-`$ npx json-server --watch .\src\objects\index.js `
-
-#### No segundo, digite:
+#### Primeiramente, digite:
 `$ node ./server/main.js `
 
-#### No terceiro, digite: 
+#### Segundamente, digite: 
 `$ npm run serve`
 
 Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no link Local para acessar o site. 
