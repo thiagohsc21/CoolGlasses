@@ -39,26 +39,24 @@ export default {
             return false;
         }
 
-        fetch('http://localhost:3000/users')
-          .then(res => res.json())
+        fetch('http://localhost:8888/user/email/' + email.value)
+          .then(res =>  
+            res.json()
+          )
           .then(data => {
             console.log(data);
-            for (let [key, usuario] of Object.entries(data)) {
-              if(usuario.email == email.value && usuario.senha == senha.value) {
-                localStorage.usuario = usuario.nome;
-                localStorage.admin = usuario.admin;
-                if(localStorage.admin == 's'){
-                  alert("admin", localStorage.usuario)
-                }
-                router.back();
-                setTimeout(alert('Bem vindo '+ localStorage.usuario+ " !"), 2);
-                return true;
-              }
+            if (senha.value == data.senha) {
+              localStorage.usuario = data._id;
+              router.back();
+              setTimeout(alert('Bem vindo '+ data.nome + " !"), 2);
+              return true;
             }
-            alert("Email ou senha Inválidos")
-            return false;
+            else {
+              alert("Email ou senha Inválidos")
+              return false;
+            }
           })
-          .catch(err => alert(err.message))
+          .catch(err => alert('Email ou Senha Incorretos'))
         
         return true;
     }

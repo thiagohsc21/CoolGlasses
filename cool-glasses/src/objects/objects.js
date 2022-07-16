@@ -21,7 +21,7 @@ class Compras {
         else
             aux = JSON.parse(localStorage.compras);
 
-        const idx = aux.findIndex(o => o.idx_produto == newItem.idx_produto);
+        const idx = aux.findIndex(o => o.id_produto == newItem.id_produto);
         if(idx == -1){
             aux.push(newItem);
             localStorage.compras = JSON.stringify(aux);
@@ -39,7 +39,7 @@ class Compras {
         else
             aux = JSON.parse(localStorage.compras);
 
-        const idx = aux.findIndex(o => o.idx_produto == item.idx_produto);
+        const idx = aux.findIndex(o => o.idx_produto == item.id_produto);
         if(idx != -1){
             if(aux[idx].qtd == 1){
                 aux.pop(item);
@@ -59,43 +59,43 @@ class Compras {
 
 export var compras = new Compras();
 
-class Estoque {
+// class Estoque {
     
-    constructor () {
-        fetch('http://localhost:3000/estoque')
-            .then(res => res.json())
-            .then(data => {
-                this.objs = data;
-            })
-            .catch(err => console.log(err.message));
-    };
-    saveJson () {
-        fs.writeFileSync('./estoque.json', JSON.stringify(this.objs));
-    };
-    getObjs () {
-        fetch('http://localhost:3000/estoque')
-            .then(res => res.json())
-            .then(data => {
-                this.objs = data;
-                return data;
-            })
-            .catch(err => console.log(err.message));
+//     constructor () {
+//         fetch('http://localhost:3000/estoque')
+//             .then(res => res.json())
+//             .then(data => {
+//                 this.objs = data;
+//             })
+//             .catch(err => console.log(err.message));
+//     };
+//     saveJson () {
+//         fs.writeFileSync('./estoque.json', JSON.stringify(this.objs));
+//     };
+//     getObjs () {
+//         fetch('http://localhost:3000/estoque')
+//             .then(res => res.json())
+//             .then(data => {
+//                 this.objs = data;
+//                 return data;
+//             })
+//             .catch(err => console.log(err.message));
         
-        return this.objs; 
-    };
-    pushObjs ( newItem ) {
-        fetch('http://localhost:3000/estoque')
-            .then(res => res.json())
-            .then(data => {
-                this.objs = data;
-                this.objs.push(newItem);
-                this.saveJson();
-            })
-            .catch(err => console.log(err.message))
-    }
-}
+//         return this.objs; 
+//     };
+//     pushObjs ( newItem ) {
+//         fetch('http://localhost:3000/estoque')
+//             .then(res => res.json())
+//             .then(data => {
+//                 this.objs = data;
+//                 this.objs.push(newItem);
+//                 this.saveJson();
+//             })
+//             .catch(err => console.log(err.message))
+//     }
+// }
 
-export var estoque = new Estoque();
+// export var estoque = new Estoque();
 
 
 class Pedidos {

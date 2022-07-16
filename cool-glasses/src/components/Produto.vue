@@ -79,8 +79,8 @@ export default {
   },
   methods: {
     addCarrinho() {
-            compras.pushObjs({
-            idx_produto: this.obj.id - 1,
+        compras.pushObjs({
+            id_produto: this.obj._id,
             qtd: 1,
             valor: this.obj.preco
         })

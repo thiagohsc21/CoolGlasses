@@ -20,12 +20,19 @@ exports.post = (req, res, next) => {
     });
 }
 
-exports.getByNome = (req, res, next) => {
+exports.getByEmail = (req, res, next) => {
     User.findOne({
-        nome : req.params.nome
+        email : req.params.email
     })
     .then( data => {
-        res.status(200).send(data);
+        if (data) {
+            console.log(data)
+            res.status(200).send(data);
+        }
+        else {
+            res.status(200).send(data);
+            // res.status(404).send();
+        }
     }).catch ( e => {
         res.status(400).send(e)
     })

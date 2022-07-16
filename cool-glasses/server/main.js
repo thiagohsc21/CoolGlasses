@@ -49,6 +49,7 @@ app.post("/upload-image", uploadImg.single('image'), async (req, res) => {
 });
 app.get("/user/", controllerUser.get);
 app.get('/user/:id', controllerUser.getById);
+app.get('/user/email/:email', controllerUser.getByEmail);
 app.post('/user/', controllerUser.post);
 app.put('/user/:id', controllerUser.put);
 

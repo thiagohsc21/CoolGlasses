@@ -11,7 +11,7 @@
                 <label id="foto" for="file">
                     <p id="editFoto">Editar Foto</p>
                     <img id="imagem" :src="require(`@/assets/imagens/${produto.imagem}`)">
-                    <input type="file" accept="image/png, image/jpeg">
+                    <input type="file" accept="image/png, image/jpeg" id="inputImage">
                 </label>
 
                 <div id="tags">
@@ -97,21 +97,49 @@ export default {
   methods: {
 
     salvar () {
-        console.log(this.produto);
-        fetch('http://localhost:8888/' + this.$route.params.id, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(this.produto)
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err.message));
-        alert("Edição finalizada com sucesso")
-                setTimeout(function(){
-                    router.push('/admin1')
-                }, 500); 
-        console.log(this.produtos)
+        let imageInput = document.getElementById('inputImage').files[0]
+
+        if(imageInput)
+            this.produto.imagem = imageInput.name;
+
+        // Se a rota for 'Novo' => faz um POST; se nao => faz PUT com id
+        if(this.$route.params.id == "Novo") {
+            fetch('http://localhost:8888', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.produto)
+            })
+            .catch(err => console.log(err.message));
+        }
+        else {
+            fetch('http://localhost:8888/' + this.$route.params.id, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.produto)
+            })
+            .catch(err => console.log(err.message));
+        }
+
+        if(imageInput) {
+            // Criando o multipart/form para a requisicao POST
+            const formData = new FormData();
+            formData.append("image", imageInput);
+            // Faz o fetch para dar upload na imagem
+            fetch('http://localhost:8888/upload-image', {
+                method: 'POST',
+                body: formData
+            });
+        }
+
+        alert("Edição finalizada com sucesso");
+        
+        setTimeout(function(){
+            router.push('/admin1')
+        }, 500); 
     }
   }
 }

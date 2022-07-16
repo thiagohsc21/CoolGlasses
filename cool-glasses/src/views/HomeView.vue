@@ -16,15 +16,14 @@ export default {
     }
   },
   mounted(){
-    fetch('http://localhost:3000/produtos')
+    fetch('http://localhost:8888')
         .then(res => res.json())
         .then(data =>  {
 
           this.produtos = data;
-          console.log(data);
 
         })
-        .catch(err => console.log(err.message))
+        .catch(err => console.log(err.message))        
         
   },
   components: {

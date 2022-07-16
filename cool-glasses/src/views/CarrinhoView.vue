@@ -19,23 +19,55 @@ export default {
     Carrinho
   },
   mounted() {
+    var produtoNoCarrinho = [];
 
-    fetch('http://localhost:3000/produtos')
-      .then(res => res.json())
-      .then(data => {
-        let produtos = data;
-        
-        let produtoNoCarrinho = [];
+    var p = new Promise ( () => (compras.getObjs()).forEach((compra, idx) => {
+      // console.log('compra', compra)
+      fetch('http://localhost:8888/' + compra.id_produto)
+        .then (res => res.json ())
+        .then (data => {
+          // console.log(data)
 
-
-        (compras.getObjs()).forEach((compra, idx) => {
-          produtoNoCarrinho.push(produtos[compra.idx_produto]);
+          produtoNoCarrinho.push(data);
           produtoNoCarrinho[idx].qtd = compra.qtd;
-        });       
 
-        this.c = produtoNoCarrinho;
-      })
-      .catch(err => alert(err.message));
+          // this.c = produtoNoCarrinho;
+
+          // console.log('AAA')
+        })
+        .catch(err => alert(err.message));
+
+
+    }))
+
+    console.log(p)
+
+    // p.then(this.c = produtoNoCarrinho[0])
+    Promise.resolve(p);
+    this.c = produtoNoCarrinho;
+      // console.log('p in cart', Array.from( produtoNoCarrinho ))
+      console.log('c:',this.c)
+
+
+    // fetch('http://localhost:8888')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     let produtos = data;
+        
+    //     let produtoNoCarrinho = [];
+
+    //       console.log(produtos);
+
+    //     (compras.getObjs()).forEach((compra, idx) => {
+    //       // console.log(produtos)
+    //       produtoNoCarrinho.push(produtos[compra.id_produto]);
+    //       console.log(produtoNoCarrinho[idx])
+    //       // produtoNoCarrinho[idx].q td = compra.qtd;
+    //     });       
+
+      //   this.c = produtoNoCarrinho;
+      // })
+      // .catch(err => alert(err.message));
 
   }
 }

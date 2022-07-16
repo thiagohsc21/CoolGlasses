@@ -63,7 +63,7 @@ export default {
     },
     methods: {
         addFunc () {
-            router.push("/admin2/-1")
+            router.push("/admin2/Novo")
             
         },
         deleteFunc() {

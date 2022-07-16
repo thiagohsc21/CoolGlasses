@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
 exports.get = (req, res, next) => {
-    Product.find({})
+    Product.find({}).sort({vendidos:-1})
     .then( data => {
         res.status(200).send(data);
     }).catch ( e => {
