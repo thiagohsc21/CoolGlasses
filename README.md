@@ -62,11 +62,12 @@ Acesso aos arquivos dos mockups:
 
 - Apresentar alguns produtos na homepage.
 - Apresentar todos os produtos com preços com a possibilidade também de filtrar por tipos de óculos.
-- Visualizar de um produto em sua pagina especifica, contendo com uma descrição e um botão para adicionar ao carrinho.
+- Visualização de um produto em sua pagina especifica, contendo com uma descrição e um botão para adicionar ao carrinho.
 - Possibilidade do usuário se registrar com nome, e-mail e senha.
 - Acessar e editar as credenciais do usuário após estar logado.
 - Apresentar os produtos no carrinho, com possibilidade de editar quantidades, etc.
 - Finalizar compra, a partir da inserção do CPF, número do cartão, data de validade do cartão, codigo de segurança e endereço de entrega
+- Permitir a adição, remoção ou alteração de um produto por um admin. 
 
 ### Informações armazenadas no Servidor
 
@@ -90,7 +91,24 @@ Acesso aos arquivos dos mockups:
 - Quantidade Disponível
 - Quantidade Vendida
 
-## 8. Comentários
+## 3. Comentários sobre o código
+Utilizamos VUE de modo a modularizar o código do nosso projeto e bootstrap para facilitar alguns detalhes da aparência. 
+
+## 4. Plano de teste
+Todas as funcionalidades e ferramentas do site, tanto por parte do usuário quanto pelo administrador, foram testadas no navegador Google Chrome e Mozilla Firefox, utilizando os sistemas operacionais Windows 10/11 e Linux Ubuntu 20.04.4. 
+
+#### Usuário
+- Cadastro, login e alteração de informações pessoais
+- Filtragem e registro de produtos no carrinho
+- Compra 
+
+#### Administrador
+- Cadastro, remoção ou alteração de produtos
+
+## 5. Resultados dos testes
+Os resultados foram promissores, de tal forma que não encontramos nenhum tipo de inconsistência em nenhum dos navegadores ou sistemas operacionais. 
+
+## 6. Building
 
 #### Como rodar
 1) Abra três terminais e entre na pasta cool-glasses, baixada do repositório, em todos
@@ -101,9 +119,5 @@ Acesso aos arquivos dos mockups:
 4) No terceiro, digite:
 `$ node ./server/main.js `
 
-## 3. Comentários sobre o código
-## 4. Plano de teste
-## 5. Resultados dos testes
-## 6. Building
 ## 7. Problemas
 ## 8. Comentários
