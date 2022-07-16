@@ -10,8 +10,8 @@
     <div class="painel_produtos">
         <div v-if="produtosNovo.length" v-for="produto in produtosNovo">
 
-            <div class="item" v-show="produto.id != -1">
-                <input type="checkbox" :id="produto.id" v-model="checkeds[produto.id-1]">
+            <div class="item">
+                <input type="checkbox" :id="produto._id" v-model="checkeds[produto._id]">
                 <img :src="require(`@/assets/imagens/${produto.imagem}`)" :alt="produto.nome">
                 <div class="produto">
                     <p>{{produto.nome}}</p> 
@@ -67,6 +67,16 @@ export default {
             
         },
         deleteFunc() {
+            console.log(this.checkeds.values())
+            this.checkeds.forEach((value, index) => {
+                if(value){
+                    console.log(index);
+                // fetch("http://localhost:8888/" + index, {
+                    //     method: 'DELETE'
+                    // })
+                }
+
+            })
             this.produtosNovo = this.produtosNovo.filter((value, index, arr) => {
                 return (!(this.checkeds[index] == true))
             })

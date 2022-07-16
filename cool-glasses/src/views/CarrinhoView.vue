@@ -22,7 +22,7 @@ export default {
     var produtoNoCarrinho = [];
 
     var p = new Promise ( () => (compras.getObjs()).forEach((compra, idx) => {
-      // console.log('compra', compra)
+      console.log('compra', compra)
       fetch('http://localhost:8888/' + compra.id_produto)
         .then (res => res.json ())
         .then (data => {
@@ -46,8 +46,9 @@ export default {
     Promise.resolve(p);
     this.c = produtoNoCarrinho;
       // console.log('p in cart', Array.from( produtoNoCarrinho ))
-      console.log('c:',this.c)
 
+      console.log('c:',this.c)
+    setTimeout(() => {console.log("dealy")}, "1000")
 
     // fetch('http://localhost:8888')
     //   .then(res => res.json())

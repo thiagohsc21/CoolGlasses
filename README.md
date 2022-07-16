@@ -122,7 +122,7 @@ Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na 
 `$ node ./server/main.js `
 
 #### No terceiro, digite: 
-- `$ npm run serve`
+`$ npm run serve`
 
 Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no link Local para acessar o site. 
 
@@ -131,7 +131,7 @@ Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no l
 ## 7. Problemas
 No início, tivemos problemas na passagem dos Mockups para as telas, porque não sabíamos muito bem como trabalhar com o CSS e Bootstrap, de modo a alinhar itens e divs, trabalhar com o tamanho das fontes e cores. 
 
-No momento de criamos uma Single Page Application, também encontramos outros desafios, pois não sabíamos nada sobre o assunto e nem por onde começar. Tivemos que aprender sobre VUE em pouco tempo de modo a realizar a tarefa. 
+No momento de criarmos uma Single Page Application, também encontramos outros desafios, pois não sabíamos nada sobre o assunto e nem por onde começar. Tivemos que aprender sobre VUE em pouco tempo de modo a realizar a tarefa. 
 
 Ao integrarmos todo o site com o mongoDB, também tivemos que aprender diversas funcionalidades, o que tomou certo tempo.
 

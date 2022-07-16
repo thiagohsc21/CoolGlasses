@@ -99,8 +99,21 @@ export default {
     salvar () {
         let imageInput = document.getElementById('inputImage').files[0]
 
-        if(imageInput)
-            this.produto.imagem = imageInput.name;
+        if(imageInput){
+            const data = new Date();
+            var dia     = data.getDate();
+            var mes     = data.getMonth();
+            var ano4    = data.getFullYear();
+            var str_data = dia + '-' + (mes+1) + '-' + ano4;
+
+            var hora    = data.getHours();          // 0-23
+            var min     = data.getMinutes();        // 0-59
+            var seg     = data.getSeconds();        // 0-59
+            var str_hora = hora + '-' + min + '-' + seg;
+
+            this.produto.imagem = str_data + "_" + str_hora + "_" + imageInput.name;
+
+        }
 
         // Se a rota for 'Novo' => faz um POST; se nao => faz PUT com id
         if(this.$route.params.id == "Novo") {
