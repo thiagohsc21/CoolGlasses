@@ -67,7 +67,7 @@ Acesso aos arquivos dos mockups:
 - Acessar e editar as credenciais do usuário após estar logado.
 - Apresentar os produtos no carrinho, com possibilidade de editar quantidades, etc.
 - Finalizar compra, a partir da inserção do CPF, número do cartão, data de validade do cartão, codigo de segurança e endereço de entrega
-- Permitir a adição, remoção ou alteração de um produto por um admin. 
+- Permitir a adição, remoção ou alteração de um produto por um admin, onde uma imagem deve ter 512x512. 
 
 ### Informações armazenadas no Servidor
 
@@ -109,15 +109,24 @@ Todas as funcionalidades e ferramentas do site, tanto por parte do usuário quan
 Os resultados foram promissores, de tal forma que não encontramos nenhum tipo de inconsistência em nenhum dos navegadores ou sistemas operacionais. 
 
 ## 6. Building
+Primeiramente, é necessário instalar os pacotes `npm` e `node.js` no computador. 
 
-#### Como rodar
-1) Abra três terminais e entre na pasta cool-glasses, baixada do repositório, em todos
-2) No primeiro, digite:
-`$ npm run serve`
-3) No segundo, digite:
+Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na pasta cool-glasses. Por fim, abra três terminais dentro da pasta, como na foto abaixo (feito no Windows 11), lembrando que todo o processo pode ser feito utilizando somente o terminal do Windows ou Linux. 
+
+![abrirTerminal](imagens/abrirTerminal.png)
+
+#### No primeiro, digite:
 `$ npx json-server --watch .\src\objects\index.js `
-4) No terceiro, digite:
+
+#### No segundo, digite:
 `$ node ./server/main.js `
+
+#### No terceiro, digite: 
+- `$ npm run serve`
+
+Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no link Local para acessar o site. 
+
+![localhostSite](imagens/localhostSite.png)
 
 ## 7. Problemas
 No início, tivemos problemas na passagem dos Mockups para as telas, porque não sabíamos muito bem como trabalhar com o CSS e Bootstrap, de modo a alinhar itens e divs, trabalhar com o tamanho das fontes e cores. 
