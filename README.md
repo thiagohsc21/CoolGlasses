@@ -120,4 +120,16 @@ Os resultados foram promissores, de tal forma que não encontramos nenhum tipo d
 `$ node ./server/main.js `
 
 ## 7. Problemas
+No início, tivemos problemas na passagem dos Mockups para as telas, porque não sabíamos muito bem como trabalhar com o CSS e Bootstrap, de modo a alinhar itens e divs, trabalhar com o tamanho das fontes e cores. 
+
+No momento de criamos uma Single Page Application, também encontramos outros desafios, pois não sabíamos nada sobre o assunto e nem por onde começar. Tivemos que aprender sobre VUE em pouco tempo de modo a realizar a tarefa. 
+
+Ao integrarmos todo o site com o mongoDB, também tivemos que aprender diversas funcionalidades, o que tomou certo tempo.
+
+Concluindo, o desenvolvimento do projeto como um todo foi bem cansativo, pois não possuíamos nenhum tipo de conhecimento em Web e o nível requerido para a tarefa era, de certa forma, alto, o que demandou um tempo extremamente alto dedicado à disciplina, de tal forma que foi necessário que deixássemos de lado tarefas de outros professores. 
+
+
+
+
+
 ## 8. Comentários
