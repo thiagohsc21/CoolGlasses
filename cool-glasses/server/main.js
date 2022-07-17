@@ -28,6 +28,7 @@ app.get('/', controllerProduct.get);
 app.get('/:id', controllerProduct.getById);
 app.post('/', controllerProduct.post);
 app.put('/:id', controllerProduct.put);
+app.delete('/:id', controllerProduct.delete);
 
 app.post("/upload-image", uploadImg.single('image'), async (req, res) => {
 

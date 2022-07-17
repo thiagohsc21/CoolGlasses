@@ -57,7 +57,7 @@ export default {
     },
     data () {
         return {
-            checkeds : [],
+            checkeds : {},
             produtosNovo: [],
         }
     },
@@ -67,19 +67,26 @@ export default {
             
         },
         deleteFunc() {
-            console.log(this.checkeds.values())
-            this.checkeds.forEach((value, index) => {
-                if(value){
-                    console.log(index);
-                // fetch("http://localhost:8888/" + index, {
-                    //     method: 'DELETE'
-                    // })
-                }
+            if (!confirm("Certeza?"))
+                return;
 
-            })
-            this.produtosNovo = this.produtosNovo.filter((value, index, arr) => {
-                return (!(this.checkeds[index] == true))
-            })
+            let inputs = document.querySelectorAll('input');
+            inputs.forEach( (value, index) => {
+                if (value.checked) {
+                    console.log(value.id, 'deletado!');
+                    // fetch("http://localhost:8888/" + value.id, {
+                    //         method: 'DELETE'
+                    // })
+                    // const index = array.indexOf(5);
+                    // if (index > -1) 
+                        this.produtos.splice(index, 1);
+                }
+                // console.log(value.checked, value.id)
+            }); 
+
+            // this.produtos = this.produtos.filter((value, index, arr) => {
+            //     return (!(inputs[index].checked == true))
+            // })
         }
     },
     mounted () {
