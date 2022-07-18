@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import {compras} from '@/objects/objects.js'
+import {compras} from '@/objects/objects'
 import p_produto from '@/components/components/p-produto.vue'
 
 export default {
@@ -59,6 +59,13 @@ export default {
     methods: {
         addCarrinho() {
             console.log(this.limite)
+            compras.pushObjs({
+                id_produto: this.obj._id,
+                qtd: 1,
+                valor: this.obj.preco
+            });
+            this.clicado = true;
+            document.getElementById("comprar").style.filter = "grayscale(0.6)";
 
         },
         teste () {
