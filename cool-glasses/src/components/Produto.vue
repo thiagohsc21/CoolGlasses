@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import {compras} from '@/objects/objects'
+import {compras} from '@/objects/objects.js'
 import p_produto from '@/components/components/p-produto.vue'
 
 export default {
@@ -59,13 +59,7 @@ export default {
     methods: {
         addCarrinho() {
             console.log(this.limite)
-            // compras.pushObjs({
-            //     id_produto: this.obj._id,
-            //     qtd: 1,
-            //     valor: this.obj.preco
-            // });
-            // this.clicado = true;
-            // document.getElementById("comprar").style.filter = "grayscale(0.6)";
+
         },
         teste () {
             this.limite ++;
@@ -107,7 +101,7 @@ export default {
 }
 
 #imagem {
-    width: 400px;
+    width: 350px;
     filter: drop-shadow(10px 10px 10px #fff)
 }
 
@@ -139,7 +133,7 @@ export default {
 
 
 .recomendados {
-    margin: 10px;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -154,14 +148,7 @@ export default {
     /* width: 300px; */
 }
 
-.produto{
-    background-color: var(--cinza-claro);
-    width: 350px;
-}
 
-.produto .OculosEmAlta{
-    width: 100%;
-}
 
 .bounce-enter-active {
   animation: bounce-in 0.5s;

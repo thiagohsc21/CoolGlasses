@@ -97,9 +97,9 @@ export default {
   },
   data() {
     return {
-        tipos: ['Oculos de Sol', 'Aviador', 'Juliette'],
+        tipos: ['Aviador', 'Quadrado', 'Redondo'],
         cores: ['Preto', 'Vermelho', 'Marrom'],
-        generos: ['Masculino', 'Feminino', 'Unisex'],
+        generos: ['Masculino', 'Feminino', 'Unissex'],
         checked: {
             tipos: [],
             cores: [],

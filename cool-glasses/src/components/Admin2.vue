@@ -38,15 +38,6 @@
                         </datalist>
                     </label>
                     
-                    <label>Tipo da Lente: 
-                        <input list="tiposLente">
-    
-                        <datalist id="tiposLente">
-                          <option value="Oculos de Sol"></option>
-                          <option value="Oculos de Grau"></option>
-                          <option value="Juliet"></option>
-                        </datalist>
-                    </label>
                     
                     <label>Genero:
                         <input list="genero" v-model="produto.genero">
@@ -54,7 +45,7 @@
                         <datalist id="genero">
                           <option value="Feminino"></option>
                           <option value="Masculino"></option>
-                          <option value="Unisex"></option>
+                          <option value="Unissex"></option>
                         </datalist>
                     </label>
                 </div> 

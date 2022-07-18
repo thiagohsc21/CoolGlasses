@@ -18,15 +18,6 @@ export default {
     Produtos
   },
   mounted(){
-    // fetch('http://localhost:8888/')
-    //     .then(res => 
-    //       res.json()
-    //     )
-    //     .then(data => 
-    //       this.produtos = data
-    //     )
-    //     .catch(err => alert(err.message))
-
       fetch('http://localhost:8888')
           .then(res => res.json())
           .then(data => this.produtos = data)
