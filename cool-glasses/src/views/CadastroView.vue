@@ -5,6 +5,8 @@
 <script>
 // @ is an alias to /src
 import Cadastro from '@/components/Cadastro.vue'
+import router from '@/router'
+
 
 export default {
   name: 'CadastroView',
@@ -82,7 +84,13 @@ export default {
           })
           .then(res => console.log(res))
           .catch(err => console.log(err.message));
-      }
+
+            alert("Cadastro finalizado com sucesso");
+        
+            setTimeout(function(){
+                router.push('/login')
+            }, 500); 
+        }
       return valid;
     }
   }

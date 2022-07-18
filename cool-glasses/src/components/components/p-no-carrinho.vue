@@ -18,7 +18,7 @@
 
 
 <script>
-import {compras} from '@/objects/objects'
+import {compras} from '@/objects/objects.js'
 
 
 export default {
