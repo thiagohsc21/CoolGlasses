@@ -25,7 +25,7 @@
     <div class="tituloRecomendados">Outros compraram</div>
 
     <div class="recomendados" >
-        <div class="x" v-for="produto in recomendados" v-if="limite<=2">
+        <div class="x" v-for="produto in recomendados.slice(0, 5)" v-if="limite<=2">
             <p_produto class="y" :obj="produto" v-if="produto._id != obj._id" >
                 <div @focusin="teste()"></div>
             </p_produto>
