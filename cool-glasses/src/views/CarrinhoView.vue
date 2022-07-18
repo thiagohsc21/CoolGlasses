@@ -18,57 +18,51 @@ export default {
   components: {
     Carrinho
   },
-  mounted() {
-    var produtoNoCarrinho = [];
+  async mounted() {
 
-    var p = new Promise ( () => (compras.getObjs()).forEach((compra, idx) => {
-      console.log('compra', compra)
-      fetch('http://localhost:8888/' + compra.id_produto)
-        .then (res => res.json ())
-        .then (data => {
-          // console.log(data)
 
-          produtoNoCarrinho.push(data);
-          produtoNoCarrinho[idx].qtd = compra.qtd;
+    /*
 
-          // this.c = produtoNoCarrinho;
+      const {productIds} = req.body;
 
-          // console.log('AAA')
+      const products = await Product.find({
+        _id: {
+          $in: productIds
+        }
+      });
+      
+
+      await fetch('http://localhost:3000/api/carrinho', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          products
         })
-        .catch(err => alert(err.message));
+      });
+
+     */
 
 
-    }))
+    const produtosPromises = [];
 
-    console.log(p)
+    for (const compra of compras.getObjs()) {
+      console.log('compra', compra);
+      produtosPromises.push((async () => {
+        const produto = await fetch('http://localhost:8888/' + compra.id_produto).then(res => res.json()).catch(err => alert(err.message));
 
-    // p.then(this.c = produtoNoCarrinho[0])
-    Promise.resolve(p);
-    this.c = produtoNoCarrinho;
-      // console.log('p in cart', Array.from( produtoNoCarrinho ))
+        produto.qtd = compra.qtd;
 
-      console.log('c:',this.c)
-    setTimeout(() => {console.log("dealy")}, "1000")
+        return produto;
+      })());
+    }
 
-    // fetch('http://localhost:8888')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     let produtos = data;
-        
-    //     let produtoNoCarrinho = [];
+    const produtos = await Promise.all(produtosPromises);
 
-    //       console.log(produtos);
+    this.c = produtos;
 
-    //     (compras.getObjs()).forEach((compra, idx) => {
-    //       // console.log(produtos)
-    //       produtoNoCarrinho.push(produtos[compra.id_produto]);
-    //       console.log(produtoNoCarrinho[idx])
-    //       // produtoNoCarrinho[idx].q td = compra.qtd;
-    //     });       
-
-      //   this.c = produtoNoCarrinho;
-      // })
-      // .catch(err => alert(err.message));
+    console.log('c:', this.c);
 
   }
 }
