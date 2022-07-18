@@ -24,70 +24,54 @@
 
     <div class="tituloRecomendados">Outros compraram</div>
 
-    <div class="recomendados">
-        <a href="/produto/1">
-            <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/aviatorpreto.png" alt="oculos1">
-                <p>Oculos Legal<br>R$ 49,95</p>
-            </div>
-        </a>
-
-        <a href="/produto/2">
-            <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/quadrado.webp" alt="oculos2">
-                <p>Oculos Rayban Quadrado<br>R$ 400,00</p>
-            </div>
-        </a>
-        
-        <!-- falta mexer aqui -->
-        <a href="/produto/3">
-            <div class="produto">
-                <img class="OculosEmAlta" src="../assets/imagens/glasses.png" alt="oculos3">
-                <p>Segundo Oculos<br>R$ 499,99</p>
-            </div>
-        </a>
-        
-        <!-- falta mezer aqui -->
-        <a href="/produto/4">
-            <div class="produto" id="ultima_imagem">
-                <img class="OculosEmAlta" src="../assets/imagens/aviatorRosa.png" alt="oculos4">
-                <p>Aviador Rosa<br>R$ 299,99</p>
-            </div>
-        </a>
+    <div class="recomendados" >
+        <div class="x" v-for="produto in recomendados" v-if="limite<=2">
+            <p_produto class="y" :obj="produto" v-if="produto._id != obj._id" >
+                <div @focusin="teste()"></div>
+            </p_produto>
+        </div>
     </div>
 
 </template>
 
 <script>
 import {compras} from '@/objects/objects'
+import p_produto from '@/components/components/p-produto.vue'
 
 export default {
-  name: 'Produto',
-  props: {
-    obj: {        
-        nome: String,
-        id: String,
-        descricao: String,
-        imagem: String,
-        preco: Number
-    }
-  },
-  data () {
-    return {
-        clicado : false
-    }
-  },
-  methods: {
-    addCarrinho() {
-        compras.pushObjs({
-            id_produto: this.obj._id,
-            qtd: 1,
-            valor: this.obj.preco
-        })
-        this.clicado = true;
-        document.getElementById('comprar').style.filter="grayscale(0.6)"
+    name: "Produto",
+    props: {
+        obj: {
+            nome: String,
+            id: String,
+            descricao: String,
+            imagem: String,
+            preco: Number
+        },
+        recomendados: Array
+    },
+    data() {
+        return {
+            clicado: false,
+            limite: 0
+        };
+    },
+    methods: {
+        addCarrinho() {
+            console.log(this.limite)
+            // compras.pushObjs({
+            //     id_produto: this.obj._id,
+            //     qtd: 1,
+            //     valor: this.obj.preco
+            // });
+            // this.clicado = true;
+            // document.getElementById("comprar").style.filter = "grayscale(0.6)";
+        },
+        teste () {
+            this.limite ++;
         }
-    }
+    },
+    components: { p_produto  }
 }
 
 </script>
@@ -155,15 +139,19 @@ export default {
 
 
 .recomendados {
+    margin: 10px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 20px;
+    align-self: center;
+    width: 100%;
 }
 
-.recomendados a{
+.y{
     color: black;
     text-decoration: none;
-    margin: auto;
+    /* margin: auto; */
+    /* width: 300px; */
 }
 
 .produto{
@@ -173,10 +161,6 @@ export default {
 
 .produto .OculosEmAlta{
     width: 100%;
-}
-
-.produto:hover {
-    box-shadow: 3px 5px 10px -3px #000000;
 }
 
 .bounce-enter-active {

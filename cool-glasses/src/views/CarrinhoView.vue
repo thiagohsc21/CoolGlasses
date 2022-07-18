@@ -48,7 +48,6 @@ export default {
     const produtosPromises = [];
 
     for (const compra of compras.getObjs()) {
-      console.log('compra', compra);
       produtosPromises.push((async () => {
         const produto = await fetch('http://localhost:8888/' + compra.id_produto).then(res => res.json()).catch(err => alert(err.message));
 
@@ -61,8 +60,6 @@ export default {
     const produtos = await Promise.all(produtosPromises);
 
     this.c = produtos;
-
-    console.log('c:', this.c);
 
   }
 }

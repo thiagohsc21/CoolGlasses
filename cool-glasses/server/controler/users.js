@@ -13,10 +13,10 @@ exports.get = (req, res, next) => {
 
 exports.post = (req, res, next) => {
     var user = new User(req.body);
-    user.save().then(x => {   
-        res.status(201).send({message: 'CADASTRADO!'});
+    user.save().then(x => {
+        res.status(201).send({message: 'CADASTRADO!', data: user});
     }).catch(e => {
-        res.status(400).send({mensage : 'Falha ao Cadastrar.', data : user})
+        res.status(400).send({mensage: 'Falha ao Cadastrar.', data: user})
     });
 }
 

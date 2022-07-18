@@ -47,10 +47,13 @@ export default {
             console.log(data);
             if (senha.value == data.senha) {
               localStorage.usuario = data._id;
+              localStorage.admin = data.admin;
               setTimeout(alert('Bem vindo '+ data.nome + " !"), 2);
+              // this.$forceUpdate();
               setTimeout(function(){
                   router.push('/')
               }, 1000); 
+
               return true;
             }
             else {

@@ -1,5 +1,5 @@
 <template>
-    <a :href="'/produto/' + obj.id">
+    <a :href="'/produto/' + obj._id">
         <div class="produto">
             <img id="imagem"  :src="require(`../../assets/imagens/${obj.imagem}`)">
             <div class="valor_prod">
@@ -29,7 +29,7 @@ export default {
     methods: {
         add() {
             compras.pushObjs({
-                idx_produto: this.obj.id - 1,
+                id_produto: this.obj._id,
                 qtd: 1,
                 valor: this.obj.preco
             })
@@ -39,7 +39,7 @@ export default {
 
         decrease() {
             compras.popObjs({
-                idx_produto: this.obj.id - 1,
+                id_produto: this.obj._id,
                 qtd: 1,
                 valor: this.obj.preco
             })

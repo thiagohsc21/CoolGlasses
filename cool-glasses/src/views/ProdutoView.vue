@@ -1,7 +1,7 @@
 <template>
 
-    <div v-if="produtos">
-        <Produto :obj="produtos"/>
+    <div v-if="recomendados">
+        <Produto :obj="produtos" :recomendados="recomendados"/>
     </div>
 
 </template>
@@ -13,17 +13,21 @@ export default {
     name: 'ProdutoView',
     data() {
         return {
-            produtos: null
+            produtos: null,
+            recomendados: null
         }
     },
     mounted(){
         fetch('http://localhost:8888/' + this.$route.params.id)
             .then(res => res.json())
             .then(data => this.produtos = data)
-            .then(console.log('prodtuto', this.produtos))
+            .catch(err => console.log(err.message));
+            
+        fetch('http://localhost:8888')
+            .then(res => res.json())
+            .then(data => this.recomendados = data)
             .catch(err => console.log(err.message));
 
-        console.log(this.produtos);
     },
     components: {
         Produto

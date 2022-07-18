@@ -1,5 +1,5 @@
 <template>
-    <a :href="'/produto/' + obj.id">
+    <a :href="'/produto/' + obj._id">
         <div class="produto">
             <img id="imagem"  :src="require(`../../assets/imagens/${obj.imagem}`)">
             <div class="valor_prod">

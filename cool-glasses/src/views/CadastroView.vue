@@ -82,14 +82,18 @@ export default {
               },
               body: JSON.stringify(user)
           })
-          .then(res => console.log(res))
+          .then(res => res.json())
+          .then(data => localStorage.usuario = data.data._id)
           .catch(err => console.log(err.message));
 
             alert("Cadastro finalizado com sucesso");
+
+            // localStorage.usuario = data._id;
+            localStorage.admin = user.admin;
         
             setTimeout(function(){
-                router.push('/login')
-            }, 500); 
+                router.push('/')
+            }, 300); 
         }
       return valid;
     }

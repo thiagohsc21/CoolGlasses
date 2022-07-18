@@ -39,11 +39,11 @@ class Compras {
         else
             aux = JSON.parse(localStorage.compras);
 
-        const idx = aux.findIndex(o => o.idx_produto == item.id_produto);
+        const idx = aux.findIndex(o => o.id_produto == item.id_produto);
         if(idx != -1){
             if(aux[idx].qtd == 1){
-                aux.pop(item);
-                localStorage.compras = JSON.stringify(aux);
+                aux.splice(idx, 1);
+                localStorage.setItem("compras", JSON.stringify(aux));
             }
             else{
                 aux[idx].qtd--;
