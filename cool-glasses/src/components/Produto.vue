@@ -72,6 +72,9 @@ export default {
             this.limite ++;
         }
     },
+    mounted() {
+        this.recomendados = this.recomendados.filter ( produto => produto._id == this.obj._id)
+    },
     components: { p_produto  }
 }
 
