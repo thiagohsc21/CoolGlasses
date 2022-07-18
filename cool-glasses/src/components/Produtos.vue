@@ -114,13 +114,12 @@ export default {
     filtrar() {
         this.objs.forEach(p => {
             console.log(p.tipo, p.cor, p.genero)
-            if ((this.checked.tipos.includes(p.tipo)) || (this.checked.cores.includes(p.cor)) || (this.checked.generos.includes(p.genero)))
+            if ((this.checked.tipos.includes(p.tipo)) && (this.checked.cores.includes(p.cor)) && (this.checked.generos.includes(p.genero)))
                 p.selected=true;
             else
                 p.selected=false;
         });
 
-        console.log("teste:", this.objs);
     },
     visible (produto) {
         if ('selected' in produto && produto.selected==false)
