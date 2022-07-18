@@ -22,7 +22,7 @@ export default {
     const senha = document.getElementById("password");
 
 
-    function validaEntradas(e) {
+    async function validaEntradas(e) {
         e.preventDefault();
         var re_email = /\S+@\S+\.\S+/;
 
@@ -49,10 +49,15 @@ export default {
               localStorage.usuario = data._id;
               localStorage.admin = data.admin;
               setTimeout(alert('Bem vindo '+ data.nome + " !"), 2);
-              // this.$forceUpdate();
+              
+              // document.location.reload(false);
+
               setTimeout(function(){
-                  router.push('/')
-              }, 1000); 
+                  router.push('/');
+              }, 2000); 
+            
+        
+
 
               return true;
             }

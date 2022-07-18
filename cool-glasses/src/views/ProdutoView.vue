@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="recomendados">
+    <div v-if="recomendados!=null && produtos!=null">
         <Produto :obj="produtos" :recomendados="recomendados"/>
     </div>
 
