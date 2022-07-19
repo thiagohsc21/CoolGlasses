@@ -7,15 +7,37 @@
 import router from '@/router';
 import FinalizarCompra from '@/components/FinalizarCompra.vue'
 import {compras} from '@/objects/objects.js'
-import { pedidos } from '@/objects/objects';
 
 
 export default {
   name: 'FinalizarCompraView',
+  data () {
+    return {
+        c: null
+    }
+  },
   components: {
     FinalizarCompra
   },
-  mounted(){
+  async mounted(){
+
+    const produtosPromises = [];
+
+    for (const compra of compras.getObjs()) {
+      produtosPromises.push((async () => {
+        const produto = await fetch('http://localhost:8888/' + compra.id_produto).then(res => res.json()).catch(err => alert(err.message));
+
+        produto.qtd = compra.qtd;
+
+        return produto;
+      })());
+    }
+
+    const produtos = await Promise.all(produtosPromises);
+
+    this.c = produtos;
+
+
 
     const submit = document.getElementById("botao_finalizar");
     submit.addEventListener("click", validaEntradas);
@@ -71,29 +93,34 @@ export default {
 
         if (localStorage.getItem('usuario')) {
             //copiando os itens do carrinho para o pedidos (salvando no local storage)
-            fetch('http://localhost:3000/produtos')
-            .then(res => res.json())
-            .then(data => {
-                let produtos = data;
+            // fetch('http://localhost:3000/produtos')
+            // .then(res => res.json())
+            // .then(data => {
+            //     let produtos = data;
 
-                (compras.getObjs()).forEach((compra, idx) => {
-                    pedidos.pushObjs({
-                        idx_produto: compra.idx_produto,
-                        qtd: compra.qtd,
-                        valor: compra.valor
-                    });
+            //     (compras.getObjs()).forEach((compra, idx) => {
+            //         pedidos.pushObjs({
+            //             idx_produto: compra.idx_produto,
+            //             qtd: compra.qtd,
+            //             valor: compra.valor
+            //         });
 
-                });
+            //     });
                     
-                alert("Compra finalizada com sucesso")
+                alert("Compra finalizada com sucesso");
+                //
+                //limpando o carrinho
+                compras.deleteCarrinho();
+                for (compra of this.compras) {
+
+                }
+
+
                 setTimeout(function(){
-                    router.push('/pedidos')
+                    router.push('/')
                 }, 500); 
 
-                // //limpando o carrinho
-                compras.deleteCarrinho();
-            })
-            .catch(err => alert(err.message));
+            // .catch(err => alert(err.message));
         }
     }
   }

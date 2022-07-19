@@ -74,12 +74,11 @@ export default {
             inputs.forEach( (value, index) => {
                 if (value.checked) {
                     console.log(value.id, 'deletado!');
-                    // fetch("http://localhost:8888/" + value.id, {
-                    //         method: 'DELETE'
-                    // })
-                    // const index = array.indexOf(5);
-                    // if (index > -1) 
-                        this.produtos.splice(index, 1);
+                    fetch("http://localhost:8888/" + value.id, {
+                            method: 'DELETE'
+                    })
+
+                    this.produtos.splice(index, 1);
                 }
                 // console.log(value.checked, value.id)
             }); 
