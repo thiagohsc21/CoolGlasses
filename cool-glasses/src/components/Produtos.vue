@@ -122,6 +122,9 @@ export default {
 
     },
     visible (produto) {
+        if (produto.estoque <= 0)
+            return false;
+
         if ('selected' in produto && produto.selected==false)
             return false;
         else 

@@ -19,7 +19,8 @@ export default {
     fetch('http://localhost:8888')
         .then(res => res.json())
         .then(data =>  {
-
+          
+          data = data.filter ( (element) => element.estoque > 0)
           this.produtos = data;
 
         })

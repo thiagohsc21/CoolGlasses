@@ -35,9 +35,6 @@ export default {
 
     const produtos = await Promise.all(produtosPromises);
 
-    this.c = produtos;
-
-
 
     const submit = document.getElementById("botao_finalizar");
     submit.addEventListener("click", validaEntradas);
@@ -92,28 +89,35 @@ export default {
         }
 
         if (localStorage.getItem('usuario')) {
-            //copiando os itens do carrinho para o pedidos (salvando no local storage)
-            // fetch('http://localhost:3000/produtos')
-            // .then(res => res.json())
-            // .then(data => {
-            //     let produtos = data;
-
-            //     (compras.getObjs()).forEach((compra, idx) => {
-            //         pedidos.pushObjs({
-            //             idx_produto: compra.idx_produto,
-            //             qtd: compra.qtd,
-            //             valor: compra.valor
-            //         });
-
-            //     });
+                // await fetch('http://localhost:8888/pedidos/' + localStorage.usuario, {
+                //     method : 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body : JSON.stringify(compras.getObjs())
+                // })
+                // .catch(err => alert(err.message));
                     
                 alert("Compra finalizada com sucesso");
-                //
+                
+                console.log(produtos);
+
+                for (const compra of produtos) {
+                    console.log('compra', compra);
+                    fetch('http://localhost:8888/' + compra._id, {
+                        method : 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body : JSON.stringify({estoque: compra.estoque-compra.qtd, 
+                            vendidos: compra.vendidos ? compra.vendidos + compra.qtd : compra.qtd})
+                    }).then(res => res.json())
+                    .catch(err => alert(err.message));
+                }
+
+
                 //limpando o carrinho
                 compras.deleteCarrinho();
-                for (compra of this.compras) {
-
-                }
 
 
                 setTimeout(function(){
