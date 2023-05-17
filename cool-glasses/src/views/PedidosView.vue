@@ -19,26 +19,36 @@ export default {
   components: {
     Pedidos
   },
-    mounted() {
-
-    fetch('http://localhost:3000/produtos')
-      .then(res => res.json())
-      .then(data => {
-        let produtos = data;
-        
-        let produtosPedidos = [];
+  async mounted() {
 
 
-        (pedidos.getObjs()).forEach((pedido, idx) => {
-          produtosPedidos.push(produtos[pedido.idx_produto]);
-          console.log("pedido qtd: ", pedido.qtd)
-          produtosPedidos[idx].qtd = pedido.qtd;
-        });       
+        let ppedidos;
+
+        await fetch('http://localhost:8888/pedidos/' + this.$route.params.id)
+          .then(res => res.json())
+          .then(data => ppedidos = data)
+          .catch(err => alert(err.message));
+
+        const produtosPromises = [];
+
+        for (const pedido of ppedidos) {
+          produtosPromises.push((async () => {
+            const produto = await fetch('http://localhost:8888/' + pedido.id_produto).then(res => res.json()).catch(err => alert(err.message));
+
+            produto.qtd = pedido.qtd;
+
+            return produto;
+          })());
+
+        // (pedidos.getObjs()).forEach((pedido, idx) => {
+        //   produtosPedidos.push(produtos[pedido.idx_produto]);
+        //   console.log("pedido qtd: ", pedido.qtd)
+        //   produtosPedidos[idx].qtd = pedido.qtd;
+        // });       
+        const produtosPedidos = await Promise.all(produtosPromises);
 
         this.prod = produtosPedidos;
-      })
-      .catch(err => alert(err.message));
-
+        }
   }
 }
 </script>

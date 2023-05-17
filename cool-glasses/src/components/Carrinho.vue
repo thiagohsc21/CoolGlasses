@@ -15,7 +15,7 @@
         <div class="painel_carrinho">
         <div class="container">
             <div class="row">
-                <div class="produtos_carrinho" v-for="produto in compras">
+                <div class="produtos_carrinho" v-for="produto in comprass">
                     <p_no_carrinho :obj="produto"/>
                 </div>
             </div>
@@ -51,13 +51,14 @@
 
 <script>
 import p_no_carrinho from '@/components/components/p-no-carrinho.vue'
+import { compras } from '@/objects/objects'
 import router from '@/router'
 
 
 export default {
   name: 'Carrinho',
   props: {
-    compras: Array
+    comprass: Array
   },
   components: {
     p_no_carrinho
@@ -71,8 +72,19 @@ export default {
   },
   methods: {
     finalizaCompra() {
+        console.log('compras', this.comprass);
         if (localStorage.getItem('usuario')) {
-            router.push('/finalizar_compra')
+            // this.comprass.forEach(compra => {
+            for (const compra of this.comprass) {
+                console.log('compra', compra);
+                if ( compra.qtd > compra.estoque ) {
+                    alert ("Impossivel comprar essa quantidade!");
+                    return;
+                }
+            };
+
+
+            router.push('/finalizar_compra');
         }
         else{
             alert("Faça Login para continuar")
@@ -81,17 +93,17 @@ export default {
     }
   },
   mounted() {
-    this.carrinho_vazio = this.compras.length == 0
-    function calcula_total(compras){
+    this.carrinho_vazio = this.comprass.length == 0
+    function calcula_total(comprass){
         let valor_aux = 0
-        for(let i in compras){
-            valor_aux += (compras[i].qtd * compras[i].preco)
+        for(let i in comprass){
+            valor_aux += (comprass[i].qtd * comprass[i].preco)
         }
 
         return (valor_aux.toFixed(2))
     }
 
-    this.valor_total = calcula_total(this.compras)
+    this.valor_total = calcula_total(this.comprass)
   },
 }
 </script>

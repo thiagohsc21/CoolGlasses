@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="recomendados">
+    <div v-if="recomendados!=null && produtos!=null">
         <Produto :obj="produtos" :recomendados="recomendados"/>
     </div>
 
@@ -25,7 +25,9 @@ export default {
             
         fetch('http://localhost:8888')
             .then(res => res.json())
-            .then(data => this.recomendados = data)
+            .then(data => {
+                this.recomendados = data.filter( (element) => element._id != this.$route.params.id && element.estoque > 0)
+            })
             .catch(err => console.log(err.message));
 
     },

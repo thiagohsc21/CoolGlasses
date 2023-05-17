@@ -74,7 +74,7 @@
             <div id="grid">
 
                 <div v-for="produto in objs">
-                    <p_produto :obj="produto" v-show="visible(produto)"/>
+                    <p_produto class="produto" :obj="produto" v-show="visible(produto)"/>
                 </div> 
 
 
@@ -122,6 +122,9 @@ export default {
 
     },
     visible (produto) {
+        if (produto.estoque <= 0)
+            return false;
+
         if ('selected' in produto && produto.selected==false)
             return false;
         else 
@@ -203,10 +206,7 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         align-self: center;
-    }
-
-    #grid div {
-        margin:auto;
+        margin:15px;
     }
 
     .produto{
@@ -214,11 +214,4 @@ export default {
         max-width: 380px;
     }
 
-    .produto:hover {
-        box-shadow: 3px 5px 10px -3px #000000;
-    }
-
-    .produto .OculosEmAlta{
-        width: 100%;
-    }
 </style>

@@ -7,15 +7,34 @@
 import router from '@/router';
 import FinalizarCompra from '@/components/FinalizarCompra.vue'
 import {compras} from '@/objects/objects.js'
-import { pedidos } from '@/objects/objects';
 
 
 export default {
   name: 'FinalizarCompraView',
+  data () {
+    return {
+        c: null
+    }
+  },
   components: {
     FinalizarCompra
   },
-  mounted(){
+  async mounted(){
+
+    const produtosPromises = [];
+
+    for (const compra of compras.getObjs()) {
+      produtosPromises.push((async () => {
+        const produto = await fetch('http://localhost:8888/' + compra.id_produto).then(res => res.json()).catch(err => alert(err.message));
+
+        produto.qtd = compra.qtd;
+
+        return produto;
+      })());
+    }
+
+    const produtos = await Promise.all(produtosPromises);
+
 
     const submit = document.getElementById("botao_finalizar");
     submit.addEventListener("click", validaEntradas);
@@ -70,30 +89,42 @@ export default {
         }
 
         if (localStorage.getItem('usuario')) {
-            //copiando os itens do carrinho para o pedidos (salvando no local storage)
-            fetch('http://localhost:3000/produtos')
-            .then(res => res.json())
-            .then(data => {
-                let produtos = data;
-
-                (compras.getObjs()).forEach((compra, idx) => {
-                    pedidos.pushObjs({
-                        idx_produto: compra.idx_produto,
-                        qtd: compra.qtd,
-                        valor: compra.valor
-                    });
-
-                });
+                // await fetch('http://localhost:8888/pedidos/' + localStorage.usuario, {
+                //     method : 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body : JSON.stringify(compras.getObjs())
+                // })
+                // .catch(err => alert(err.message));
                     
-                alert("Compra finalizada com sucesso")
+                alert("Compra finalizada com sucesso");
+                
+                console.log(produtos);
+
+                for (const compra of produtos) {
+                    console.log('compra', compra);
+                    fetch('http://localhost:8888/' + compra._id, {
+                        method : 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body : JSON.stringify({estoque: compra.estoque-compra.qtd, 
+                            vendidos: compra.vendidos ? compra.vendidos + compra.qtd : compra.qtd})
+                    }).then(res => res.json())
+                    .catch(err => alert(err.message));
+                }
+
+
+                //limpando o carrinho
+                compras.deleteCarrinho();
+
+
                 setTimeout(function(){
-                    router.push('/pedidos')
+                    router.push('/')
                 }, 500); 
 
-                // //limpando o carrinho
-                compras.deleteCarrinho();
-            })
-            .catch(err => alert(err.message));
+            // .catch(err => alert(err.message));
         }
     }
   }

@@ -1,6 +1,6 @@
 <template>
     <div v-if="c">
-      <Carrinho :compras="c"/>
+      <Carrinho :comprass="c"/>
     </div>
 </template>
 
@@ -43,7 +43,6 @@ export default {
       });
 
      */
-
 
     const produtosPromises = [];
 
