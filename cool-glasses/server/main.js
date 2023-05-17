@@ -14,9 +14,9 @@ const controllerUser = require('./controler/users');
 
 const app = express();
 const port = 8888;
-
-mongoose.connect("mongodb+srv://adrio:adrio1234@cluster0.eq0pvr4.mongodb.net/?retryWrites=true&w=majority")
-//                mongodb+srv://adrio:1234@cluster0.eq0pvr4.mongodb.net/?retryWrites=true&w=majority
+                  
+//conectando ao mongodb
+mongoose.connect("mongodb+srv://admin:admin@cluster0.jddmxkc.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log('connected to mongodb'))
   .catch(e => console.error(e));
 
