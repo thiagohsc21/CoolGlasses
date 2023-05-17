@@ -111,20 +111,26 @@ Os resultados foram promissores, de tal forma que não encontramos nenhum tipo d
 ## 6. Building
 Primeiramente, é necessário instalar os pacotes `npm` e `node.js` no computador. 
 
-Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na pasta cool-glasses. Por fim, abra um terminal dentro da pasta, como na foto abaixo (feito no Windows 11), lembrando que todo o processo pode ser feito utilizando somente o terminal do Windows ou Linux. 
-
-![abrirTerminal](imagens/abrirTerminal.png)
+Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na pasta cool-glasses. Depois seguir os passos:
 
 #### Primeiramente, digite:
-`$ node ./server/main.js `
+`$ node ./server/main.js ` Essa instrução conctará o site ao banco de dados
 
 #### Segundamente, digite: 
-`$ npm run serve`
+`$ npm run serve` Essa para rodar o servidor em localhost
 
 Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no link Local para acessar o site. 
 
-![localhostSite](imagens/localhostSite.png)
+## Home
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/d37c7e60-fe49-48c2-b48b-191dcd8073ef)
 
+## Admin
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/c288a179-a969-449d-90e7-0d0cffedfdcc)
+
+## Add produtos no estoque
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/f466ca8b-7a5b-49fb-a90c-6f5e6903737b)
+
+## Produtos
 ## 7. Problemas
 No início, tivemos problemas na passagem dos Mockups para as telas, porque não sabíamos muito bem como trabalhar com o CSS e Bootstrap, de modo a alinhar itens e divs, trabalhar com o tamanho das fontes e cores. 
 
