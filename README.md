@@ -1,6 +1,7 @@
 
 
-![logo](imagens/imagem-readme.png)
+![imagem-readme](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/4acb19df-7f76-4876-978e-29199429c98a)
+
 
 Projeto desenvolvido para a disciplina de Introdução ao Desenvolvimento Web, no ano de 2022.
 
@@ -42,21 +43,11 @@ O tema escolhido por nós foi desenvolver um website que realiza a venda de ócu
 CoolGlasses é uma loja virtual de óculos. O projeto será desenvolvido implementando HTML, CSS, javascript e outros, além do uso de um banco de dados. 
 
 ### Diagrama de navegação
-![navegacao](imagens/diagramaNavegacao.png)
+![diagramaNavegacao](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/3d8b7148-11bd-444e-b956-c0076aec926f)
 
 #### Mockups
 
-Os mockups se encontram no diretório 'mockups', além de todos estarem contidos também nesse link para o figma que foi utilizado: [Figma ](https://www.figma.com/file/Q0Aj5abwo0EIDR1jyfYADb/CoolGlasses?node-id=0%3A1)
-
-Acesso aos arquivos dos mockups: 
-- [Home](/mockups/home.png)
-  - [Produtos](/mockups/produtos.png)
-    - [Produto](/mockups/produto.png)
-- [Login](/mockups/login.png)
-- [Cadastro](/mockups/cadastro.png)
-- [Perfil do Cliente](/mockups/perfil.png)
-- [Carrinho](/mockups/carrinhoo.png)
-  - [Finalizar Compra](/mockups/finalizarcompra.png)
+Os mockups se encontram no nesse link para o figma que foi utilizado: [Figma ](https://www.figma.com/file/Q0Aj5abwo0EIDR1jyfYADb/CoolGlasses?node-id=0%3A1)
 
 ### Funcionalidades
 
@@ -119,13 +110,23 @@ Após isso, basta baixar nosso repositório, extrair em algum lugar e entrar na 
 #### Segundamente, digite: 
 `$ npm run serve` Essa para rodar o servidor em localhost
 
-Se tudo ocorrer bem, você verá algo como a imagem abaixo, bastando clicar no link Local para acessar o site. 
+Se tudo ocorrer bem, você poderá entrar no site, acessando a home em: http://localhost:8080/ 
 
-## Home
+## Páginas:
+### Home
 ![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/d37c7e60-fe49-48c2-b48b-191dcd8073ef)
 
-## Admin
+### Produtos em Alta:
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/fe3d9556-8d6a-43cc-b646-a0934838870c)
+
+### Produto
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/e4fecadf-8d89-4586-b62f-30eedf811c15)
+
+### Admin
 ![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/c288a179-a969-449d-90e7-0d0cffedfdcc)
+
+### Usuário
+![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/215ddbcb-e674-4519-93d6-dd5c0b0b2a1c)
 
 ## Add produtos no estoque
 ![image](https://github.com/thiagohsc21/CoolGlasses/assets/44558872/f466ca8b-7a5b-49fb-a90c-6f5e6903737b)
