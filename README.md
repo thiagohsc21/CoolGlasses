@@ -139,7 +139,7 @@ No momento de criarmos uma Single Page Application, também encontramos outros d
 
 Ao integrarmos todo o site com o mongoDB, também tivemos que aprender diversas funcionalidades, o que tomou certo tempo.
 
-Concluindo, o desenvolvimento do projeto como um todo foi bem cansativo, pois não possuíamos nenhum tipo de conhecimento em Web e o nível requerido para a tarefa era, de certa forma, alto, o que demandou um tempo extremamente alto dedicado à disciplina, de tal forma que foi necessário que deixássemos de lado tarefas de outros professores. 
+Concluindo, o desenvolvimento do projeto como um todo foi bem cansativo, pois não possuíamos nenhum tipo de conhecimento em Web e o nível requerido para a tarefa era, de certa forma, alto, o que demandou um tempo extremamente alto dedicado à disciplina.
 
 
 ## 8. Comentários
